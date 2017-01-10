@@ -43,6 +43,7 @@
             this.userName_tb.Name = "userName_tb";
             this.userName_tb.Size = new System.Drawing.Size(140, 20);
             this.userName_tb.TabIndex = 0;
+            this.userName_tb.TextChanged += new System.EventHandler(this.userName_tb_TextChanged);
             // 
             // passWord_tb
             // 
@@ -50,6 +51,7 @@
             this.passWord_tb.Name = "passWord_tb";
             this.passWord_tb.Size = new System.Drawing.Size(140, 20);
             this.passWord_tb.TabIndex = 1;
+            this.passWord_tb.TextChanged += new System.EventHandler(this.passWord_tb_TextChanged);
             // 
             // userName_lbl
             // 
@@ -59,6 +61,7 @@
             this.userName_lbl.Size = new System.Drawing.Size(84, 13);
             this.userName_lbl.TabIndex = 2;
             this.userName_lbl.Text = "Gebruikersnaam";
+            this.userName_lbl.Click += new System.EventHandler(this.userName_lbl_Click);
             // 
             // passWord_lbl
             // 
@@ -68,6 +71,7 @@
             this.passWord_lbl.Size = new System.Drawing.Size(68, 13);
             this.passWord_lbl.TabIndex = 3;
             this.passWord_lbl.Text = "Wachtwoord";
+            this.passWord_lbl.Click += new System.EventHandler(this.passWord_lbl_Click);
             // 
             // login_btn
             // 
@@ -77,6 +81,7 @@
             this.login_btn.TabIndex = 4;
             this.login_btn.Text = "Login";
             this.login_btn.UseVisualStyleBackColor = true;
+            this.login_btn.Click += new System.EventHandler(this.login_btn_Click);
             // 
             // logoChapoo
             // 

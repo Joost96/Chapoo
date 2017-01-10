@@ -21,5 +21,31 @@ namespace UI
         {
 
         }
+
+        private void login_btn_Click(object sender, EventArgs e)
+        {
+            string userName = userName_tb.Text;
+            string passWord = passWord_tb.Text;
+        }
+
+        private void passWord_lbl_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void userName_lbl_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void passWord_tb_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void userName_tb_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
