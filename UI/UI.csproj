@@ -53,6 +53,12 @@
     <Compile Include="EigenaarForm.Designer.cs">
       <DependentUpon>EigenaarForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="KeukenForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KeukenForm.Designer.cs">
+      <DependentUpon>KeukenForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -63,6 +69,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="EigenaarForm.resx">
       <DependentUpon>EigenaarForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KeukenForm.resx">
+      <DependentUpon>KeukenForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
