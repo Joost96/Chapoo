@@ -30,5 +30,13 @@ namespace Logica
                 return false;
             }
         }
+
+        public bool GetTafels()
+        {
+            List<Tafel> tafels = new List<Tafel>();
+            // eventjes geen idee!
+
+            return true; 
+        }
     }
 }
