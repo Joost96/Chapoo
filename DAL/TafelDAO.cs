@@ -36,6 +36,37 @@ namespace DAL
             return updatesuccesful;
         }
 
+        public static List<Tafel> ReadAll()
+            {
+            List<Tafel> TafelOverzicht = new List<Tafel>();
+            //    Tafel tafel = new Tafel();
+            
+
+            SqlConnection conn = Connection.GetConnection("naam");
+            conn.Open();
+            string sql = "SELECT [t_status], [zitplaatsen], [tafel_nr]" +
+                "FROM [RBS_1617F_db01].[dbo].[WERKNEMER] ";
+            SqlCommand command = new SqlCommand(sql, conn);
+           
+
+            command.Prepare();
+            command.ExecuteNonQuery();
+            SqlDataReader reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+                TafelStatus status = (TafelStatus)reader.GetInt32(0);
+                int zitplaatsen = reader.GetInt32(1);
+                int tafelnummer = reader.GetInt32(2);
+
+
+                TafelOverzicht.Add(new Tafel(tafelnummer, status, zitplaatsen));
+            }
+
+
+            return TafelOverzicht;
+        }
+
+
 
 
     }
