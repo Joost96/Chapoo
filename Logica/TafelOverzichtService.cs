@@ -10,12 +10,24 @@ namespace Logica
 {
     public class TafelOverzichtService
     {
-    /*    private TafelDAO tafelDAO = new TafelDAO();
+       private TafelDAO tafelDAO = new TafelDAO();
 
-        public TafelStatus VeranderStatus(TafelStatus newStatus)
+        public bool VeranderStatus(Tafel tafel, TafelStatus newStatus)
         {
-            
-            
-        }*/
+            try
+            {
+                tafel.status = newStatus;
+
+                tafelDAO.update(tafel);
+
+                if (tafelDAO.update = false)
+                    return false;
+                
+            }
+            catch
+            {
+                return false;
+            }
+        }
     }
 }
