@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Model
 {
-    class Werknemer
+    public class Werknemer
     {
         private int id;
 
@@ -16,6 +16,7 @@ namespace Model
         public string Gebruikersnaam { get; set; }
         public string Wachtwoord { get; set; }
         public int Id { get { return id; } }
+        public WerknemerRol rol { get; set; }
 
         public Werknemer(int id , string voornaam, string achternaam, string gebruikersnaam, string wachtwoord)
         {
