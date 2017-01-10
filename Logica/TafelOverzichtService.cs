@@ -22,7 +22,8 @@ namespace Logica
 
                 if (tafelDAO.update = false)
                     return false;
-                
+
+                return true;
             }
             catch
             {
