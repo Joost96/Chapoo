@@ -95,9 +95,7 @@ namespace DAL
         //{
 
         //}
-        //public WerknemerDAO()
-        //    {
-        //    }
+      
 
 
 
