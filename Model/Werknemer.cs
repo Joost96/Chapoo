@@ -18,13 +18,14 @@ namespace Model
         public int Id { get { return id; } }
         public WerknemerRol rol { get; set; }
 
-        public Werknemer(int id , string voornaam, string achternaam, string gebruikersnaam, string wachtwoord)
+        public Werknemer(int id , string voornaam, string achternaam, string gebruikersnaam, string wachtwoord, WerknemerRol rol)
         {
             this.id = id;
             Voornaam = voornaam;
             Achternaam = achternaam;
             Gebruikersnaam = gebruikersnaam;
             Wachtwoord = wachtwoord;
+            this.rol = rol;
         }
         public override string ToString()
         {

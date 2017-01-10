@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Model;
+using DAL;
 
 namespace Logica
 {
@@ -14,7 +15,7 @@ namespace Logica
         public WerknemerRol CheckCredentials(string password, string username)
         {
             
-            Werknemer werkNemer = werknemerDAO.GetLogin();
+            Werknemer werkNemer = werknemerDAO.GetWerknemer(username);
             if (werkNemer != null)
             {
                 if (werkNemer.Gebruikersnaam == username && werkNemer.Wachtwoord == password)

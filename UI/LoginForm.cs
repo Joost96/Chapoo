@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Logica;
 using Model;
+using System.Diagnostics;
 
 namespace UI
 {
@@ -31,7 +32,7 @@ namespace UI
 
             LoginService login = new LoginService();
             WerknemerRol rolVanWerknemer = login.CheckCredentials(passWord, userName);
-            
+            Debug.WriteLine(rolVanWerknemer);
             if (rolVanWerknemer == WerknemerRol.bar)
             {
 
