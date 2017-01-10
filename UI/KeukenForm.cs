@@ -21,13 +21,18 @@ namespace UI
 
         public void ophalenGegevens()
         {
-            
+           
         }
 
         private void logout_btn_Click(object sender, EventArgs e)
         {
             LoginForm from = new LoginForm();
             from.Show();
+
+        }
+
+        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
         }
     }
