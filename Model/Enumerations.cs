@@ -6,5 +6,6 @@ using System.Threading.Tasks;
 
 namespace Model
 {
-   public enum WerknemerRol{ bediening = 0,  keuken = 1, bar = 2 , eigenaar = 4, onbevoegd = 5}
+   public enum WerknemerRol{ bediening = 0,  keuken = 1, bar = 2 , eigenaar = 4, onbevoegd = 5};
+   public enum TafelStatus { beschikbaar = 0, gereserveerd = 1, bezet = 2}
 }
