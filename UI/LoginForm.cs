@@ -30,6 +30,9 @@ namespace UI
             string passWord = passWord_tb.Text;
 
             LoginService login = new LoginService();
+            login.CheckCredentials(passWord, userName);
+
+
 
         }
 
