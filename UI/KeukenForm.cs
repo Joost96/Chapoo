@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Model;
+using Logica;
 
 namespace UI
 {
@@ -15,6 +17,11 @@ namespace UI
         public KeukenForm()
         {
             InitializeComponent();
+        }
+
+        public void ophalenGegevens()
+        {
+            
         }
 
         private void logout_btn_Click(object sender, EventArgs e)
