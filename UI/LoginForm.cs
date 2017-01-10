@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Logica;
+using Model;
 
 namespace UI
 {
@@ -26,6 +28,9 @@ namespace UI
         {
             string userName = userName_tb.Text;
             string passWord = passWord_tb.Text;
+
+            LoginService login = new LoginService();
+
         }
 
         private void passWord_lbl_Click(object sender, EventArgs e)
