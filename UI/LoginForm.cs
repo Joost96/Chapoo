@@ -52,7 +52,8 @@ namespace UI
 
             else if (rolVanWerknemer == WerknemerRol.keuken)
             {
-
+                KeukenForm from = new KeukenForm();
+                from.Show();
             }
 
             else if (rolVanWerknemer == WerknemerRol.onbevoegd)

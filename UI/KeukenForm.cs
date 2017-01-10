@@ -16,5 +16,12 @@ namespace UI
         {
             InitializeComponent();
         }
+
+        private void logout_btn_Click(object sender, EventArgs e)
+        {
+            LoginForm from = new LoginForm();
+            from.Show();
+
+        }
     }
 }
