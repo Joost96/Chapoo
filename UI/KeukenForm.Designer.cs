@@ -32,6 +32,7 @@
             this.logout_btn = new System.Windows.Forms.Button();
             this.klaar_btn = new System.Windows.Forms.Button();
             this.bereiden_btn = new System.Windows.Forms.Button();
+            this.refresh_btn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // listView1
@@ -72,11 +73,26 @@
             this.bereiden_btn.Text = "Bereiden";
             this.bereiden_btn.UseVisualStyleBackColor = false;
             // 
+            // refresh_btn
+            // 
+            this.refresh_btn.BackColor = System.Drawing.Color.Pink;
+            this.refresh_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.refresh_btn.Image = global::UI.Properties.Resources.refresh_16x16;
+            this.refresh_btn.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.refresh_btn.Location = new System.Drawing.Point(13, 409);
+            this.refresh_btn.Name = "refresh_btn";
+            this.refresh_btn.Size = new System.Drawing.Size(90, 23);
+            this.refresh_btn.TabIndex = 4;
+            this.refresh_btn.Text = "Verversen";
+            this.refresh_btn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.refresh_btn.UseVisualStyleBackColor = false;
+            // 
             // KeukenForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(304, 444);
+            this.Controls.Add(this.refresh_btn);
             this.Controls.Add(this.bereiden_btn);
             this.Controls.Add(this.klaar_btn);
             this.Controls.Add(this.logout_btn);
@@ -93,5 +109,6 @@
         private System.Windows.Forms.Button logout_btn;
         private System.Windows.Forms.Button klaar_btn;
         private System.Windows.Forms.Button bereiden_btn;
+        private System.Windows.Forms.Button refresh_btn;
     }
 }
