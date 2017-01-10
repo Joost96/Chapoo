@@ -24,7 +24,7 @@ namespace Logica
                 }
 
             }          
-                return (WerknemerRol)5;           
+                return (WerknemerRol)4;           
         }
 
     }

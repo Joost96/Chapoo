@@ -18,9 +18,9 @@ namespace Logica
             {
                 tafel.status = newStatus;
 
-                tafelDAO.update(tafel);
+                TafelDAO.Update(tafel);
 
-                if (tafelDAO.update = false)
+                if (TafelDAO.Update(tafel) == false)
                     return false;
 
                 return true;
@@ -31,12 +31,17 @@ namespace Logica
             }
         }
 
-        public bool GetTafels()
+        public List<Tafel> GetTafels()
         {
-            List<Tafel> tafels = new List<Tafel>();
+            List<Tafel> TafelOverzicht = new List<Tafel>();
+            TafelDAO.ReadAll();
+
+            
+
+
             // eventjes geen idee!
 
-            return true; 
+            return TafelOverzicht; 
         }
     }
 }
