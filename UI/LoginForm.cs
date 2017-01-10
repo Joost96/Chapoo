@@ -30,8 +30,32 @@ namespace UI
             string passWord = passWord_tb.Text;
 
             LoginService login = new LoginService();
-            login.CheckCredentials(passWord, userName);
+            WerknemerRol rolVanWerknemer = login.CheckCredentials(passWord, userName);
+            
+            if (rolVanWerknemer == WerknemerRol.bar)
+            {
 
+            }
+
+            else if (rolVanWerknemer == WerknemerRol.bediening)
+            {
+
+            }
+
+            else if (rolVanWerknemer == WerknemerRol.eigenaar)
+            {
+
+            }
+
+            else if (rolVanWerknemer == WerknemerRol.keuken)
+            {
+
+            }
+
+            else if (rolVanWerknemer == WerknemerRol.onbevoegd)
+            {
+
+            }
 
 
         }
