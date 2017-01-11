@@ -34,7 +34,7 @@ namespace Logica
                               }
                           }
                       }
-
+                      BestellingDAO.Update(bestelling);
             return bestelling;
         }
 
