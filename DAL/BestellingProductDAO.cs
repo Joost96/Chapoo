@@ -57,5 +57,13 @@ namespace DAL
             }
         }
 
+        public static void  Update (List<BestellingProduct> bestellingen)
+        {
+
+        }
+
     }
+
+    
+
 }
