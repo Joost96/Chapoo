@@ -39,7 +39,9 @@ namespace UI
 
             else if (rolVanWerknemer == WerknemerRol.bediening)
             {
-
+                Hide();
+                OverzichtForm overzicht = new OverzichtForm();
+                overzicht.Show();
             }
 
             else if (rolVanWerknemer == WerknemerRol.eigenaar)
@@ -53,6 +55,7 @@ namespace UI
 
             else if (rolVanWerknemer == WerknemerRol.keuken)
             {
+                Hide();
                 KeukenForm from = new KeukenForm();
                 from.Show();
             }
