@@ -44,9 +44,12 @@ namespace UI
             }
 
             else if (rolVanWerknemer == WerknemerRol.eigenaar)
-            {
+            {   
+                this.Close();
                 // krijgt scherm under construction
                 EigenaarForm from = new EigenaarForm();
+                
+
                 from.Show();
             }
 
