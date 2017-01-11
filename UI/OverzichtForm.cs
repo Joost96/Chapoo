@@ -42,11 +42,17 @@ namespace UI
                 Button btn = new Button();
                 btn.Text = tafel.tafelNummer.ToString();
                 btn.Size = new Size(85, 40);
+                btn.Margin = new Padding(8);
                 //btn.Click += btn_Click;
                 flowLayoutPanel1.Controls.Add(btn);
 
 
             }
+        }
+
+        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
