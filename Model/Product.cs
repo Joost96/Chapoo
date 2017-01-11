@@ -8,7 +8,7 @@ namespace Model
 {
     public class Product
     {
-        private int Id;
+        public int Id { get; set; }
         public string Category { get; set; }
         public string Naam { get; set; }
         public string Omschrijving { get; set; }
