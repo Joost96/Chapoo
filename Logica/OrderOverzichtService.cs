@@ -8,6 +8,9 @@ namespace Logica
 {
     class OrderOverzichtService
     {
+        public void ChangeStatus()
+        {
 
+        }
     }
 }
