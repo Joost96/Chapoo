@@ -32,7 +32,6 @@ namespace UI
 
             LoginService login = new LoginService();
             WerknemerRol rolVanWerknemer = login.CheckCredentials(passWord, userName);
-            Debug.WriteLine(rolVanWerknemer);
             if (rolVanWerknemer == WerknemerRol.bar)
             {
 
@@ -61,7 +60,7 @@ namespace UI
 
             }
 
-
+            this.Close();
         }
 
         private void passWord_lbl_Click(object sender, EventArgs e)
