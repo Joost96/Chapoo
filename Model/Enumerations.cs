@@ -10,7 +10,7 @@ namespace Model
     public enum TafelStatus { beschikbaar = 1, gereserveerd = 2, bezet = 3 };
    public enum BetaalMethode { cash = 0, pin = 1, creditcard = 2};
    public enum BestellingStatus { Queue = 0 , Prepare = 1, Ready = 2, Serve = 3};
-   public enum KaartCategory { Lunch = 0, Dinner = 1, Drank = 2 };
+   public enum KaartCategory { Lunch = 1, Dinner = 2, Drank = 3};
 
 }
 // besteld,  bereiding,      klaar om te serveren     geserveerd. 

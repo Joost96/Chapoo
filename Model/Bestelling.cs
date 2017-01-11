@@ -18,7 +18,7 @@ namespace Model
        public double Fooi { get; set; }
        public DateTime Datum {get;set; }
        public double TotaalBedrag { get; set; }
-       public List<Product> producten { get; set; }
+       public List<BestellingProduct> producten { get; set; }
 
 
 
@@ -33,14 +33,14 @@ namespace Model
 
        }
 
-       public List<Product> CreateProducten()
+       public List<BestellingProduct> CreateProducten()
        {
-       
-           List<Product> producten = new List<Product>();
+
+           List<BestellingProduct> producten = new List<BestellingProduct>();
            return producten;
        }
 
-       public List<Product> AddProduct(Product product)
+       public List<BestellingProduct> AddProduct(BestellingProduct product)
        {
          //  List<Product> producten = new List<Product>();
            producten.Add(product);
@@ -48,7 +48,7 @@ namespace Model
            return producten;
           
        }
-       public List<Product> RemoveProduct(Product product, int amount)
+       public List<BestellingProduct> RemoveProduct(BestellingProduct product, int amount)
        {
            for (int i = 0; i < amount; i++)
            {
