@@ -47,6 +47,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BestellingMenuForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BestellingMenuForm.Designer.cs">
+      <DependentUpon>BestellingMenuForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="EigenaarForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -73,6 +79,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="BestellingMenuForm.resx">
+      <DependentUpon>BestellingMenuForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EigenaarForm.resx">
       <DependentUpon>EigenaarForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -159,6 +168,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\bezet.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Modify.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

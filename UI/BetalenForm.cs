@@ -10,19 +10,14 @@ using System.Windows.Forms;
 
 namespace UI
 {
-    public partial class BestellingMenuForm : Form
+    public partial class BetalenForm : Form
     {
-        public BestellingMenuForm()
+        public BetalenForm()
         {
             InitializeComponent();
         }
 
-        private void drinkenToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dinnerToolStripMenuItem_Click(object sender, EventArgs e)
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
