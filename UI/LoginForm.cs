@@ -32,6 +32,7 @@ namespace UI
 
             LoginService login = new LoginService();
             WerknemerRol rolVanWerknemer = login.CheckCredentials(passWord, userName);
+            Debug.WriteLine(rolVanWerknemer);
             if (rolVanWerknemer == WerknemerRol.bar)
             {
 
@@ -39,22 +40,23 @@ namespace UI
 
             else if (rolVanWerknemer == WerknemerRol.bediening)
             {
-
+                Hide();
+                OverzichtForm overzicht = new OverzichtForm();
+                overzicht.Show();
             }
 
             else if (rolVanWerknemer == WerknemerRol.eigenaar)
-            {
+            {   
                
                 // krijgt scherm under construction
-                Hide();
                 EigenaarForm from = new EigenaarForm();
                 from.Show();
-                
+                // hide maar nog niet close ???
             }
 
             else if (rolVanWerknemer == WerknemerRol.keuken)
             {
-
+                Hide();
                 KeukenForm from = new KeukenForm();
                 from.Show();
             }
@@ -63,7 +65,7 @@ namespace UI
             {
 
             }
-            
+
 
         }
 
