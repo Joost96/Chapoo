@@ -8,7 +8,7 @@ namespace Model
 {
     public class Tafel
     {
-        private int tafelNummer;
+        public int tafelNummer { get; set; }
 
         public TafelStatus status { get; set; }
         public int zitplaatsen { get; set; }

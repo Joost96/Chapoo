@@ -49,7 +49,7 @@ namespace UI
                 Hide();
                 EigenaarForm from = new EigenaarForm();
                 from.Show();
-                Close();
+                
             }
 
             else if (rolVanWerknemer == WerknemerRol.keuken)
@@ -63,8 +63,8 @@ namespace UI
             {
 
             }
-
             
+
         }
 
         private void passWord_lbl_Click(object sender, EventArgs e)
