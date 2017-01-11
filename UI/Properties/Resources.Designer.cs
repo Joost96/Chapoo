@@ -63,6 +63,26 @@ namespace UI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap beschikbaar {
+            get {
+                object obj = ResourceManager.GetObject("beschikbaar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap bezet {
+            get {
+                object obj = ResourceManager.GetObject("bezet", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap chapoo {
             get {
                 object obj = ResourceManager.GetObject("chapoo", resourceCulture);
@@ -76,6 +96,16 @@ namespace UI.Properties {
         internal static System.Drawing.Bitmap Exit {
             get {
                 object obj = ResourceManager.GetObject("Exit", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap gereserveerd {
+            get {
+                object obj = ResourceManager.GetObject("gereserveerd", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

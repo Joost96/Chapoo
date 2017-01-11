@@ -10,14 +10,19 @@ using System.Windows.Forms;
 
 namespace UI
 {
-    public partial class EigenaarForm : Form
+    public partial class OverzichtForm : Form
     {
-        public EigenaarForm()
+        public OverzichtForm()
         {
             InitializeComponent();
         }
 
-        private void UC_image_Click(object sender, EventArgs e)
+        private void beschikbaar_lbl_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void gereserveerd_lbl_Click(object sender, EventArgs e)
         {
 
         }
@@ -26,7 +31,6 @@ namespace UI
         {
             LoginForm from = new LoginForm();
             from.Show();
-        }
         }
     }
 }
