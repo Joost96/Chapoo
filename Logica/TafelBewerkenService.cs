@@ -11,9 +11,21 @@ namespace Logica
 {
     public class TafelBewerkenService
     {
-        public void getBestellingProducten(int bestellingId)
+        public List<BestellingProduct> getBestellingProducten(int bestellingId)
         {
+           List<BestellingProduct> bestelling = ( ReadAllFromBestellingProducten(bestellingId));
+
+           return bestelling;
 
         }
+
+        public List<BestellingProduct> PasAantalAan ()
+        {
+            List<BestellingProduct> bestelling = new List<BestellingProduct>();
+
+
+            return bestelling;
+        }
+
     }
 }
