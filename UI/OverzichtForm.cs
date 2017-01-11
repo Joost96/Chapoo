@@ -40,7 +40,11 @@ namespace UI
             foreach (Tafel tafel in TafelOverzichtService.GetTafels())
             {
                 Button btn = new Button();
-                btn.Text = tafel.
+                btn.Text = tafel.tafelNummer.ToString();
+                btn.Size = new Size(85, 40);
+                //btn.Click += btn_Click;
+                flowLayoutPanel1.Controls.Add(btn);
+
 
             }
         }
