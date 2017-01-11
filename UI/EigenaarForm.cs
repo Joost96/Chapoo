@@ -27,6 +27,6 @@ namespace UI
             LoginForm from = new LoginForm();
             from.Show();
         }
-        }
+        
     }
 }
