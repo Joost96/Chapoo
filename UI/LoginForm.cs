@@ -32,6 +32,7 @@ namespace UI
 
             LoginService login = new LoginService();
             WerknemerRol rolVanWerknemer = login.CheckCredentials(passWord, userName);
+            Debug.WriteLine(rolVanWerknemer);
             if (rolVanWerknemer == WerknemerRol.bar)
             {
 
@@ -45,9 +46,9 @@ namespace UI
             }
 
             else if (rolVanWerknemer == WerknemerRol.eigenaar)
-            {
+            {   
+               
                 // krijgt scherm under construction
-                Hide();
                 EigenaarForm from = new EigenaarForm();
                 from.Show();
                 // hide maar nog niet close ???
@@ -65,7 +66,7 @@ namespace UI
 
             }
 
-            
+
         }
 
         private void passWord_lbl_Click(object sender, EventArgs e)
