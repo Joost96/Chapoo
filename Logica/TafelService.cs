@@ -1,0 +1,22 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Model;
+using DAL;
+
+namespace Logica
+{
+    public class TafelService
+    {
+        public List<BestellingProduct> getBestellingProducten(int bestellingId)
+        {
+            List<BestellingProduct> bestelling = BestellingProductDAO.ReadAllFromBestellingProducten(bestellingId);
+
+            return bestelling;
+
+        }
+    }
+}
+
