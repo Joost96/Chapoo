@@ -40,20 +40,20 @@ namespace UI
             foreach (Tafel tafel in TafelOverzichtService.GetTafels())
             {
                 Button btn = new Button();
-                btn.Text = tafel.tafelNummer.ToString() + tafel.status.ToString();
+                btn.Text = tafel.tafelNummer.ToString() + ' '+tafel.status.ToString();
                 btn.Size = new Size(87, 40);
                 btn.Margin = new Padding(6);
-                if (tafel.status == TafelStatus.beschikbaar)
+                if (tafel.status == TafelStatus.Vrij)
                 {
                     btn.BackColor = Color.Gray;
                 }
 
-                else if (tafel.status == TafelStatus.gereserveerd)
+                else if (tafel.status == TafelStatus.Gereserveerd)
                 {
                     btn.BackColor = Color.Orange;
                 }
 
-                else if (tafel.status == TafelStatus.bezet)
+                else if (tafel.status == TafelStatus.Bezet)
                 {
                     btn.BackColor = Color.Green;
                 }
