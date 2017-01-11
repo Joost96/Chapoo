@@ -80,9 +80,9 @@
             // 
             this.logout_btn.Image = global::UI.Properties.Resources.Exit;
             this.logout_btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.logout_btn.Location = new System.Drawing.Point(225, 405);
+            this.logout_btn.Location = new System.Drawing.Point(225, 8);
             this.logout_btn.Name = "logout_btn";
-            this.logout_btn.Size = new System.Drawing.Size(67, 27);
+            this.logout_btn.Size = new System.Drawing.Size(67, 24);
             this.logout_btn.TabIndex = 10;
             this.logout_btn.Text = "Logout";
             this.logout_btn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -91,10 +91,10 @@
             // 
             // flowLayoutPanel1
             // 
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(50, 20);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(50, 53);
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(5);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(200, 350);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(200, 321);
             this.flowLayoutPanel1.TabIndex = 14;
             this.flowLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint);
             // 
