@@ -28,56 +28,56 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.drinkenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.lunchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.dinnerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.listView1 = new System.Windows.Forms.ListView();
+            this.menu_tab = new System.Windows.Forms.TabControl();
+            this.drinken_tab = new System.Windows.Forms.TabPage();
+            this.lunch_tab = new System.Windows.Forms.TabPage();
             this.bewerken_btn = new System.Windows.Forms.Button();
             this.bestellen_btn = new System.Windows.Forms.Button();
-            this.menuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.listView1 = new System.Windows.Forms.ListView();
-            this.menuStrip1.SuspendLayout();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.menu_tab.SuspendLayout();
             this.SuspendLayout();
             // 
-            // menuStrip1
+            // listView1
             // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.drinkenToolStripMenuItem,
-            this.lunchToolStripMenuItem,
-            this.dinnerToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(304, 24);
-            this.menuStrip1.TabIndex = 0;
-            this.menuStrip1.Text = "menuStrip1";
+            this.listView1.Location = new System.Drawing.Point(9, 253);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(286, 150);
+            this.listView1.TabIndex = 3;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
             // 
-            // drinkenToolStripMenuItem
+            // menu_tab
             // 
-            this.drinkenToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.menuToolStripMenuItem});
-            this.drinkenToolStripMenuItem.Name = "drinkenToolStripMenuItem";
-            this.drinkenToolStripMenuItem.Size = new System.Drawing.Size(62, 20);
-            this.drinkenToolStripMenuItem.Text = "Drinken";
-            this.drinkenToolStripMenuItem.Click += new System.EventHandler(this.drinkenToolStripMenuItem_Click);
+            this.menu_tab.Controls.Add(this.drinken_tab);
+            this.menu_tab.Controls.Add(this.lunch_tab);
+            this.menu_tab.Controls.Add(this.tabPage1);
+            this.menu_tab.Location = new System.Drawing.Point(9, 9);
+            this.menu_tab.Margin = new System.Windows.Forms.Padding(0);
+            this.menu_tab.Name = "menu_tab";
+            this.menu_tab.SelectedIndex = 0;
+            this.menu_tab.Size = new System.Drawing.Size(286, 223);
+            this.menu_tab.TabIndex = 4;
             // 
-            // lunchToolStripMenuItem
+            // drinken_tab
             // 
-            this.lunchToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.menuToolStripMenuItem1});
-            this.lunchToolStripMenuItem.Name = "lunchToolStripMenuItem";
-            this.lunchToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
-            this.lunchToolStripMenuItem.Text = "Lunch";
+            this.drinken_tab.Location = new System.Drawing.Point(4, 22);
+            this.drinken_tab.Name = "drinken_tab";
+            this.drinken_tab.Padding = new System.Windows.Forms.Padding(3);
+            this.drinken_tab.Size = new System.Drawing.Size(278, 197);
+            this.drinken_tab.TabIndex = 0;
+            this.drinken_tab.Text = "Drinken";
+            this.drinken_tab.UseVisualStyleBackColor = true;
             // 
-            // dinnerToolStripMenuItem
+            // lunch_tab
             // 
-            this.dinnerToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.menuToolStripMenuItem2});
-            this.dinnerToolStripMenuItem.Name = "dinnerToolStripMenuItem";
-            this.dinnerToolStripMenuItem.Size = new System.Drawing.Size(49, 20);
-            this.dinnerToolStripMenuItem.Text = "Diner";
-            this.dinnerToolStripMenuItem.Click += new System.EventHandler(this.dinnerToolStripMenuItem_Click);
+            this.lunch_tab.Location = new System.Drawing.Point(4, 22);
+            this.lunch_tab.Name = "lunch_tab";
+            this.lunch_tab.Padding = new System.Windows.Forms.Padding(3);
+            this.lunch_tab.Size = new System.Drawing.Size(278, 197);
+            this.lunch_tab.TabIndex = 1;
+            this.lunch_tab.Text = "Lunch";
+            this.lunch_tab.UseVisualStyleBackColor = true;
             // 
             // bewerken_btn
             // 
@@ -107,62 +107,39 @@
             this.bestellen_btn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.bestellen_btn.UseVisualStyleBackColor = false;
             // 
-            // menuToolStripMenuItem
+            // tabPage1
             // 
-            this.menuToolStripMenuItem.Name = "menuToolStripMenuItem";
-            this.menuToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.menuToolStripMenuItem.Text = "Menu";
-            // 
-            // menuToolStripMenuItem1
-            // 
-            this.menuToolStripMenuItem1.Name = "menuToolStripMenuItem1";
-            this.menuToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
-            this.menuToolStripMenuItem1.Text = "Menu";
-            // 
-            // menuToolStripMenuItem2
-            // 
-            this.menuToolStripMenuItem2.Name = "menuToolStripMenuItem2";
-            this.menuToolStripMenuItem2.Size = new System.Drawing.Size(152, 22);
-            this.menuToolStripMenuItem2.Text = "Menu";
-            // 
-            // listView1
-            // 
-            this.listView1.Location = new System.Drawing.Point(13, 199);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(279, 204);
-            this.listView1.TabIndex = 3;
-            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Size = new System.Drawing.Size(278, 197);
+            this.tabPage1.TabIndex = 2;
+            this.tabPage1.Text = "Diner";
+            this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // BestellingMenuForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(304, 444);
+            this.Controls.Add(this.menu_tab);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.bewerken_btn);
             this.Controls.Add(this.bestellen_btn);
-            this.Controls.Add(this.menuStrip1);
-            this.MainMenuStrip = this.menuStrip1;
             this.Name = "BestellingMenuForm";
             this.Text = "Bestelling";
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
+            this.menu_tab.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem drinkenToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem lunchToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem dinnerToolStripMenuItem;
         private System.Windows.Forms.Button bestellen_btn;
         private System.Windows.Forms.Button bewerken_btn;
-        private System.Windows.Forms.ToolStripMenuItem menuToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem menuToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem menuToolStripMenuItem2;
         private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.TabControl menu_tab;
+        private System.Windows.Forms.TabPage drinken_tab;
+        private System.Windows.Forms.TabPage lunch_tab;
+        private System.Windows.Forms.TabPage tabPage1;
     }
 }
