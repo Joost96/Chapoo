@@ -8,18 +8,20 @@ namespace Model
 {
     public class Product
     {
-        private int id;
-        public string naam { get; set; }
-        public string omschrijving { get; set; }
-        public int prijs { get; set; }
-        public int voorraad { get; set; }
+        private int Id;
+        public string Category { get; set; }
+        public string Naam { get; set; }
+        public string Omschrijving { get; set; }
+        public int Prijs { get; set; }
+        public int Voorraad { get; set; }
 
         public Product (int id, string naam, string omschrijving, int prijs, int voorraad)
         {
-            int Id = id;
-            string Naam = naam;
-            string Omschrijving = omschrijving;
-            int Prijs = prijs;
+            Id = id;
+            Naam = naam;
+            Omschrijving = omschrijving;
+            Prijs = prijs;
+            Voorraad = voorraad;
         }
 
     }
