@@ -24,5 +24,7 @@ namespace Model
             Voorraad = voorraad;
         }
 
+     
+
     }
 }

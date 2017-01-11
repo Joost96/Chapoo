@@ -33,18 +33,27 @@ namespace Model
 
        }
 
+       public List<Product> CreateProducten()
+       {
+       
+           List<Product> producten = new List<Product>();
+           return producten;
+       }
+
        public List<Product> AddProduct(Product product)
        {
          //  List<Product> producten = new List<Product>();
            producten.Add(product);
 
-           return product;
+           return producten;
           
        }
        public List<Product> RemoveProduct(Product product, int amount)
        {
-           producten.Remove(product = product);
-
+           for (int i = 0; i < amount; i++)
+           {
+               producten.Remove(product);
+           }
            //Only remove one, now removes all of that product
 
            return producten;
