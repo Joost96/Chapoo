@@ -44,8 +44,8 @@ namespace DAL
 
             SqlConnection conn = Connection.GetConnection("naam");
             conn.Open();
-            string sql = "SELECT [t_status], [zitplaatsen], [tafel_nr]" +
-                "FROM [RBS_1617F_db01].[dbo].[WERKNEMER] ";
+            string sql = "SELECT [tafel_nr], [t_status], [zitplaatsen]" +
+                "FROM [RBS_1617F_db01].[dbo].[TAFEL] ";
             SqlCommand command = new SqlCommand(sql, conn);
            
 
@@ -54,9 +54,10 @@ namespace DAL
             SqlDataReader reader = command.ExecuteReader();
             while (reader.Read())
             {
-                TafelStatus status = (TafelStatus)reader.GetInt32(0);
-                int zitplaatsen = reader.GetInt32(1);
-                int tafelnummer = reader.GetInt32(2);
+                int tafelnummer = reader.GetInt32(0);
+                TafelStatus status = (TafelStatus)reader.GetInt32(1);
+                int zitplaatsen = reader.GetInt32(2);
+                
 
 
                 TafelOverzicht.Add(new Tafel(tafelnummer, status, zitplaatsen));
