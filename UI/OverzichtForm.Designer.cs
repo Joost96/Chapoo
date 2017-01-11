@@ -209,6 +209,7 @@
             this.Controls.Add(this.tafel1_btn);
             this.Name = "OverzichtForm";
             this.Text = "Overzicht";
+            this.Load += new System.EventHandler(this.OverzichtForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

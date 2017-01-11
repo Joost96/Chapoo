@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Model;
+using Logica;
 
 namespace UI
 {
@@ -31,6 +33,16 @@ namespace UI
         {
             LoginForm from = new LoginForm();
             from.Show();
+        }
+
+        private void OverzichtForm_Load(object sender, EventArgs e)
+        {
+            foreach (Tafel tafel in TafelOverzichtService.GetTafels())
+            {
+                Button btn = new Button();
+                btn.Text = tafel.
+
+            }
         }
     }
 }

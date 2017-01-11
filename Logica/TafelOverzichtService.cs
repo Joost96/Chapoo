@@ -31,16 +31,12 @@ namespace Logica
             }
         }
 
-        public List<Tafel> GetTafels()
+        public static List<Tafel> GetTafels()
         {
-            List<Tafel> TafelOverzicht = new List<Tafel>();
-            TafelDAO.ReadAll();
-
-            
-
+            List<Tafel> TafelOverzicht = TafelDAO.ReadAll();
+            // TafelDAO.ReadAll();
 
             // eventjes geen idee!
-
             return TafelOverzicht; 
         }
     }
