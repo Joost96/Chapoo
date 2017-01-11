@@ -91,9 +91,10 @@
             // 
             // flowLayoutPanel1
             // 
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(20, 12);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(50, 20);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(6);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(272, 342);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(200, 350);
             this.flowLayoutPanel1.TabIndex = 14;
             // 
             // OverzichtForm
