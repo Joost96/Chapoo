@@ -44,6 +44,7 @@ namespace UI
 
             else if (rolVanWerknemer == WerknemerRol.eigenaar)
             {
+               
                 // krijgt scherm under construction
                 EigenaarForm from = new EigenaarForm();
                 from.Show();
@@ -51,6 +52,7 @@ namespace UI
 
             else if (rolVanWerknemer == WerknemerRol.keuken)
             {
+
                 KeukenForm from = new KeukenForm();
                 from.Show();
             }
@@ -60,7 +62,7 @@ namespace UI
 
             }
 
-            this.Close();
+            
         }
 
         private void passWord_lbl_Click(object sender, EventArgs e)
