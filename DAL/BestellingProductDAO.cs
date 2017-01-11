@@ -53,6 +53,7 @@ namespace DAL
 
                     
                 }
+                conn.Close();
                 return BestellingProducten;
             }
         }
