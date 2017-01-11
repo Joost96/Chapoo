@@ -32,8 +32,12 @@
             this.passWord_tb = new System.Windows.Forms.TextBox();
             this.userName_lbl = new System.Windows.Forms.Label();
             this.passWord_lbl = new System.Windows.Forms.Label();
-            this.login_btn = new System.Windows.Forms.Button();
+            this.password_icon = new System.Windows.Forms.PictureBox();
+            this.people_icon = new System.Windows.Forms.PictureBox();
             this.logoChapoo = new System.Windows.Forms.PictureBox();
+            this.login_btn = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.password_icon)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.people_icon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.logoChapoo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -74,15 +78,23 @@
             this.passWord_lbl.Text = "Wachtwoord";
             this.passWord_lbl.Click += new System.EventHandler(this.passWord_lbl_Click);
             // 
-            // login_btn
+            // password_icon
             // 
-            this.login_btn.Location = new System.Drawing.Point(72, 306);
-            this.login_btn.Name = "login_btn";
-            this.login_btn.Size = new System.Drawing.Size(140, 25);
-            this.login_btn.TabIndex = 4;
-            this.login_btn.Text = "Login";
-            this.login_btn.UseVisualStyleBackColor = true;
-            this.login_btn.Click += new System.EventHandler(this.login_btn_Click);
+            this.password_icon.Image = global::UI.Properties.Resources.Lock;
+            this.password_icon.Location = new System.Drawing.Point(41, 271);
+            this.password_icon.Name = "password_icon";
+            this.password_icon.Size = new System.Drawing.Size(25, 19);
+            this.password_icon.TabIndex = 7;
+            this.password_icon.TabStop = false;
+            // 
+            // people_icon
+            // 
+            this.people_icon.Image = global::UI.Properties.Resources.People;
+            this.people_icon.Location = new System.Drawing.Point(41, 214);
+            this.people_icon.Name = "people_icon";
+            this.people_icon.Size = new System.Drawing.Size(25, 19);
+            this.people_icon.TabIndex = 6;
+            this.people_icon.TabStop = false;
             // 
             // logoChapoo
             // 
@@ -94,11 +106,26 @@
             this.logoChapoo.TabIndex = 5;
             this.logoChapoo.TabStop = false;
             // 
+            // login_btn
+            // 
+            this.login_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.login_btn.Image = global::UI.Properties.Resources.Next;
+            this.login_btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.login_btn.Location = new System.Drawing.Point(72, 306);
+            this.login_btn.Name = "login_btn";
+            this.login_btn.Size = new System.Drawing.Size(140, 25);
+            this.login_btn.TabIndex = 4;
+            this.login_btn.Text = "Login";
+            this.login_btn.UseVisualStyleBackColor = true;
+            this.login_btn.Click += new System.EventHandler(this.login_btn_Click);
+            // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(304, 444);
+            this.Controls.Add(this.password_icon);
+            this.Controls.Add(this.people_icon);
             this.Controls.Add(this.logoChapoo);
             this.Controls.Add(this.login_btn);
             this.Controls.Add(this.passWord_lbl);
@@ -108,6 +135,8 @@
             this.Name = "LoginForm";
             this.Text = "Chapoo";
             this.Load += new System.EventHandler(this.LoginForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.password_icon)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.people_icon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.logoChapoo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -122,6 +151,8 @@
         private System.Windows.Forms.Label passWord_lbl;
         private System.Windows.Forms.Button login_btn;
         private System.Windows.Forms.PictureBox logoChapoo;
+        private System.Windows.Forms.PictureBox people_icon;
+        private System.Windows.Forms.PictureBox password_icon;
     }
 }
 
