@@ -46,8 +46,10 @@ namespace UI
             {
                
                 // krijgt scherm under construction
+                Hide();
                 EigenaarForm from = new EigenaarForm();
                 from.Show();
+                Close();
             }
 
             else if (rolVanWerknemer == WerknemerRol.keuken)
