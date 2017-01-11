@@ -48,7 +48,7 @@ namespace UI
                 Hide();
                 EigenaarForm from = new EigenaarForm();
                 from.Show();
-                Close();
+                // hide maar nog niet close ???
             }
 
             else if (rolVanWerknemer == WerknemerRol.keuken)
