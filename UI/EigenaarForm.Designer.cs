@@ -48,7 +48,7 @@
             // 
             this.logout_btn.Image = global::UI.Properties.Resources.Exit;
             this.logout_btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.logout_btn.Location = new System.Drawing.Point(225, 12);
+            this.logout_btn.Location = new System.Drawing.Point(225, 8);
             this.logout_btn.Name = "logout_btn";
             this.logout_btn.Size = new System.Drawing.Size(67, 23);
             this.logout_btn.TabIndex = 2;

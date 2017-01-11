@@ -82,7 +82,7 @@
             this.logout_btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.logout_btn.Location = new System.Drawing.Point(225, 8);
             this.logout_btn.Name = "logout_btn";
-            this.logout_btn.Size = new System.Drawing.Size(67, 24);
+            this.logout_btn.Size = new System.Drawing.Size(67, 23);
             this.logout_btn.TabIndex = 10;
             this.logout_btn.Text = "Logout";
             this.logout_btn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
