@@ -42,7 +42,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Bestelling.cs" />
+    <Compile Include="Category.cs" />
     <Compile Include="Enumerations.cs" />
+    <Compile Include="Kaart.cs" />
     <Compile Include="Product.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tafel.cs" />

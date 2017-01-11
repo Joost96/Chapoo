@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace Model
 {
-    class BestellingProduct : Product
+    public class BestellingProduct : Product
     {
-        int Aantal;
-        Bestelling Bestelling;
-        string Commentaar;
-        string Tijd;
-        BestellingStatus Status;
+        public int Aantal { get; set; }
+        public Bestelling Bestelling { get; set; }
+        public string Commentaar { get; set; }
+        public string Tijd { get; set; }
+        public BestellingStatus Status { get; set; }
 
         public BestellingProduct(int id, string omschrijving, string naam, double prijs,int voorraad ,int aantal, Bestelling bestelling, string commentaar, string tijd, BestellingStatus status) 
             :base(id, omschrijving, naam, prijs, voorraad)
