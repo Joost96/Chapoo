@@ -27,6 +27,11 @@ namespace Logica
                           if (p.Id == productId )
                           {
                               p.Aantal = p.Aantal + verschilAantal;
+
+                              if (p.Aantal < 0)
+                              {
+                                  p.Aantal = 0;
+                              }
                           }
                       }
 
