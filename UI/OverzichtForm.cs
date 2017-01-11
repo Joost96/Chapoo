@@ -41,7 +41,7 @@ namespace UI
             {
                 Button btn = new Button();
                 btn.Text = tafel.tafelNummer.ToString();
-                btn.Size = new Size(85, 40);
+                btn.Size = new Size(87, 40);
                 btn.Margin = new Padding(6);
                 if (tafel.status == TafelStatus.beschikbaar)
                 {
