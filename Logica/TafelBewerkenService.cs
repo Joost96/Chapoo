@@ -11,6 +11,9 @@ namespace Logica
 {
     public class TafelBewerkenService
     {
+        public void getBestellingProducten(int bestellingId)
+        {
 
+        }
     }
 }
