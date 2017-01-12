@@ -13,7 +13,7 @@ namespace Logica
     {
         public List<BestellingProduct> getBestellingProducten(int bestellingId)
         {
-            List<BestellingProduct> bestelling = BestellingProductDAO.ReadAllFromBestellingProducten(bestellingId);
+            List<BestellingProduct> bestelling = BestellingDAO.ReadAllFromBestellingProducten(bestellingId);
 
            return bestelling;
 

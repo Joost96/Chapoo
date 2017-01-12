@@ -10,26 +10,29 @@ namespace Model
     {
        private int Id;
 
-       public int WerknemerId { get; set; }
-       public int TafelId { get; set; }
+       public Werknemer Bediening { get; set; }
+       public Tafel TafelBestelling { get; set; }
        public string Commentaar { get; set; }
        public bool Betaald { get; set; }
        public BetaalMethode BetalingsMiddel { get; set; }
        public double Fooi { get; set; }
        public DateTime Datum {get;set; }
        public double TotaalBedrag { get; set; }
-       public List<BestellingProduct> producten { get; set; }
+       public List<BestellingProduct> Producten { get; set; }
 
 
 
-       public Bestelling(int id, string commentaar, bool betaald,  double fooi, DateTime datum, double totaalBedrag)
+       public Bestelling(int id,Werknemer bediening, Tafel tafelBestelling, string commentaar, bool betaald,  double fooi, DateTime datum, double totaalBedrag, List<BestellingProduct> producten)
        {
            Id = id;
+            Bediening = bediening;
+            TafelBestelling = tafelBestelling;
            Commentaar = commentaar;
            Betaald = betaald;
            Fooi = fooi;
            Datum = datum;
            TotaalBedrag = totaalBedrag;
+            Producten = producten;
 
        }
 
@@ -43,20 +46,20 @@ namespace Model
        public List<BestellingProduct> AddProduct(BestellingProduct product)
        {
          //  List<Product> producten = new List<Product>();
-           producten.Add(product);
+           Producten.Add(product);
 
-           return producten;
+           return Producten;
           
        }
        public List<BestellingProduct> RemoveProduct(BestellingProduct product, int amount)
        {
            for (int i = 0; i < amount; i++)
            {
-               producten.Remove(product);
+               Producten.Remove(product);
            }
            //Only remove one, now removes all of that product
 
-           return producten;
+           return Producten;
        }
 
     }
