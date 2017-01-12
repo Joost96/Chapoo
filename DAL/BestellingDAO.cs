@@ -16,17 +16,21 @@ namespace DAL
         {
             {
                 List<BestellingProduct> BestellingProducten = new List<BestellingProduct>();
+                Bestelling bestelling = null;
                 SqlConnection conn = Connection.GetConnection("naam");
                 conn.Open();
-                string sqlBestelling = = "SELECT b.[Id], b.[WerkNemerId], [commentaar], [betaald], [betaalmethode]" +
-                    ", [fooi], [datum], [prijs], [omschrijving], [betaald], [datum], [totaalbedrag], [fooi]" +
+                string sqlBestelling = "SELECT b.[Id], b.[commentaar], b.[betaald], b.[betaalmethode], " +
+                    "b.[fooi], b.[datum], b.[totaalbedraag]," +
+                    "w.[w_nr], w.[voornaam], w.[achternaam], w.[rol], w.[wachtwoord], w.[username], " +
+                    "t.[tafel_nr], t.[t_status], t.[zitplaatsen]" +
                     "FROM [RBS_1617F_db01].[dbo].[BESTELLING] b" +
-                    "JOIN [RBS_1617F_db01].[dbo].[Werknemer] w ON b.[WerkNemerId] = w.[Id]" +
-                    "JOIN [RBS_1617F_db01].[dbo].[Tafel] t ON b.[TafelId] = t.[Id]" +
+                    "JOIN [RBS_1617F_db01].[dbo].[Werknemer] w ON b.[WerkNemerId] = w.[w_nr]" +
+                    "JOIN [RBS_1617F_db01].[dbo].[Tafel] t ON b.[TafelId] = t.[tafel_nr]" +
                     "WHERE Id = @BestellingId";
-                string sqlProducten = "SELECT [BestellingId], [Omschrijving], [b_status], [aantal], [tijd], [commentaar], [naam], [prijs], [omschrijving], [betaald], [datum], [totaalbedrag], [fooi]" +
-                    "FROM [RBS_1617F_db01].[dbo].[PRODUCTEN_IN_BESTELLING]" +
-                    "JOIN [RBS_1617F_db01].[dbo].[PRODUCT] ON PRODUCT.ProductId = PRODUCTEN_IN_BESTELLING.ProductId" +
+                string sqlProducten = "SELECT p.[id], p.[Naam], [prijs], [omschrijving], [voorraad], " +
+                    "[commentaar], [naam], [prijs], [omschrijving], [betaald], [datum], [totaalbedrag], [fooi]" +
+                    "FROM [RBS_1617F_db01].[dbo].[PRODUCTEN_IN_BESTELLING] pb" +
+                    "JOIN [RBS_1617F_db01].[dbo].[PRODUCT] p ON p.ProductId = pb.ProductId" +
                     "WHERE BestellingId = @BestellingId";
                 
                                     
@@ -39,27 +43,44 @@ namespace DAL
                 commandBestelling.Prepare();
                 commandProducten.Prepare();
 
-                SqlDataReader reader = commandBestelling.ExecuteReader();
-                while (reader.Read())
+                SqlDataReader readerBestelling = commandBestelling.ExecuteReader();
+                SqlDataReader readerProducten = commandProducten.ExecuteReader();
+
+                conn.Close();
+                if (readerBestelling.Read())
                 {
-                    int id = reader.GetInt32(0);
-                    string omschrijving = reader.GetString(1);
-                    string naam = reader.GetString(2);
-                    double prijs = reader.GetDouble(3);
-                    int voorraad = reader.GetInt32(4);
-                    int aantal = reader.GetInt32(5);
-                    string commentaar = reader.GetString(6);
-                    string tijd = reader.GetString(7);
-                    BestellingStatus status = (BestellingStatus)reader.GetInt32(8);
-                    bool betaald = reader.GetBoolean(9);
-                    DateTime datum = reader.GetDateTime(10);
-                    double totaalBedrag = reader.GetDouble(11);
-                    double fooi = reader.GetDouble(12);
-
-                    Bestelling bestelling = new Bestelling(bestellingId, commentaar, betaald, fooi, datum, totaalBedrag , BestellingProducten);
-                    BestellingProducten.Add(new BestellingProduct(id, omschrijving, naam, prijs, voorraad, aantal, bestelling, commentaar, tijd, status));
-
-                    
+                    //bestelling
+                    int id = readerBestelling.GetInt32(0);
+                    string commentaar = readerBestelling.GetString(1);
+                    bool betaald = readerBestelling.GetBoolean(2);
+                    BestellingStatus status = (BestellingStatus)readerBestelling.GetInt32(3);
+                    double fooi = readerBestelling.GetDouble(4);
+                    DateTime datum = readerBestelling.GetDateTime(5);
+                    double totaalBedrag = readerBestelling.GetDouble(6);
+                    //werknemer
+                    int werknemerId = readerBestelling.GetInt32(7);
+                    string voornaam = readerBestelling.GetString(8);
+                    string achternaam = readerBestelling.GetString(9);
+                    WerknemerRol rol = (WerknemerRol)readerBestelling.GetInt32(10);
+                    string wachtwoord = readerBestelling.GetString(11);
+                    string gebruikersnaam = readerBestelling.GetString(12);
+                    //tafel
+                    int tafelNummer = readerBestelling.GetInt32(13);
+                    TafelStatus statusTafel = (TafelStatus)readerBestelling.GetInt32(14);
+                    int zitplaatsen = readerBestelling.GetInt32(15);
+                                
+                    Werknemer werknemer = new Werknemer(werknemerId, voornaam, achternaam, gebruikersnaam, wachtwoord, rol);
+                    Tafel tafel = new Tafel(tafelNummer, statusTafel, zitplaatsen);
+                    bestelling = new Bestelling(bestellingId,werknemer,tafel, commentaar, betaald, fooi, datum, totaalBedrag , BestellingProducten);
+                }
+                while (readerProducten.Read())
+                {
+                    string naam = readerProducten.GetString(2);
+                    double prijs = readerProducten.GetDouble(3);
+                    int voorraad = readerProducten.GetInt32(4);
+                    int aantal = readerProducten.GetInt32(5);
+                    string commentaar = readerProducten.GetString(6);
+                    string tijd = readerProducten.GetString(7);
                 }
                 conn.Close();
                 return BestellingProducten;
