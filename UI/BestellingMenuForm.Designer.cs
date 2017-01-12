@@ -31,11 +31,13 @@
             this.listView1 = new System.Windows.Forms.ListView();
             this.menu_tab = new System.Windows.Forms.TabControl();
             this.drinken_tab = new System.Windows.Forms.TabPage();
+            this.listView_dranken = new System.Windows.Forms.ListView();
             this.lunch_tab = new System.Windows.Forms.TabPage();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.bewerken_btn = new System.Windows.Forms.Button();
             this.bestellen_btn = new System.Windows.Forms.Button();
-            this.listView_dranken = new System.Windows.Forms.ListView();
+            this.Naam = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Prijs = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.menu_tab.SuspendLayout();
             this.drinken_tab.SuspendLayout();
             this.SuspendLayout();
@@ -73,12 +75,25 @@
             this.drinken_tab.UseVisualStyleBackColor = true;
             this.drinken_tab.Click += new System.EventHandler(this.drinken_tab_Click);
             // 
+            // listView_dranken
+            // 
+            this.listView_dranken.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.Naam,
+            this.Prijs});
+            this.listView_dranken.GridLines = true;
+            this.listView_dranken.Location = new System.Drawing.Point(7, 7);
+            this.listView_dranken.Name = "listView_dranken";
+            this.listView_dranken.Size = new System.Drawing.Size(265, 202);
+            this.listView_dranken.TabIndex = 0;
+            this.listView_dranken.UseCompatibleStateImageBehavior = false;
+            this.listView_dranken.View = System.Windows.Forms.View.Details;
+            // 
             // lunch_tab
             // 
             this.lunch_tab.Location = new System.Drawing.Point(4, 22);
             this.lunch_tab.Name = "lunch_tab";
             this.lunch_tab.Padding = new System.Windows.Forms.Padding(3);
-            this.lunch_tab.Size = new System.Drawing.Size(278, 197);
+            this.lunch_tab.Size = new System.Drawing.Size(278, 215);
             this.lunch_tab.TabIndex = 1;
             this.lunch_tab.Text = "Lunch";
             this.lunch_tab.UseVisualStyleBackColor = true;
@@ -87,7 +102,7 @@
             // 
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Size = new System.Drawing.Size(278, 197);
+            this.tabPage1.Size = new System.Drawing.Size(278, 215);
             this.tabPage1.TabIndex = 2;
             this.tabPage1.Text = "Diner";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -120,13 +135,14 @@
             this.bestellen_btn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.bestellen_btn.UseVisualStyleBackColor = false;
             // 
-            // listView_dranken
+            // Naam
             // 
-            this.listView_dranken.Location = new System.Drawing.Point(7, 7);
-            this.listView_dranken.Name = "listView_dranken";
-            this.listView_dranken.Size = new System.Drawing.Size(265, 202);
-            this.listView_dranken.TabIndex = 0;
-            this.listView_dranken.UseCompatibleStateImageBehavior = false;
+            this.Naam.Text = "Naam";
+            this.Naam.Width = 120;
+            // 
+            // Prijs
+            // 
+            this.Prijs.Text = "Prijs";
             // 
             // BestellingMenuForm
             // 
@@ -139,6 +155,7 @@
             this.Controls.Add(this.bestellen_btn);
             this.Name = "BestellingMenuForm";
             this.Text = "Bestelling";
+            this.Load += new System.EventHandler(this.BestellingMenuForm_Load);
             this.menu_tab.ResumeLayout(false);
             this.drinken_tab.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -155,5 +172,7 @@
         private System.Windows.Forms.TabPage lunch_tab;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.ListView listView_dranken;
+        private System.Windows.Forms.ColumnHeader Naam;
+        private System.Windows.Forms.ColumnHeader Prijs;
     }
 }

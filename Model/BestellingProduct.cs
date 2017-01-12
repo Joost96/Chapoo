@@ -13,8 +13,8 @@ namespace Model
         public DateTime Tijd { get; set; }
         public BestellingStatus Status { get; set; }
 
-        public BestellingProduct(int id, string omschrijving, string naam, double prijs,int voorraad ,int aantal, string commentaar, string tijd, BestellingStatus status) 
-            :base(id, omschrijving, naam, prijs, voorraad)
+        public BestellingProduct(int id, string omschrijving, string naam, double prijs,int voorraad ,int aantal, string commentaar, DateTime tijd, BestellingStatus status, Category category) 
+            :base(id,category, omschrijving, naam, prijs, voorraad)
         {
             Aantal = aantal;
             Commentaar = commentaar;

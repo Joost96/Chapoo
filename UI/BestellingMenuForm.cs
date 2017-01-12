@@ -36,11 +36,16 @@ namespace UI
 
         private void drinken_tab_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void BestellingMenuForm_Load(object sender, EventArgs e)
+        {
             BestellenKaartService kaartService = new BestellenKaartService();
-            foreach(Product p in kaartService.GetAllProductenFromKaart(3))
+            foreach (Product p in kaartService.GetAllProductenFromKaart(3))
             {
-                ListViewItem drank = new ListViewItem(p.Naam);
-                drank.SubItems.Add(p.Prijs.ToString());
+                ListViewItem drank = new ListViewItem(p.Naam + " " +p.Omschrijving );
+                drank.SubItems.Add(p.Prijs.ToString("C2"));
                 listView_dranken.Items.Add(drank);
 
             }
