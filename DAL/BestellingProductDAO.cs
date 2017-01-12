@@ -60,7 +60,7 @@ namespace DAL
 
         public static void  Update (List<BestellingProduct> bestellingen)
         {
-
+            //Voor bestellingID en PRoductid Pas aantal aan
         }
 
     }
