@@ -26,14 +26,18 @@ namespace UI
 
         private void logout_btn_Click(object sender, EventArgs e)
         {
-            LoginForm from = new LoginForm();
-            from.Show();
-
+         // verwijderen   
         }
 
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void logout_btn_Click_1(object sender, EventArgs e)
+        {
+            LoginForm from = new LoginForm();
+            from.Show();
         }
     }
 }

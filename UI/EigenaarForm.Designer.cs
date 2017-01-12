@@ -38,7 +38,7 @@
             this.UC_image.Image = global::UI.Properties.Resources.under_construction;
             this.UC_image.Location = new System.Drawing.Point(12, 106);
             this.UC_image.Name = "UC_image";
-            this.UC_image.Size = new System.Drawing.Size(280, 216);
+            this.UC_image.Size = new System.Drawing.Size(344, 263);
             this.UC_image.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.UC_image.TabIndex = 0;
             this.UC_image.TabStop = false;
@@ -48,24 +48,24 @@
             // 
             this.logout_btn.Image = global::UI.Properties.Resources.Exit;
             this.logout_btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.logout_btn.Location = new System.Drawing.Point(225, 8);
+            this.logout_btn.Location = new System.Drawing.Point(289, 12);
             this.logout_btn.Name = "logout_btn";
-            this.logout_btn.Size = new System.Drawing.Size(67, 23);
-            this.logout_btn.TabIndex = 2;
+            this.logout_btn.Size = new System.Drawing.Size(67, 28);
+            this.logout_btn.TabIndex = 11;
             this.logout_btn.Text = "Logout";
             this.logout_btn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.logout_btn.UseVisualStyleBackColor = true;
-            this.logout_btn.Click += new System.EventHandler(this.logout_btn_Click);
             // 
             // EigenaarForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(304, 444);
+            this.ClientSize = new System.Drawing.Size(368, 473);
             this.Controls.Add(this.logout_btn);
             this.Controls.Add(this.UC_image);
             this.Name = "EigenaarForm";
             this.Text = "Chapoo";
+            this.Load += new System.EventHandler(this.EigenaarForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.UC_image)).EndInit();
             this.ResumeLayout(false);
 

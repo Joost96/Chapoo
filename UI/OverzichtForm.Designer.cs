@@ -41,7 +41,7 @@
             this.bezet_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bezet_lbl.Image = global::UI.Properties.Resources.bezet;
             this.bezet_lbl.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bezet_lbl.Location = new System.Drawing.Point(17, 415);
+            this.bezet_lbl.Location = new System.Drawing.Point(12, 427);
             this.bezet_lbl.Name = "bezet_lbl";
             this.bezet_lbl.Size = new System.Drawing.Size(68, 17);
             this.bezet_lbl.TabIndex = 13;
@@ -54,7 +54,7 @@
             this.gereserveerd_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gereserveerd_lbl.Image = global::UI.Properties.Resources.gereserveerd;
             this.gereserveerd_lbl.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.gereserveerd_lbl.Location = new System.Drawing.Point(17, 398);
+            this.gereserveerd_lbl.Location = new System.Drawing.Point(12, 410);
             this.gereserveerd_lbl.Name = "gereserveerd_lbl";
             this.gereserveerd_lbl.Size = new System.Drawing.Size(120, 17);
             this.gereserveerd_lbl.TabIndex = 12;
@@ -68,7 +68,7 @@
             this.beschikbaar_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.beschikbaar_lbl.Image = global::UI.Properties.Resources.beschikbaar;
             this.beschikbaar_lbl.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.beschikbaar_lbl.Location = new System.Drawing.Point(17, 381);
+            this.beschikbaar_lbl.Location = new System.Drawing.Point(12, 393);
             this.beschikbaar_lbl.Name = "beschikbaar_lbl";
             this.beschikbaar_lbl.Size = new System.Drawing.Size(110, 17);
             this.beschikbaar_lbl.TabIndex = 11;
@@ -80,9 +80,9 @@
             // 
             this.logout_btn.Image = global::UI.Properties.Resources.Exit;
             this.logout_btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.logout_btn.Location = new System.Drawing.Point(225, 8);
+            this.logout_btn.Location = new System.Drawing.Point(289, 10);
             this.logout_btn.Name = "logout_btn";
-            this.logout_btn.Size = new System.Drawing.Size(67, 23);
+            this.logout_btn.Size = new System.Drawing.Size(67, 28);
             this.logout_btn.TabIndex = 10;
             this.logout_btn.Text = "Logout";
             this.logout_btn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -91,10 +91,11 @@
             // 
             // flowLayoutPanel1
             // 
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(50, 53);
-            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(5);
+            this.flowLayoutPanel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(14, 67);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(10);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(200, 321);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(340, 309);
             this.flowLayoutPanel1.TabIndex = 14;
             this.flowLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint);
             // 
@@ -102,7 +103,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(304, 444);
+            this.ClientSize = new System.Drawing.Size(368, 473);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.bezet_lbl);
             this.Controls.Add(this.gereserveerd_lbl);

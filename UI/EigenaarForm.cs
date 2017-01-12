@@ -28,6 +28,10 @@ namespace UI
             from.Show();
             this.Close();
         }
-        
+
+        private void EigenaarForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

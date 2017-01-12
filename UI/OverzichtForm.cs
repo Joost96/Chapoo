@@ -40,8 +40,8 @@ namespace UI
             foreach (Tafel tafel in TafelOverzichtService.GetTafels())
             {
                 Button btn = new Button();
-                btn.Text = tafel.tafelNummer.ToString() + ' '+tafel.status.ToString();
-                btn.Size = new Size(87, 40);
+                btn.Text = "Tafel " + tafel.tafelNummer.ToString() + ' '+tafel.status.ToString();
+                btn.Size = new Size(100, 60);
                 btn.Margin = new Padding(6);
                 if (tafel.status == TafelStatus.Vrij)
                 {
