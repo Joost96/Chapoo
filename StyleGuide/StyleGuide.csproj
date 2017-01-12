@@ -4,14 +4,13 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{3B0496AE-0A96-42C4-924F-1D620F513A10}</ProjectGuid>
+    <ProjectGuid>{F611326F-5ECA-4E70-9985-2D7782A1C966}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>DAL</RootNamespace>
-    <AssemblyName>DAL</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <RootNamespace>StyleGuide</RootNamespace>
+    <AssemblyName>StyleGuide</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -32,8 +31,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
-    <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -42,18 +42,33 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BestellingDAO.cs" />
-    <Compile Include="Connection.cs" />
-    <Compile Include="KaartDAO.cs" />
+    <Compile Include="BaseGuide.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseGuide.Designer.cs">
+      <DependentUpon>BaseGuide.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DesktopGuide.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DesktopGuide.Designer.cs">
+      <DependentUpon>DesktopGuide.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PhoneGuide.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PhoneGuide.Designer.cs">
+      <DependentUpon>PhoneGuide.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TafelDAO.cs" />
-    <Compile Include="WerknemerDAO.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Model\Model.csproj">
-      <Project>{706bb4f8-9f4e-408c-9328-85b6f615a704}</Project>
-      <Name>Model</Name>
-    </ProjectReference>
+    <EmbeddedResource Include="BaseGuide.resx">
+      <DependentUpon>BaseGuide.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DesktopGuide.resx">
+      <DependentUpon>DesktopGuide.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

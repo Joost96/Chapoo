@@ -9,15 +9,16 @@ namespace Model
     public class Product
     {
         public int Id { get; set; }
-        public string Category { get; set; }
+        public Category CategoryProduct { get; set; }
         public string Naam { get; set; }
         public string Omschrijving { get; set; }
         public double Prijs { get; set; }
         public int Voorraad { get; set; }
 
-        public Product (int id, string naam, string omschrijving, double prijs, int voorraad)
+        public Product (int id, Category categoryProduct, string naam, string omschrijving, double prijs, int voorraad)
         {
             Id = id;
+            CategoryProduct = categoryProduct
             Naam = naam;
             Omschrijving = omschrijving;
             Prijs = prijs;
