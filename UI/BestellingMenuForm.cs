@@ -36,7 +36,8 @@ namespace UI
 
         private void drinken_tab_Click(object sender, EventArgs e)
         {
-            if ()
+            KaartDAO.Read();
+            foreach (Product p in menu)
         }
     }
 }

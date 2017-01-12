@@ -24,6 +24,12 @@ namespace Model
             Voorraad = voorraad;
         }
 
+        public Product(string naam, double prijs)
+        {
+            Naam = naam;
+            Prijs = prijs;
+        }
+
      
 
     }
