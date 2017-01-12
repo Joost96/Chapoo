@@ -10,7 +10,7 @@ namespace Model
     {
         public int Aantal { get; set; }
         public string Commentaar { get; set; }
-        public string Tijd { get; set; }
+        public DateTime Tijd { get; set; }
         public BestellingStatus Status { get; set; }
 
         public BestellingProduct(int id, string omschrijving, string naam, double prijs,int voorraad ,int aantal, string commentaar, string tijd, BestellingStatus status) 

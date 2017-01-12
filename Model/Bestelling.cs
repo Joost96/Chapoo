@@ -22,13 +22,14 @@ namespace Model
 
 
 
-       public Bestelling(int id,Werknemer bediening, Tafel tafelBestelling, string commentaar, bool betaald,  double fooi, DateTime datum, double totaalBedrag, List<BestellingProduct> producten)
+       public Bestelling(int id,Werknemer bediening, Tafel tafelBestelling, string commentaar, bool betaald, BetaalMethode betalingsMiddel,  double fooi, DateTime datum, double totaalBedrag, List<BestellingProduct> producten)
        {
            Id = id;
             Bediening = bediening;
             TafelBestelling = tafelBestelling;
            Commentaar = commentaar;
            Betaald = betaald;
+            BetalingsMiddel = betalingsMiddel;
            Fooi = fooi;
            Datum = datum;
            TotaalBedrag = totaalBedrag;

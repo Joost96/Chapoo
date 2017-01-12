@@ -27,10 +27,14 @@ namespace DAL
                     "JOIN [RBS_1617F_db01].[dbo].[Werknemer] w ON b.[WerkNemerId] = w.[w_nr]" +
                     "JOIN [RBS_1617F_db01].[dbo].[Tafel] t ON b.[TafelId] = t.[tafel_nr]" +
                     "WHERE Id = @BestellingId";
-                string sqlProducten = "SELECT p.[id], p.[Naam], [prijs], [omschrijving], [voorraad], " +
-                    "[commentaar], [naam], [prijs], [omschrijving], [betaald], [datum], [totaalbedrag], [fooi]" +
+                string sqlProducten = "SELECT p.[id], p.[Naam], p.[prijs], p.[omschrijving], p.[voorraad], " +
+                    "pb.[aantal], pb.[tijd], pb.[prijs], pb.[commentaar], " +
+                    "c.[id], c.[naam], c.[btw], " +
+                    "k.[id], k.[naam], k.[is_keuken]" +
                     "FROM [RBS_1617F_db01].[dbo].[PRODUCTEN_IN_BESTELLING] pb" +
                     "JOIN [RBS_1617F_db01].[dbo].[PRODUCT] p ON p.ProductId = pb.ProductId" +
+                    "JOIN [RBS_1617F_db01].[dbo].[Category] p ON c.Id = p.CategoryId" +
+                    "JOIN [RBS_1617F_db01].[dbo].[Kaart] k ON k.Id = c.KaartId" +
                     "WHERE BestellingId = @BestellingId";
                 
                                     
@@ -53,7 +57,7 @@ namespace DAL
                     int id = readerBestelling.GetInt32(0);
                     string commentaar = readerBestelling.GetString(1);
                     bool betaald = readerBestelling.GetBoolean(2);
-                    BestellingStatus status = (BestellingStatus)readerBestelling.GetInt32(3);
+                    BetaalMethode betaalMethode = (BetaalMethode)readerBestelling.GetInt32(3);
                     double fooi = readerBestelling.GetDouble(4);
                     DateTime datum = readerBestelling.GetDateTime(5);
                     double totaalBedrag = readerBestelling.GetDouble(6);
@@ -71,16 +75,32 @@ namespace DAL
                                 
                     Werknemer werknemer = new Werknemer(werknemerId, voornaam, achternaam, gebruikersnaam, wachtwoord, rol);
                     Tafel tafel = new Tafel(tafelNummer, statusTafel, zitplaatsen);
-                    bestelling = new Bestelling(bestellingId,werknemer,tafel, commentaar, betaald, fooi, datum, totaalBedrag , BestellingProducten);
+                    bestelling = new Bestelling(bestellingId,werknemer,tafel, commentaar, betaald, betaalMethode, fooi, datum, totaalBedrag , BestellingProducten);
                 }
                 while (readerProducten.Read())
                 {
-                    string naam = readerProducten.GetString(2);
-                    double prijs = readerProducten.GetDouble(3);
+                    //bestellingProduct
+                    int id = readerProducten.GetInt32(0);
+                    string naam = readerProducten.GetString(1);
+                    double prijs = readerProducten.GetDouble(2);
+                    string omschrijving = readerProducten.GetString(3);
                     int voorraad = readerProducten.GetInt32(4);
-                    int aantal = readerProducten.GetInt32(5);
-                    string commentaar = readerProducten.GetString(6);
-                    string tijd = readerProducten.GetString(7);
+                    BestellingStatus productStatus = (BestellingStatus)readerBestelling.GetInt32(5);
+                    int aantal = readerProducten.GetInt32(6);
+                    DateTime tijd = readerProducten.GetDateTime(7);
+                    string commentaar = readerProducten.GetString(8);
+                    //category
+                    int categoryId = readerProducten.GetInt32(9);
+                    string categoryNaam = readerProducten.GetString(10);
+                    int btw = readerProducten.GetInt32(11);
+                    //kaart
+                    int kaartId = readerProducten.GetInt32(12);
+                    string kaartNaam = readerProducten.GetString(13);
+                    bool isKeuken = readerProducten.GetBoolean(14);
+
+                    Kaart kaart = new Kaart(kaartId, isKeuken, kaartNaam);
+                    Category category = new Category(btw, categoryId, categoryNaam, kaart);
+                    BestellingProduct bestellingproduct = new BestellingProduct(id,omschrijving , naam , prijs , voorraad , aantal , commentaar , tijd , productStatus)
                 }
                 conn.Close();
                 return BestellingProducten;

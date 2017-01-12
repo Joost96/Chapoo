@@ -11,10 +11,10 @@ namespace Model
        private int Id;
 
        public bool IsKeuken { get; set; }
-       public KaartCategory Naam { get; set; }
+       public string Naam { get; set; }
        public List<Category> Categorieën { get; set; }
 
-       public Kaart(int id, bool isKeuken, KaartCategory naam)
+       public Kaart(int id, bool isKeuken, string naam)
        {
            Id = id;
            IsKeuken = isKeuken;
