@@ -12,6 +12,8 @@ using Logica;
 
 namespace UI
 {
+
+    //Shahin
     public partial class BestellingMenuForm : Form
     {
         public BestellingMenuForm()
@@ -49,6 +51,37 @@ namespace UI
                 listView_dranken.Items.Add(drank);
 
             }
+
+            foreach (Product p in kaartService.GetAllProductenFromKaart(1))
+            {
+                ListViewItem lunch_item = new ListViewItem(p.Naam + " " + p.Omschrijving);
+                lunch_item.SubItems.Add(p.Prijs.ToString("C2"));
+                listView_lunch.Items.Add(lunch_item);
+
+            }
+
+            foreach (Product p in kaartService.GetAllProductenFromKaart(2))
+            {
+                ListViewItem diner_item = new ListViewItem(p.Naam + " " +p.Omschrijving );
+                diner_item.SubItems.Add(p.Prijs.ToString("C2"));
+                listView_diner.Items.Add(diner_item);
+
+            }
+        }
+
+        private void bewerken_btn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tabPage1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void listView_diner_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
