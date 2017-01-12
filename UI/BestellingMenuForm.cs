@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Model;
+using Logica;
 
 namespace UI
 {
@@ -30,6 +32,11 @@ namespace UI
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void drinken_tab_Click(object sender, EventArgs e)
+        {
+            if ()
         }
     }
 }

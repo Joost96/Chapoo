@@ -32,9 +32,9 @@
             this.menu_tab = new System.Windows.Forms.TabControl();
             this.drinken_tab = new System.Windows.Forms.TabPage();
             this.lunch_tab = new System.Windows.Forms.TabPage();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
             this.bewerken_btn = new System.Windows.Forms.Button();
             this.bestellen_btn = new System.Windows.Forms.Button();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
             this.menu_tab.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -68,6 +68,7 @@
             this.drinken_tab.TabIndex = 0;
             this.drinken_tab.Text = "Drinken";
             this.drinken_tab.UseVisualStyleBackColor = true;
+            this.drinken_tab.Click += new System.EventHandler(this.drinken_tab_Click);
             // 
             // lunch_tab
             // 
@@ -78,6 +79,15 @@
             this.lunch_tab.TabIndex = 1;
             this.lunch_tab.Text = "Lunch";
             this.lunch_tab.UseVisualStyleBackColor = true;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Size = new System.Drawing.Size(278, 197);
+            this.tabPage1.TabIndex = 2;
+            this.tabPage1.Text = "Diner";
+            this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // bewerken_btn
             // 
@@ -106,15 +116,6 @@
             this.bestellen_btn.Text = "Bestellen";
             this.bestellen_btn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.bestellen_btn.UseVisualStyleBackColor = false;
-            // 
-            // tabPage1
-            // 
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Size = new System.Drawing.Size(278, 197);
-            this.tabPage1.TabIndex = 2;
-            this.tabPage1.Text = "Diner";
-            this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // BestellingMenuForm
             // 
