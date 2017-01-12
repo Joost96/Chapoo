@@ -18,7 +18,7 @@ namespace Model
         public Product (int id, Category categoryProduct, string naam, string omschrijving, double prijs, int voorraad)
         {
             Id = id;
-            CategoryProduct = categoryProduct
+            CategoryProduct = categoryProduct;
             Naam = naam;
             Omschrijving = omschrijving;
             Prijs = prijs;
@@ -29,10 +29,6 @@ namespace Model
         {
             Naam = naam;
             Prijs = prijs;
-        }
-
-     
-
+        }  
     }
 }
-

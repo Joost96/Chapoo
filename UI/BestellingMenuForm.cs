@@ -36,8 +36,14 @@ namespace UI
 
         private void drinken_tab_Click(object sender, EventArgs e)
         {
-            KaartDAO.Read();
-            foreach (Product p in menu)
+            BestellenKaartService kaartService = new BestellenKaartService();
+            foreach(Product p in kaartService.GetAllProductenFromKaart(3))
+            {
+                ListViewItem drank = new ListViewItem(p.Naam);
+                drank.SubItems.Add(p.Prijs.ToString());
+                listView_dranken.Items.Add(drank);
+
+            }
         }
     }
 }

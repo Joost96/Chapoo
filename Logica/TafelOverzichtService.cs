@@ -31,6 +31,7 @@ namespace Logica
             }
         }
 
+        // delete static
         public static List<Tafel> GetTafels()
         {
             List<Tafel> TafelOverzicht = TafelDAO.ReadAll();

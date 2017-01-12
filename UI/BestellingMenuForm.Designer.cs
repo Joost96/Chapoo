@@ -35,7 +35,9 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.bewerken_btn = new System.Windows.Forms.Button();
             this.bestellen_btn = new System.Windows.Forms.Button();
+            this.listView_dranken = new System.Windows.Forms.ListView();
             this.menu_tab.SuspendLayout();
+            this.drinken_tab.SuspendLayout();
             this.SuspendLayout();
             // 
             // listView1
@@ -56,15 +58,16 @@
             this.menu_tab.Margin = new System.Windows.Forms.Padding(0);
             this.menu_tab.Name = "menu_tab";
             this.menu_tab.SelectedIndex = 0;
-            this.menu_tab.Size = new System.Drawing.Size(286, 223);
+            this.menu_tab.Size = new System.Drawing.Size(286, 241);
             this.menu_tab.TabIndex = 4;
             // 
             // drinken_tab
             // 
+            this.drinken_tab.Controls.Add(this.listView_dranken);
             this.drinken_tab.Location = new System.Drawing.Point(4, 22);
             this.drinken_tab.Name = "drinken_tab";
             this.drinken_tab.Padding = new System.Windows.Forms.Padding(3);
-            this.drinken_tab.Size = new System.Drawing.Size(278, 197);
+            this.drinken_tab.Size = new System.Drawing.Size(278, 215);
             this.drinken_tab.TabIndex = 0;
             this.drinken_tab.Text = "Drinken";
             this.drinken_tab.UseVisualStyleBackColor = true;
@@ -117,6 +120,14 @@
             this.bestellen_btn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.bestellen_btn.UseVisualStyleBackColor = false;
             // 
+            // listView_dranken
+            // 
+            this.listView_dranken.Location = new System.Drawing.Point(7, 7);
+            this.listView_dranken.Name = "listView_dranken";
+            this.listView_dranken.Size = new System.Drawing.Size(265, 202);
+            this.listView_dranken.TabIndex = 0;
+            this.listView_dranken.UseCompatibleStateImageBehavior = false;
+            // 
             // BestellingMenuForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -129,6 +140,7 @@
             this.Name = "BestellingMenuForm";
             this.Text = "Bestelling";
             this.menu_tab.ResumeLayout(false);
+            this.drinken_tab.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -142,5 +154,6 @@
         private System.Windows.Forms.TabPage drinken_tab;
         private System.Windows.Forms.TabPage lunch_tab;
         private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.ListView listView_dranken;
     }
 }
