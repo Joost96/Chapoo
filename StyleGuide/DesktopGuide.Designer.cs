@@ -33,6 +33,7 @@
             // DesktopGuide
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(784, 561);
             this.Name = "DesktopGuide";
             this.ResumeLayout(false);

@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.listView1 = new System.Windows.Forms.ListView();
             this.menu_tab = new System.Windows.Forms.TabControl();
             this.drinken_tab = new System.Windows.Forms.TabPage();
             this.listView_dranken = new System.Windows.Forms.ListView();
@@ -42,6 +41,7 @@
             this.listView_diner = new System.Windows.Forms.ListView();
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.listView1 = new System.Windows.Forms.ListView();
             this.bewerken_btn = new System.Windows.Forms.Button();
             this.bestellen_btn = new System.Windows.Forms.Button();
             this.menu_tab.SuspendLayout();
@@ -50,26 +50,17 @@
             this.tabPage1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // listView1
-            // 
-            this.listView1.Location = new System.Drawing.Point(9, 276);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(350, 150);
-            this.listView1.TabIndex = 3;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
-            // 
             // menu_tab
             // 
             this.menu_tab.Controls.Add(this.drinken_tab);
             this.menu_tab.Controls.Add(this.lunch_tab);
             this.menu_tab.Controls.Add(this.tabPage1);
-            this.menu_tab.Location = new System.Drawing.Point(9, 9);
+            this.menu_tab.Location = new System.Drawing.Point(9, 7);
             this.menu_tab.Margin = new System.Windows.Forms.Padding(0);
             this.menu_tab.Name = "menu_tab";
             this.menu_tab.SelectedIndex = 0;
             this.menu_tab.Size = new System.Drawing.Size(350, 260);
-            this.menu_tab.TabIndex = 4;
+            this.menu_tab.TabIndex = 8;
             // 
             // drinken_tab
             // 
@@ -81,7 +72,6 @@
             this.drinken_tab.TabIndex = 0;
             this.drinken_tab.Text = "Drinken";
             this.drinken_tab.UseVisualStyleBackColor = true;
-            this.drinken_tab.Click += new System.EventHandler(this.drinken_tab_Click);
             // 
             // listView_dranken
             // 
@@ -147,7 +137,6 @@
             this.tabPage1.TabIndex = 2;
             this.tabPage1.Text = "Diner";
             this.tabPage1.UseVisualStyleBackColor = true;
-            this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
             // 
             // listView_diner
             // 
@@ -171,20 +160,27 @@
             // 
             this.columnHeader4.Text = "Prijs";
             // 
+            // listView1
+            // 
+            this.listView1.Location = new System.Drawing.Point(9, 274);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(350, 150);
+            this.listView1.TabIndex = 7;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            // 
             // bewerken_btn
             // 
             this.bewerken_btn.BackColor = System.Drawing.Color.Silver;
             this.bewerken_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bewerken_btn.Image = global::UI.Properties.Resources.Modify;
             this.bewerken_btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bewerken_btn.Location = new System.Drawing.Point(12, 432);
+            this.bewerken_btn.Location = new System.Drawing.Point(12, 430);
             this.bewerken_btn.Name = "bewerken_btn";
             this.bewerken_btn.Size = new System.Drawing.Size(83, 36);
-            this.bewerken_btn.TabIndex = 2;
+            this.bewerken_btn.TabIndex = 6;
             this.bewerken_btn.Text = "Bewerken";
             this.bewerken_btn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.bewerken_btn.UseVisualStyleBackColor = false;
-            this.bewerken_btn.Click += new System.EventHandler(this.bewerken_btn_Click);
             // 
             // bestellen_btn
             // 
@@ -192,10 +188,10 @@
             this.bestellen_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bestellen_btn.Image = global::UI.Properties.Resources.Save;
             this.bestellen_btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bestellen_btn.Location = new System.Drawing.Point(247, 432);
+            this.bestellen_btn.Location = new System.Drawing.Point(247, 430);
             this.bestellen_btn.Name = "bestellen_btn";
             this.bestellen_btn.Size = new System.Drawing.Size(112, 36);
-            this.bestellen_btn.TabIndex = 1;
+            this.bestellen_btn.TabIndex = 5;
             this.bestellen_btn.Text = "Bestellen";
             this.bestellen_btn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.bestellen_btn.UseVisualStyleBackColor = false;
@@ -203,14 +199,12 @@
             // BestellingMenuForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(368, 473);
             this.Controls.Add(this.menu_tab);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.bewerken_btn);
             this.Controls.Add(this.bestellen_btn);
             this.Name = "BestellingMenuForm";
-            this.Text = "Bestelling";
             this.Load += new System.EventHandler(this.BestellingMenuForm_Load);
             this.menu_tab.ResumeLayout(false);
             this.drinken_tab.ResumeLayout(false);
@@ -222,21 +216,21 @@
 
         #endregion
 
-        private System.Windows.Forms.Button bestellen_btn;
-        private System.Windows.Forms.Button bewerken_btn;
-        private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.TabControl menu_tab;
         private System.Windows.Forms.TabPage drinken_tab;
-        private System.Windows.Forms.TabPage lunch_tab;
-        private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.ListView listView_dranken;
         private System.Windows.Forms.ColumnHeader Naam;
         private System.Windows.Forms.ColumnHeader Prijs;
+        private System.Windows.Forms.TabPage lunch_tab;
         private System.Windows.Forms.ListView listView_lunch;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.ListView listView_diner;
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader columnHeader4;
+        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.Button bewerken_btn;
+        private System.Windows.Forms.Button bestellen_btn;
     }
 }
