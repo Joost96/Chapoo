@@ -3,36 +3,18 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Model;
 using Logica;
 
 namespace UI
 {
-    public partial class OverzichtForm : Form
+    public partial class OverzichtForm : StyleGuide.PhoneGuide
     {
         public OverzichtForm()
         {
             InitializeComponent();
-        }
-
-        private void beschikbaar_lbl_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void gereserveerd_lbl_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void logout_btn_Click(object sender, EventArgs e)
-        {
-            LoginForm from = new LoginForm();
-            from.Show();
         }
 
         private void OverzichtForm_Load(object sender, EventArgs e)
@@ -40,8 +22,8 @@ namespace UI
             foreach (Tafel tafel in TafelOverzichtService.GetTafels())
             {
                 Button btn = new Button();
-                btn.Text = tafel.tafelNummer.ToString() + ' '+tafel.status.ToString();
-                btn.Size = new Size(87, 40);
+                btn.Text = "Tafel " + tafel.tafelNummer.ToString() + ' ' + tafel.status.ToString();
+                btn.Size = new Size(100, 60);
                 btn.Margin = new Padding(6);
                 if (tafel.status == TafelStatus.Vrij)
                 {
@@ -65,9 +47,10 @@ namespace UI
             }
         }
 
-        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        private void logout_btn_Click(object sender, EventArgs e)
         {
-
+            LoginForm from = new LoginForm();
+            from.Show();
         }
     }
 }

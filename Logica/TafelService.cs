@@ -12,7 +12,7 @@ namespace Logica
     {
         public List<BestellingProduct> getBestellingProducten(int bestellingId)
         {
-            List<BestellingProduct> bestelling = BestellingProductDAO.ReadAllFromBestellingProducten(bestellingId);
+            List<BestellingProduct> bestelling = BestellingDAO.ReadAllFromBestellingProducten(bestellingId);
 
             return bestelling;
 
@@ -21,7 +21,7 @@ namespace Logica
         public struct Prijzen
         {
             public double productprijs;
-            public string categorie;
+            public Category categorie;
             public double btwValue;
             public double productMetBTW;
         }
@@ -38,10 +38,10 @@ namespace Logica
             foreach (Product P in bestelling)
             {
                 prijs.productprijs = P.Prijs;
-                prijs.categorie = P.Category;
+                prijs.categorie = P.CategoryProduct;
                 
                 //Als de categorie binnen deze waardes valt is hij 6, of 12 procent.
-                int numCat = Int32.Parse(prijs.categorie);
+                int numCat = prijs.categorie.Btw;
                 if(numCat <= 8 || numCat == 12)
                 {
                     double btw = 1.06;

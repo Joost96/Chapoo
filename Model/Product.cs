@@ -24,11 +24,16 @@ namespace Model
             Prijs = prijs;
             Voorraad = voorraad;
         }
-
-        public Product(string naam, double prijs)
+        public Product(int id, string naam, string omschrijving, double prijs, int voorraad)
         {
+            Id = id;
             Naam = naam;
+            Omschrijving = omschrijving;
             Prijs = prijs;
-        }  
+            Voorraad = voorraad;
+        }
+
+
     }
 }
+

@@ -9,8 +9,9 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>StyleGuide</RootNamespace>
     <AssemblyName>StyleGuide</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -68,6 +69,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DesktopGuide.resx">
       <DependentUpon>DesktopGuide.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PhoneGuide.resx">
+      <DependentUpon>PhoneGuide.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

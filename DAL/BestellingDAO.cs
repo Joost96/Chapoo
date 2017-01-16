@@ -82,7 +82,7 @@ namespace DAL
                     //bestellingProduct
                     int id = readerProducten.GetInt32(0);
                     string naam = readerProducten.GetString(1);
-                    double prijs = readerProducten.GetDouble(2);
+                    double prijs = (double)readerProducten.GetDecimal(2);
                     string omschrijving = readerProducten.GetString(3);
                     int voorraad = readerProducten.GetInt32(4);
                     BestellingStatus productStatus = (BestellingStatus)readerBestelling.GetInt32(5);
@@ -100,7 +100,7 @@ namespace DAL
 
                     Kaart kaart = new Kaart(kaartId, isKeuken, kaartNaam);
                     Category category = new Category(btw, categoryId, categoryNaam, kaart);
-                    BestellingProduct bestellingproduct = new BestellingProduct(id,omschrijving , naam , prijs , voorraad , aantal , commentaar , tijd , productStatus)
+                    BestellingProduct bestellingproduct = new BestellingProduct(id, omschrijving, naam, prijs, voorraad, aantal, commentaar, tijd, productStatus, category);
                 }
                 conn.Close();
                 return BestellingProducten;

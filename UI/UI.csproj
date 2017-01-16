@@ -126,6 +126,10 @@
       <Project>{706bb4f8-9f4e-408c-9328-85b6f615a704}</Project>
       <Name>Model</Name>
     </ProjectReference>
+    <ProjectReference Include="..\StyleGuide\StyleGuide.csproj">
+      <Project>{f611326f-5eca-4e70-9985-2d7782a1c966}</Project>
+      <Name>StyleGuide</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\chapoo.png" />
