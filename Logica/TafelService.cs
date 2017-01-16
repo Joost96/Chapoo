@@ -31,32 +31,32 @@ namespace Logica
             //Deze methode haalt aan de hand van een gegeven bestellingId een struct op met per product de prijs, de afzonderlijke BTW per product en de totaalprijs (productprijs + btw)
             List<Prijzen> Prijslijst = new List<Prijzen>();
             //Nieuw prijs struct en lijst bestellingproduct
-            Prijzen Prijzen = new Prijzen();
+            Prijzen PrijsPerProduct = new Prijzen();
             List<BestellingProduct> bestelling = getBestellingProducten(bestellingId);
             
 
             //Voor ieder product in de lijst van de bestelling
             foreach (Product P in bestelling)
             {
-                Prijzen.productprijs = P.Prijs;
-                Prijzen.categorie = P.CategoryProduct;
+                PrijsPerProduct.productprijs = P.Prijs;
+                PrijsPerProduct.categorie = P.CategoryProduct;
                 
                 //Als de categorie binnen deze waardes valt is hij 6, of 12 procent.
-                int numCat = Prijzen.categorie.Btw;
+                int numCat = PrijsPerProduct.categorie.Btw;
                 if(numCat <= 8 || numCat == 12)
                 {
                     double btw = 1.06;
-                    Prijzen.productMetBTW = (Prijzen.productprijs * btw) ;
-                    Prijzen.btwValue = (Prijzen.productMetBTW - Prijzen.productprijs);
+                    PrijsPerProduct.productMetBTW = (PrijsPerProduct.productprijs * btw) ;
+                    PrijsPerProduct.btwValue = (PrijsPerProduct.productMetBTW - PrijsPerProduct.productprijs);
 
                 }
                 else if (numCat >= 9 && numCat <= 11 )
                 {
                     double btw = 1.21;
-                    Prijzen.productMetBTW = (Prijzen.productprijs * btw);
+                    PrijsPerProduct.productMetBTW = (PrijsPerProduct.productprijs * btw);
                 }
 
-                Prijslijst.Add(Prijzen);
+                Prijslijst.Add(PrijsPerProduct);
 
                 
 

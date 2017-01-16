@@ -11,23 +11,18 @@ namespace Logica
 {
     public class BetalenService
     {
-        public List<BestellingProduct> getBestellingProducten(int bestellingId)
-        {
-            List<BestellingProduct> bestelling = BestellingDAO.ReadAllFromBestellingProducten(bestellingId);
+        
 
-            return bestelling;
-
-        }
-
-
-        public struct Prijzen getTotaalPrijsPerBestelling(int bestellingId)
+        //Gemaakt door Mark. Haalt een lijst op van prijzen per product voor 1 bestellingid
+        public List<TafelService.Prijzen> getTotaalPrijsPerBestelling(int bestellingId)
         {
             
             TafelService service = new TafelService();
-            List<Prijzen> prijslijst = service.GetPrijzen(bestellingId);
+            List<TafelService.Prijzen> prijslijst = service.GetPrijzen(bestellingId);
 
 
-            return prijs;
+            return prijslijst;
+
         }
 
 
