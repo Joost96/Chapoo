@@ -26,42 +26,44 @@ namespace Logica
             public double productMetBTW;
         }
         //gemaakt door mark
-        public Prijzen GetPrijzen(int bestellingId)
+        public List<Prijzen> GetPrijzen(int bestellingId)
         {
             //Deze methode haalt aan de hand van een gegeven bestellingId een struct op met per product de prijs, de afzonderlijke BTW per product en de totaalprijs (productprijs + btw)
-
+            List<Prijzen> Prijslijst = new List<Prijzen>();
             //Nieuw prijs struct en lijst bestellingproduct
-            Prijzen prijs = new Prijzen();
+            Prijzen Prijzen = new Prijzen();
             List<BestellingProduct> bestelling = getBestellingProducten(bestellingId);
+            
 
             //Voor ieder product in de lijst van de bestelling
             foreach (Product P in bestelling)
             {
-                prijs.productprijs = P.Prijs;
-                prijs.categorie = P.CategoryProduct;
+                Prijzen.productprijs = P.Prijs;
+                Prijzen.categorie = P.CategoryProduct;
                 
                 //Als de categorie binnen deze waardes valt is hij 6, of 12 procent.
-                int numCat = prijs.categorie.Btw;
+                int numCat = Prijzen.categorie.Btw;
                 if(numCat <= 8 || numCat == 12)
                 {
                     double btw = 1.06;
-                    prijs.productMetBTW = (prijs.productprijs * btw) ;
-                    prijs.btwValue = (prijs.productMetBTW - prijs.productprijs);
+                    Prijzen.productMetBTW = (Prijzen.productprijs * btw) ;
+                    Prijzen.btwValue = (Prijzen.productMetBTW - Prijzen.productprijs);
+
                 }
                 else if (numCat >= 9 && numCat <= 11 )
                 {
                     double btw = 1.21;
-                    prijs.productMetBTW = (prijs.productprijs * btw);
+                    Prijzen.productMetBTW = (Prijzen.productprijs * btw);
                 }
 
-
+                Prijslijst.Add(Prijzen);
 
                 
 
                 
             }
             //Geeft een struct terug met daarin de standaard productprijs, btw waarde per product en de Totaalprijs per product.
-            return prijs;
+            return Prijslijst;
 
         }
 
