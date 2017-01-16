@@ -14,7 +14,7 @@ namespace Logica
         KaartDAO kaartDal = new KaartDAO();
         public List<Product> GetAllProductenFromKaart(int KaartId)
         {
-            List<Product> menuKaart = new List<Product>(kaartDal.Read(KaartId));
+            List<Product> menuKaart = new List<Product>(kaartDal.ReadAllProduct(KaartId));
             return menuKaart;
 
         }

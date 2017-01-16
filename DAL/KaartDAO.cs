@@ -13,7 +13,7 @@ namespace DAL
     //Shahin
     public class KaartDAO
     {
-        public List<Product>Read(int KaartId)
+        public List<Product>ReadAllProduct(int KaartId)
         {
             SqlConnection conn = Connection.GetConnection("naam");
             conn.Open();
