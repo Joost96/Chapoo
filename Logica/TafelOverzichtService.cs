@@ -31,13 +31,10 @@ namespace Logica
             }
         }
 
-        // delete static
-        public static List<Tafel> GetTafels()
+        // Shahin = ik heb dit aangepast om static te verwijderen.
+        public List<Tafel> GetTafels()
         {
             List<Tafel> TafelOverzicht = TafelDAO.ReadAll();
-            // TafelDAO.ReadAll();
-
-            // eventjes geen idee!
             return TafelOverzicht; 
         }
     }

@@ -9,6 +9,7 @@ using Model;
 namespace Logica
 {
     // Shahin
+    // door design aanpassing samengevoegd -> BestellenOverzichtService + BestelKaartService
     public class BestellenKaartService
     {
         KaartDAO kaartDal = new KaartDAO();
@@ -25,12 +26,8 @@ namespace Logica
             {
                 bestellingDal.AddProduct(p);
             }
-        } 
+        }  
         
-        public void AddComentaarToBestelling ()
-
-        {
-
-        }       
+        //item verwijderen en aantal aanpassen wordt in UI laag gedaan.    
     }
 }
