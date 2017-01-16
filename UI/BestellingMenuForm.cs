@@ -13,14 +13,22 @@ namespace UI
     //shahin
     public partial class BestellingMenuForm : StyleGuide.PhoneGuide
     {
+        BestellenKaartService kaartService = new BestellenKaartService();
         public BestellingMenuForm()
         {
             InitializeComponent();
         }
-
-        private void BestellingMenuForm_Load(object sender, EventArgs e)
+        private void initButtons(ListView listView)
         {
-            BestellenKaartService kaartService = new BestellenKaartService();
+            for (int i = 0; i < listView.Items.Count; i++)
+            {
+
+            }
+        }
+
+        private void loadDranken()
+        {
+            listView_dranken.Clear();
             foreach (Product p in kaartService.GetAllProductenFromKaart(3))
             {
                 ListViewItem drank = new ListViewItem(p.Naam + " " + p.Omschrijving);
@@ -28,7 +36,10 @@ namespace UI
                 listView_dranken.Items.Add(drank);
 
             }
-
+        }
+        private void loadLunchKaart()
+        {
+            listView_lunch.Clear();
             foreach (Product p in kaartService.GetAllProductenFromKaart(1))
             {
                 ListViewItem lunch_item = new ListViewItem(p.Naam + " " + p.Omschrijving);
@@ -36,7 +47,10 @@ namespace UI
                 listView_lunch.Items.Add(lunch_item);
 
             }
-
+        }
+        private void loadDinerKaart()
+        {
+            listView_diner.Clear();
             foreach (Product p in kaartService.GetAllProductenFromKaart(2))
             {
                 ListViewItem diner_item = new ListViewItem(p.Naam + " " + p.Omschrijving);
@@ -45,5 +59,25 @@ namespace UI
 
             }
         }
+
+        private void BestellingMenuForm_Load(object sender, EventArgs e)
+        {
+            loadDranken();
+            loadLunchKaart();
+            loadDinerKaart();
+        }
+
+        private void refresh_btn_Click(object sender, EventArgs e)
+        {
+            loadDranken();
+            loadLunchKaart();
+            loadDinerKaart();
+        }
+
+        private void listView_dranken_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }
