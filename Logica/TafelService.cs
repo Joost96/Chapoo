@@ -28,6 +28,8 @@ namespace Logica
         //gemaakt door mark
         public Prijzen GetPrijzen(int bestellingId)
         {
+            //Deze methode haalt aan de hand van een gegeven bestellingId een struct op met per product de prijs, de afzonderlijke BTW per product en de totaalprijs (productprijs + btw)
+
             //Nieuw prijs struct en lijst bestellingproduct
             Prijzen prijs = new Prijzen();
             List<BestellingProduct> bestelling = getBestellingProducten(bestellingId);
