@@ -44,6 +44,8 @@
             this.listView1 = new System.Windows.Forms.ListView();
             this.bewerken_btn = new System.Windows.Forms.Button();
             this.bestellen_btn = new System.Windows.Forms.Button();
+            this.refresh_btn = new System.Windows.Forms.Button();
+            this.Aantal = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.menu_tab.SuspendLayout();
             this.drinken_tab.SuspendLayout();
             this.lunch_tab.SuspendLayout();
@@ -55,7 +57,7 @@
             this.menu_tab.Controls.Add(this.drinken_tab);
             this.menu_tab.Controls.Add(this.lunch_tab);
             this.menu_tab.Controls.Add(this.tabPage1);
-            this.menu_tab.Location = new System.Drawing.Point(9, 7);
+            this.menu_tab.Location = new System.Drawing.Point(9, 9);
             this.menu_tab.Margin = new System.Windows.Forms.Padding(0);
             this.menu_tab.Name = "menu_tab";
             this.menu_tab.SelectedIndex = 0;
@@ -77,14 +79,16 @@
             // 
             this.listView_dranken.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.Naam,
-            this.Prijs});
+            this.Prijs,
+            this.Aantal});
             this.listView_dranken.GridLines = true;
             this.listView_dranken.Location = new System.Drawing.Point(-4, -3);
             this.listView_dranken.Name = "listView_dranken";
-            this.listView_dranken.Size = new System.Drawing.Size(350, 241);
+            this.listView_dranken.Size = new System.Drawing.Size(310, 241);
             this.listView_dranken.TabIndex = 0;
             this.listView_dranken.UseCompatibleStateImageBehavior = false;
             this.listView_dranken.View = System.Windows.Forms.View.Details;
+            this.listView_dranken.SelectedIndexChanged += new System.EventHandler(this.listView_dranken_SelectedIndexChanged);
             // 
             // Naam
             // 
@@ -144,9 +148,9 @@
             this.columnHeader3,
             this.columnHeader4});
             this.listView_diner.GridLines = true;
-            this.listView_diner.Location = new System.Drawing.Point(-1, -3);
+            this.listView_diner.Location = new System.Drawing.Point(-4, -3);
             this.listView_diner.Name = "listView_diner";
-            this.listView_diner.Size = new System.Drawing.Size(347, 241);
+            this.listView_diner.Size = new System.Drawing.Size(350, 241);
             this.listView_diner.TabIndex = 1;
             this.listView_diner.UseCompatibleStateImageBehavior = false;
             this.listView_diner.View = System.Windows.Forms.View.Details;
@@ -174,7 +178,7 @@
             this.bewerken_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bewerken_btn.Image = global::UI.Properties.Resources.Modify;
             this.bewerken_btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bewerken_btn.Location = new System.Drawing.Point(12, 430);
+            this.bewerken_btn.Location = new System.Drawing.Point(131, 430);
             this.bewerken_btn.Name = "bewerken_btn";
             this.bewerken_btn.Size = new System.Drawing.Size(83, 36);
             this.bewerken_btn.TabIndex = 6;
@@ -196,10 +200,31 @@
             this.bestellen_btn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.bestellen_btn.UseVisualStyleBackColor = false;
             // 
+            // refresh_btn
+            // 
+            this.refresh_btn.BackColor = System.Drawing.Color.Pink;
+            this.refresh_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.refresh_btn.Image = global::UI.Properties.Resources.Refresh;
+            this.refresh_btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.refresh_btn.Location = new System.Drawing.Point(9, 430);
+            this.refresh_btn.Name = "refresh_btn";
+            this.refresh_btn.Size = new System.Drawing.Size(90, 36);
+            this.refresh_btn.TabIndex = 16;
+            this.refresh_btn.Text = "Verversen";
+            this.refresh_btn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.refresh_btn.UseVisualStyleBackColor = false;
+            this.refresh_btn.Click += new System.EventHandler(this.refresh_btn_Click);
+            // 
+            // Aantal
+            // 
+            this.Aantal.Text = "Aantal";
+            this.Aantal.Width = 45;
+            // 
             // BestellingMenuForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.ClientSize = new System.Drawing.Size(368, 473);
+            this.Controls.Add(this.refresh_btn);
             this.Controls.Add(this.menu_tab);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.bewerken_btn);
@@ -232,5 +257,7 @@
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.Button bewerken_btn;
         private System.Windows.Forms.Button bestellen_btn;
+        private System.Windows.Forms.Button refresh_btn;
+        private System.Windows.Forms.ColumnHeader Aantal;
     }
 }
