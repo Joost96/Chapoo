@@ -30,9 +30,10 @@ namespace Logica
 
         public void UpdateBetaalStatus(int bestellingId, BetaalMethode betaalmethode, double fooi)
         {
-            BetaalMethode betaling = new BetaalMethode();
+            int betalingmethode = (int)betaalmethode;
             double totaalbedrag = getTotaalPrijsPerBestelling(bestellingId);
-            //BestellingDAO.UpdateBetaalStatus(bestellingId,  betaling, fooi, totaalbedrag);
+            BestellingDAO dao = new BestellingDAO();
+            dao.UpdateBetaalStatus(bestellingId, betalingmethode, fooi, totaalbedrag);
         }
 
 

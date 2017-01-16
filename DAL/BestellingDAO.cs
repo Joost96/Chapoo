@@ -112,7 +112,7 @@ namespace DAL
 
         }
 
-        public  void UpdateBetaalStatus(int bestellingId, BetaalMethode betaalmethode, double fooi, double totaalbedrag)
+        public  void UpdateBetaalStatus(int bestellingId, int betaalmethode, double fooi, double totaalbedrag)
         {
             SqlConnection conn = Connection.GetConnection("naam");
             conn.Open();
@@ -121,7 +121,7 @@ namespace DAL
                 "WHERE id = @bestellingId";
             SqlCommand command = new SqlCommand(sql, conn);
             command.Parameters.Add("@bestellingId", System.Data.SqlDbType.Int).Value = bestellingId;
-            command.Parameters.Add("@betaalmethode", System.Data.SqlDbType.VarChar).Value = betaalmethode;
+            command.Parameters.Add("@betaalmethode", System.Data.SqlDbType.Int).Value = betaalmethode;
             command.Parameters.Add("@fooi", System.Data.SqlDbType.Decimal).Value = fooi;
             command.Parameters.Add("@totaalbedrag", System.Data.SqlDbType.Decimal).Value = totaalbedrag;
             command.Prepare();
