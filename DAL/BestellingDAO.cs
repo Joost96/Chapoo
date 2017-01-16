@@ -36,8 +36,8 @@ namespace DAL
                     "JOIN [RBS_1617F_db01].[dbo].[Category] p ON c.Id = p.CategoryId" +
                     "JOIN [RBS_1617F_db01].[dbo].[Kaart] k ON k.Id = c.KaartId" +
                     "WHERE BestellingId = @BestellingId";
-
-
+                
+                                    
                 SqlCommand commandBestelling = new SqlCommand(sqlBestelling, conn);
                 SqlCommand commandProducten = new SqlCommand(sqlProducten, conn);
 
@@ -51,72 +51,60 @@ namespace DAL
                 SqlDataReader readerProducten = commandProducten.ExecuteReader();
 
                 conn.Close();
-                bestelling = ReaderBestelling(bestellingId, BestellingProducten, bestelling, readerBestelling);
-                ReaderProducten(readerBestelling, readerProducten);
+                if (readerBestelling.Read())
+                {
+                    //bestelling
+                    int id = readerBestelling.GetInt32(0);
+                    string commentaar = readerBestelling.GetString(1);
+                    bool betaald = readerBestelling.GetBoolean(2);
+                    BetaalMethode betaalMethode = (BetaalMethode)readerBestelling.GetInt32(3);
+                    double fooi = readerBestelling.GetDouble(4);
+                    DateTime datum = readerBestelling.GetDateTime(5);
+                    double totaalBedrag = readerBestelling.GetDouble(6);
+                    //werknemer
+                    int werknemerId = readerBestelling.GetInt32(7);
+                    string voornaam = readerBestelling.GetString(8);
+                    string achternaam = readerBestelling.GetString(9);
+                    WerknemerRol rol = (WerknemerRol)readerBestelling.GetInt32(10);
+                    string wachtwoord = readerBestelling.GetString(11);
+                    string gebruikersnaam = readerBestelling.GetString(12);
+                    //tafel
+                    int tafelNummer = readerBestelling.GetInt32(13);
+                    TafelStatus statusTafel = (TafelStatus)readerBestelling.GetInt32(14);
+                    int zitplaatsen = readerBestelling.GetInt32(15);
+                                
+                    Werknemer werknemer = new Werknemer(werknemerId, voornaam, achternaam, gebruikersnaam, wachtwoord, rol);
+                    Tafel tafel = new Tafel(tafelNummer, statusTafel, zitplaatsen);
+                    bestelling = new Bestelling(bestellingId,werknemer,tafel, commentaar, betaald, betaalMethode, fooi, datum, totaalBedrag , BestellingProducten);
+                }
+                while (readerProducten.Read())
+                {
+                    //bestellingProduct
+                    int id = readerProducten.GetInt32(0);
+                    string naam = readerProducten.GetString(1);
+                    double prijs = (double)readerProducten.GetDecimal(2);
+                    string omschrijving = readerProducten.GetString(3);
+                    int voorraad = readerProducten.GetInt32(4);
+                    BestellingStatus productStatus = (BestellingStatus)readerBestelling.GetInt32(5);
+                    int aantal = readerProducten.GetInt32(6);
+                    DateTime tijd = readerProducten.GetDateTime(7);
+                    string commentaar = readerProducten.GetString(8);
+                    //category
+                    int categoryId = readerProducten.GetInt32(9);
+                    string categoryNaam = readerProducten.GetString(10);
+                    int btw = readerProducten.GetInt32(11);
+                    //kaart
+                    int kaartId = readerProducten.GetInt32(12);
+                    string kaartNaam = readerProducten.GetString(13);
+                    bool isKeuken = readerProducten.GetBoolean(14);
+
+                    Kaart kaart = new Kaart(kaartId, isKeuken, kaartNaam);
+                    Category category = new Category(btw, categoryId, categoryNaam, kaart);
+                    BestellingProduct bestellingproduct = new BestellingProduct(id, omschrijving, naam, prijs, voorraad, aantal, commentaar, tijd, productStatus, category);
+                }
                 conn.Close();
                 return BestellingProducten;
             }
-        }
-
-        private static void ReaderProducten(SqlDataReader readerBestelling, SqlDataReader readerProducten)
-        {
-            while (readerProducten.Read())
-            {
-                //bestellingProduct
-                int id = readerProducten.GetInt32(0);
-                string naam = readerProducten.GetString(1);
-                double prijs = (double)readerProducten.GetDecimal(2);
-                string omschrijving = readerProducten.GetString(3);
-                int voorraad = readerProducten.GetInt32(4);
-                BestellingStatus productStatus = (BestellingStatus)readerBestelling.GetInt32(5);
-                int aantal = readerProducten.GetInt32(6);
-                DateTime tijd = readerProducten.GetDateTime(7);
-                string commentaar = readerProducten.GetString(8);
-                //category
-                int categoryId = readerProducten.GetInt32(9);
-                string categoryNaam = readerProducten.GetString(10);
-                int btw = readerProducten.GetInt32(11);
-                //kaart
-                int kaartId = readerProducten.GetInt32(12);
-                string kaartNaam = readerProducten.GetString(13);
-                bool isKeuken = readerProducten.GetBoolean(14);
-
-                Kaart kaart = new Kaart(kaartId, isKeuken, kaartNaam);
-                Category category = new Category(btw, categoryId, categoryNaam, kaart);
-                BestellingProduct bestellingproduct = new BestellingProduct(id, omschrijving, naam, prijs, voorraad, aantal, commentaar, tijd, productStatus, category);
-            }
-        }
-
-        private static Bestelling ReaderBestelling(int bestellingId, List<BestellingProduct> BestellingProducten, Bestelling bestelling, SqlDataReader readerBestelling)
-        {
-            if (readerBestelling.Read())
-            {
-                //bestelling
-                int id = readerBestelling.GetInt32(0);
-                string commentaar = readerBestelling.GetString(1);
-                bool betaald = readerBestelling.GetBoolean(2);
-                BetaalMethode betaalMethode = (BetaalMethode)readerBestelling.GetInt32(3);
-                double fooi = readerBestelling.GetDouble(4);
-                DateTime datum = readerBestelling.GetDateTime(5);
-                double totaalBedrag = readerBestelling.GetDouble(6);
-                //werknemer
-                int werknemerId = readerBestelling.GetInt32(7);
-                string voornaam = readerBestelling.GetString(8);
-                string achternaam = readerBestelling.GetString(9);
-                WerknemerRol rol = (WerknemerRol)readerBestelling.GetInt32(10);
-                string wachtwoord = readerBestelling.GetString(11);
-                string gebruikersnaam = readerBestelling.GetString(12);
-                //tafel
-                int tafelNummer = readerBestelling.GetInt32(13);
-                TafelStatus statusTafel = (TafelStatus)readerBestelling.GetInt32(14);
-                int zitplaatsen = readerBestelling.GetInt32(15);
-
-                Werknemer werknemer = new Werknemer(werknemerId, voornaam, achternaam, gebruikersnaam, wachtwoord, rol);
-                Tafel tafel = new Tafel(tafelNummer, statusTafel, zitplaatsen);
-                bestelling = new Bestelling(bestellingId, werknemer, tafel, commentaar, betaald, betaalMethode, fooi, datum, totaalBedrag, BestellingProducten);
-            }
-
-            return bestelling;
         }
 
         public static void  Update (List<BestellingProduct> bestellingen)

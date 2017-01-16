@@ -25,9 +25,10 @@ namespace Logica
 
         }
 
-        public void UpdateBetaalStatus(int bestellingId)
+        public void UpdateBetaalStatus(int bestellingId, List<TafelService.Prijzen> prijslijst, bool betaalstatus, int betaalmethode, double fooi, double totaalbedrag)
         {
-            BestellingDAO.Update
+            List<TafelService.Prijzen> prijzen = getTotaalPrijsPerBestelling(bestellingId);
+            BestellingDAO.Update(bestellingId, prijzen,  betaalstatus, betaalmethode, fooi, totaalbedrag);
         }
 
 
