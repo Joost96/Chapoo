@@ -107,9 +107,27 @@ namespace DAL
             }
         }
 
-        public static void  Update (List<BestellingProduct> bestellingen)
+        public void  Update (List<BestellingProduct> bestellingen)
         {
 
         }
+
+        public  void UpdateBetaalStatus(int bestellingId, BetaalMethode betaalmethode, double fooi, double totaalbedrag)
+        {
+            SqlConnection conn = Connection.GetConnection("naam");
+            conn.Open();
+            string sql = "INSERT INTO [RBS_1617F_db01].[dbo].[BESTELLING](betaalmethode, fooi, totaalbedrag) " +
+                "VALUES (@betaalmethode, @fooi, @totaalbedrag) " +
+                "WHERE id = @bestellingId";
+            SqlCommand command = new SqlCommand(sql, conn);
+            command.Parameters.Add("@bestellingId", System.Data.SqlDbType.Int).Value = bestellingId;
+            command.Parameters.Add("@betaalmethode", System.Data.SqlDbType.VarChar).Value = betaalmethode;
+            command.Parameters.Add("@fooi", System.Data.SqlDbType.Decimal).Value = fooi;
+            command.Parameters.Add("@totaalbedrag", System.Data.SqlDbType.Decimal).Value = totaalbedrag;
+            command.Prepare();
+            command.ExecuteNonQuery();
+            conn.Close();
+        }
+
     }
 }
