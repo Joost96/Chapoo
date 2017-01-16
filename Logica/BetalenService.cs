@@ -13,7 +13,7 @@ namespace Logica
     {
         
 
-        //Gemaakt door Mark. Haalt een lijst op van prijzen per product voor 1 bestellingid
+        //Gemaakt door Mark. Haalt een lijst op van de prijzen van alle product in voor 1 bestellingid
         public List<TafelService.Prijzen> getTotaalPrijsPerBestelling(int bestellingId)
         {
             
@@ -23,6 +23,11 @@ namespace Logica
 
             return prijslijst;
 
+        }
+
+        public void UpdateBetaalStatus(int bestellingId)
+        {
+            BestellingDAO.Update
         }
 
 
