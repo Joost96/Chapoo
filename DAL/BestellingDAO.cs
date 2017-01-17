@@ -36,8 +36,8 @@ namespace DAL
                     "JOIN [RBS_1617F_db01].[dbo].[Category] c ON c.Id = p.CategoryId " +
                     "JOIN [RBS_1617F_db01].[dbo].[Kaart] k ON k.Id = c.KaartId " +
                     "WHERE BestellingId = @BestellingId";
-                
-                                    
+
+
                 SqlCommand commandBestelling = new SqlCommand(sqlBestelling, conn);
                 SqlCommand commandProducten = new SqlCommand(sqlProducten, conn);
 
@@ -49,7 +49,7 @@ namespace DAL
 
                 SqlDataReader readerBestelling = commandBestelling.ExecuteReader();
                 SqlDataReader readerProducten = commandProducten.ExecuteReader();
-                
+
 
                 if (readerBestelling.Read())
                 {
@@ -59,9 +59,9 @@ namespace DAL
                 while (readerProducten.Read())
                 {
                     //bestellingProduct
-                     bestelling.AddProduct(createBestellingProductFromReader(readerProducten));
+                    bestelling.AddProduct(createBestellingProductFromReader(readerProducten));
                 }
-                
+
                 conn.Close();
                 return bestelling;
             }
@@ -96,9 +96,9 @@ namespace DAL
                 SqlCommand commandProducten = new SqlCommand(sqlProducten, conn);
 
                 commandBestelling.Parameters.Add("@tafelId", System.Data.SqlDbType.Int).Value = tafelId;
-                
+
                 commandBestelling.Prepare();
-   
+
                 SqlDataReader readerBestelling = commandBestelling.ExecuteReader();
 
                 if (readerBestelling.Read())
@@ -131,13 +131,13 @@ namespace DAL
             command.Parameters.Add("@b_status", System.Data.SqlDbType.Int).Value = (int)product.Status;
             command.Parameters.Add("@aantal", System.Data.SqlDbType.Int).Value = product.Aantal;
             command.Parameters.Add("@tijd", System.Data.SqlDbType.DateTime).Value = product.Tijd;
-            command.Parameters.Add("@commentaar", System.Data.SqlDbType.VarChar,45).Value = product.Commentaar;
+            command.Parameters.Add("@commentaar", System.Data.SqlDbType.VarChar, 45).Value = product.Commentaar;
             command.Prepare();
             command.ExecuteNonQuery();
             conn.Close();
         }
         //Gemaakt door Mark
-        public  void UpdateBetaalStatus(int bestellingId, int betaalmethode, double fooi, double totaalbedrag)
+        public void UpdateBetaalStatus(int bestellingId, int betaalmethode, double fooi, double totaalbedrag)
         {
             SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["constr"].ConnectionString);
             conn.Open();
@@ -154,13 +154,10 @@ namespace DAL
             conn.Close();
         }
 
-<<<<<<< HEAD
-        public List<BestellingProduct>ReadKeukenBarOverzicht(int keukenBar)
-=======
-     /*  public Product ReadKeukenBarOverzicht ()
->>>>>>> origin/master
+
+        public List<BestellingProduct> ReadKeukenBarOverzicht(int keukenBar)
         {
-            SqlConnection conn = Connection.GetConnection("naam");
+            SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["constr"].ConnectionString);
             conn.Open();
             string sql = "SELECT pb.[ProductId], pb.[BestellingId], pb.[b_status], pb.[aantal], pb.[tijd], pb.[commentaar], p.[naam],b.[TafelId], k.[is_keuken]" +
                 " FROM[RBS_1617F_db01].[dbo].[PRODUCTEN_IN_BESTELLING] pb " +
@@ -169,14 +166,27 @@ namespace DAL
                 " JOIN [RBS_1617F_db01].[dbo].[KAART] k ON p.[KaartId] = k.[id]" +
                 " WHERE k.[is_keuken] = @keukenBar" +
                 " order by tijd ";
-
-<<<<<<< HEAD
             SqlCommand command = new SqlCommand(sql, conn);
             command.Parameters.Add("@keukenBar", System.Data.SqlDbType.Int).Value = keukenBar;
             command.Prepare();
             SqlDataReader reader = command.ExecuteReader();
-=======
-        }*/
+            List<BestellingProduct> overzicht_K_B = new List<BestellingProduct>();
+            while (reader.Read())
+            {
+                int id = reader.GetInt32(0);
+                int bestellingId = reader.GetInt32(1);
+                int status = reader.GetInt32(2);
+                BestellingStatus bStatus = (BestellingStatus)status;
+                int aantal = reader.GetInt32(3);
+                DateTime tijd = reader.GetDateTime(4);
+                string commentaar = reader.GetString(5);
+                string naam = reader.GetString(6);
+
+                overzicht_K_B.Add(new BestellingProduct(id, naam, aantal, commentaar, tijd, bStatus));
+            }
+            conn.Close();
+            return overzicht_K_B;
+        }
 
         private Bestelling createBestellingFormReader(SqlDataReader reader)
         {
@@ -229,24 +239,7 @@ namespace DAL
             Kaart kaart = new Kaart(kaartId, isKeuken, kaartNaam);
             Category category = new Category(btw, categoryId, categoryNaam, kaart);
             return new BestellingProduct(id, omschrijving, naam, prijs, voorraad, aantal, commentaar, tijd, productStatus, category);
->>>>>>> origin/master
 
-            List<BestellingProduct> overzicht_K_B = new List<BestellingProduct>();
-            while (reader.Read())
-            {
-                int id = reader.GetInt32(0);
-                int bestellingId = reader.GetInt32(1);
-                int status = reader.GetInt32(2);
-                BestellingStatus bStatus = (BestellingStatus)status;
-                int aantal = reader.GetInt32(3);
-                DateTime tijd = reader.GetDateTime(4);
-                string commentaar = reader.GetString(5);
-                string naam = reader.GetString(6);
-
-                overzicht_K_B.Add(new BestellingProduct(id, naam, aantal, commentaar, tijd, bStatus));
-            }
-            conn.Close();
-            return overzicht_K_B;
         }
     }
 }
