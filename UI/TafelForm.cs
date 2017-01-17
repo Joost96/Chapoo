@@ -49,7 +49,7 @@ namespace UI
                 
                 listview_bestelling.Items.Add(bestellingItem);
             }
-
+                
         }
 
         private void bestellen_btn_Click(object sender, EventArgs e)

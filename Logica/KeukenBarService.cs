@@ -10,7 +10,7 @@ namespace Logica
 {
     class KeukenBarService
     {
-        private BestellingDAO bestellingDal = new BestellingDAO();
+       private BestellingDAO bestellingDal = new BestellingDAO();
 
         // bestelling status veranderen
         public void changeBestellingStatus(BestellingProduct product, BestellingStatus newStatus)

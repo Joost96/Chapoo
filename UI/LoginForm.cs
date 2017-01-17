@@ -26,9 +26,12 @@ namespace UI
             LoginService login = new LoginService();
             WerknemerRol rolVanWerknemer = login.CheckCredentials(passWord, userName);
             Debug.WriteLine(rolVanWerknemer);
+            onbevoegd_lbl.Visible = false;
             if (rolVanWerknemer == WerknemerRol.bar)
             {
-
+                Hide();
+                KeukenBarForm form = new KeukenBarForm(false);
+                form.Show();
             }
 
             else if (rolVanWerknemer == WerknemerRol.bediening)
@@ -39,9 +42,9 @@ namespace UI
             }
 
             else if (rolVanWerknemer == WerknemerRol.eigenaar)
-            {   
-               
-                // krijgt scherm under construction
+            {
+
+                Hide();
                 EigenaarForm from = new EigenaarForm();
                 from.Show();
                 // hide maar nog niet close ???
@@ -50,14 +53,19 @@ namespace UI
             else if (rolVanWerknemer == WerknemerRol.keuken)
             {
                 Hide();
-                KeukenBarForm from = new KeukenBarForm();
+                KeukenBarForm from = new KeukenBarForm(true);
                 from.Show();
             }
 
             else if (rolVanWerknemer == WerknemerRol.onbevoegd)
             {
-
+                onbevoegd_lbl.Visible = true;
             }
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
