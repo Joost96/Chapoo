@@ -43,7 +43,10 @@ namespace UI
             {
 
                 ListViewItem bestellingItem = new ListViewItem(p.Naam + p.Aantal + p.Commentaar);
-                bestellingItem.SubItems.Add(p.Prijs.ToString("C2"));
+                bestellingItem.SubItems.Add(p.Aantal.ToString());
+                bestellingItem.SubItems.Add(p.Commentaar);
+                bestellingItem.SubItems.Add(p.Status.ToString());
+                
                 listview_bestelling.Items.Add(bestellingItem);
             }
 
