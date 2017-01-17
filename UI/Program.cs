@@ -16,7 +16,7 @@ namespace UI
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new TafelForm(6));
+            Application.Run(new BestellingMenuForm(6));
         }
     }
 }

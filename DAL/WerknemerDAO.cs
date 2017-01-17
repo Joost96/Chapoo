@@ -14,7 +14,7 @@ namespace DAL
     {
        public void Create(string voornaam, string achternaam, int rol, string wachtwoord, string username)
         {
-            SqlConnection conn = Connection.GetConnection("naam");
+            SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["constr"].ConnectionString);
             conn.Open();
             string sql = "INSERT INTO [RBS_1617F_db01].[dbo].[WERKNEMER](voornaam, achternaam, rol, wachtwoord, username) " +
                 "VALUES (@voornaam, @achternaam, @rol, @wachtwoord, @username) ";
@@ -32,7 +32,7 @@ namespace DAL
            
        public void Delete(int werknemerId)
        {
-           SqlConnection conn = Connection.GetConnection("naam");
+           SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["constr"].ConnectionString);
            conn.Open();
 
            string sql = "DELETE " +
@@ -57,7 +57,7 @@ namespace DAL
             Model.Werknemer werknemer = null;
 
 
-            SqlConnection conn = Connection.GetConnection("naam");
+            SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["constr"].ConnectionString);
             conn.Open();
             string sql = "SELECT [w_nr], [voornaam], [achternaam], [rol], [wachtwoord], [username] " +
                 "FROM [RBS_1617F_db01].[dbo].[WERKNEMER] " +
@@ -93,7 +93,7 @@ namespace DAL
             
 
         
-            SqlConnection conn = Connection.GetConnection("naam");
+            SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["constr"].ConnectionString);
             conn.Open();
             string sql = "SELECT * " +
                 "FROM [RBS_1617F_db01].[dbo].[WERKNEMER] " 
@@ -128,7 +128,7 @@ namespace DAL
 
         public void Update(Werknemer werkNemer)
         {
-            SqlConnection conn = new SqlConnection("naam");
+            SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["constr"].ConnectionString);
             int id = werkNemer.Id;
             string voornaam = werkNemer.Voornaam;
             string achternaam = werkNemer.Achternaam;
