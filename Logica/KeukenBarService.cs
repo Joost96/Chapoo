@@ -14,7 +14,6 @@ namespace Logica
 
         public void changeBestellingStatus(int best)
         {
-            bool
 
         }
 
