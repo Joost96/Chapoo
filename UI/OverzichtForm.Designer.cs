@@ -50,7 +50,7 @@
             this.bezet_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bezet_lbl.Image = global::UI.Properties.Resources.bezet;
             this.bezet_lbl.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bezet_lbl.Location = new System.Drawing.Point(12, 436);
+            this.bezet_lbl.Location = new System.Drawing.Point(12, 423);
             this.bezet_lbl.Name = "bezet_lbl";
             this.bezet_lbl.Size = new System.Drawing.Size(68, 17);
             this.bezet_lbl.TabIndex = 18;
@@ -63,7 +63,7 @@
             this.gereserveerd_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gereserveerd_lbl.Image = global::UI.Properties.Resources.gereserveerd;
             this.gereserveerd_lbl.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.gereserveerd_lbl.Location = new System.Drawing.Point(12, 419);
+            this.gereserveerd_lbl.Location = new System.Drawing.Point(12, 406);
             this.gereserveerd_lbl.Name = "gereserveerd_lbl";
             this.gereserveerd_lbl.Size = new System.Drawing.Size(120, 17);
             this.gereserveerd_lbl.TabIndex = 17;
@@ -76,7 +76,7 @@
             this.beschikbaar_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.beschikbaar_lbl.Image = global::UI.Properties.Resources.beschikbaar;
             this.beschikbaar_lbl.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.beschikbaar_lbl.Location = new System.Drawing.Point(12, 402);
+            this.beschikbaar_lbl.Location = new System.Drawing.Point(12, 389);
             this.beschikbaar_lbl.Name = "beschikbaar_lbl";
             this.beschikbaar_lbl.Size = new System.Drawing.Size(110, 17);
             this.beschikbaar_lbl.TabIndex = 16;
@@ -105,6 +105,11 @@
             this.Controls.Add(this.beschikbaar_lbl);
             this.Controls.Add(this.logout_btn);
             this.Name = "OverzichtForm";
+            this.Controls.SetChildIndex(this.logout_btn, 0);
+            this.Controls.SetChildIndex(this.beschikbaar_lbl, 0);
+            this.Controls.SetChildIndex(this.gereserveerd_lbl, 0);
+            this.Controls.SetChildIndex(this.bezet_lbl, 0);
+            this.Controls.SetChildIndex(this.flowLayoutPanel1, 0);
             this.ResumeLayout(false);
             this.PerformLayout();
 

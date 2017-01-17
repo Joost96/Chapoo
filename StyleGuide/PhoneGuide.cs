@@ -10,9 +10,18 @@ namespace StyleGuide
 {
     public partial class PhoneGuide : StyleGuide.BaseGuide
     {
+        private StyleGuide.BaseGuide vorige;
         public PhoneGuide()
         {
+        
             InitializeComponent();
+        }
+
+        private void back_btn_Click(object sender, EventArgs e)
+        {
+            Hide();         
+            vorige.Show();
+            
         }
     }
 }

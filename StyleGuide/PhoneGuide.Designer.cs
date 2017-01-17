@@ -28,17 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PhoneGuide));
+            this.back_btn = new System.Windows.Forms.Button();
             this.SuspendLayout();
+            // 
+            // back_btn
+            // 
+            this.back_btn.Image = ((System.Drawing.Image)(resources.GetObject("back_btn.Image")));
+            this.back_btn.Location = new System.Drawing.Point(3, 441);
+            this.back_btn.Name = "back_btn";
+            this.back_btn.Size = new System.Drawing.Size(37, 30);
+            this.back_btn.TabIndex = 0;
+            this.back_btn.UseVisualStyleBackColor = true;
+            this.back_btn.Click += new System.EventHandler(this.back_btn_Click);
             // 
             // PhoneGuide
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.ClientSize = new System.Drawing.Size(368, 473);
+            this.Controls.Add(this.back_btn);
             this.Name = "PhoneGuide";
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
+        private System.Windows.Forms.Button back_btn;
     }
 }

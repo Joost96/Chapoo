@@ -51,12 +51,12 @@
             this.dinerPrijs = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.dinerVoorraad = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.listviewBestelling = new System.Windows.Forms.ListView();
-            this.bewerken_btn = new System.Windows.Forms.Button();
-            this.bestellen_btn = new System.Windows.Forms.Button();
             this.BestellingNaam = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.BestellingPrijs = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.BestellingAantal = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.BestellingComentaar = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.bewerken_btn = new System.Windows.Forms.Button();
+            this.bestellen_btn = new System.Windows.Forms.Button();
             this.panelEdit = new System.Windows.Forms.Panel();
             this.btnSave = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -325,7 +325,7 @@
             this.bewerken_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bewerken_btn.Image = global::UI.Properties.Resources.Modify;
             this.bewerken_btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bewerken_btn.Location = new System.Drawing.Point(131, 430);
+            this.bewerken_btn.Location = new System.Drawing.Point(130, 430);
             this.bewerken_btn.Name = "bewerken_btn";
             this.bewerken_btn.Size = new System.Drawing.Size(83, 36);
             this.bewerken_btn.TabIndex = 6;
@@ -403,6 +403,11 @@
             this.Controls.Add(this.bestellen_btn);
             this.Name = "BestellingMenuForm";
             this.Load += new System.EventHandler(this.BestellingMenuForm_Load);
+            this.Controls.SetChildIndex(this.bestellen_btn, 0);
+            this.Controls.SetChildIndex(this.bewerken_btn, 0);
+            this.Controls.SetChildIndex(this.listviewBestelling, 0);
+            this.Controls.SetChildIndex(this.menu_tab, 0);
+            this.Controls.SetChildIndex(this.panelEdit, 0);
             this.menu_tab.ResumeLayout(false);
             this.drinken_tab.ResumeLayout(false);
             this.lunch_tab.ResumeLayout(false);
