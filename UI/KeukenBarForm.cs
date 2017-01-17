@@ -12,24 +12,21 @@ namespace UI
 {
     public partial class KeukenBarForm : StyleGuide.DesktopGuide
     {
-        public KeukenBarForm()
+        public KeukenBarForm(bool locatie)
         {
             InitializeComponent();
+            loadBestellingen(locatie);
+            
         }
         private List<BestellingProduct> bestellingProducten = new List<BestellingProduct>();
 
-        private void loadBestellingen(ListView lisoverzichtKB, Product product, int aantal, BestellingStatus status, Bestelling bestelling)
+        private void loadBestellingen(bool locatie)
         {
             listView_keukenBar.Items.Clear();
-      /*      foreach (Product p in bestellingProducten.GetAllProducten(productId))
-            {
-                ListViewItem item = new ListViewItem(p.Naam + p.Omschrijving);
-                item.SubItems.Add(p.Prijs.ToString("C2"));
-                item.SubItems.Add(p.Voorraad.ToString());
-                item.Tag = p;
-                lisoverzichtKB.Items.Add(item);
+            if (locatie == true)
+            { }
+            else { }
 
-            }*/
         }
 
         private void logout_btn_Click(object sender, EventArgs e)

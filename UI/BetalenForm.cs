@@ -3,27 +3,16 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace UI
 {
-    public partial class BetalenForm : Form
+    public partial class BetalenForm : StyleGuide.PhoneGuide
     {
-        private int bestellingId;
-
-        public BetalenForm(int bestellingId)
+        public BetalenForm()
         {
-            this.bestellingId = bestellingId;
-          //  InitializeComponent();
-          
-        }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
+            InitializeComponent();
         }
     }
 }
