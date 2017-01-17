@@ -146,5 +146,12 @@ namespace DAL
             conn.Close();
         }
 
+        public Product ReadKeukenBarOverzicht ()
+        {
+            List<Product> overzicht_K_B = new List<Product>();
+
+
+        }
+
     }
 }
