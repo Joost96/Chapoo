@@ -8,8 +8,9 @@ namespace Model
 {
    public class Bestelling
     {
-       private int Id;
+       private int id;
 
+       public int Id { get; }
        public Werknemer Bediening { get; set; }
        public Tafel TafelBestelling { get; set; }
        public string Commentaar { get; set; }

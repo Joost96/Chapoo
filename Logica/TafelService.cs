@@ -10,9 +10,10 @@ namespace Logica
 {
     public class TafelService
     {
+        private BestellingDAO bestellingDAO = new BestellingDAO();
         public List<BestellingProduct> getBestellingProducten(int bestellingId)
         {
-            List<BestellingProduct> bestelling = BestellingDAO.ReadAllFromBestellingProducten(bestellingId);
+            List<BestellingProduct> bestelling = bestellingDAO.ReadBestellingById(bestellingId).Producten;
 
             return bestelling;
 

@@ -16,10 +16,12 @@ namespace UI
         private BestellenKaartService kaartService = new BestellenKaartService();
         private List<BestellingProduct> bestellingProducten = new List<BestellingProduct>();
         private BestellingProduct editProduct;
+
+        private Bestelling bestelling;
         public BestellingMenuForm(int id)
         {
             InitializeComponent();
-            kaartService.getBestelling(id);
+            bestelling = kaartService.getBestelling(id);
         }
 
         private void loadKaart(ListView listview , int kaartId)
@@ -74,7 +76,7 @@ namespace UI
                 }
                 else
                 {
-                    bestellingProducten.Add(new BestellingProduct(product, 1, BestellingStatus.Queue));
+                    bestellingProducten.Add(new BestellingProduct(product, 1, BestellingStatus.Queue , bestelling));
                 }
             }
             loadBestellingen();
