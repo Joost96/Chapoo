@@ -10,26 +10,15 @@ namespace Logica
 {
     class KeukenBarService
     {
-<<<<<<< HEAD
         private BestellingDAO bestellingDal = new BestellingDAO();
 
         // bestelling status veranderen
-        public void changeBestellingStatus()
-=======
-        public BestellingProduct ChangeStatus(BestellingProduct product, BestellingStatus newStatus)
->>>>>>> origin/master
+        public void changeBestellingStatus(BestellingProduct product, BestellingStatus newStatus)
         {
             product.Status = newStatus;
-            return product;
         }
-<<<<<<< HEAD
-        /*
-        // lijst met bestellingen ophalen
-        public Bestelling getBestellingen()
-=======
 
         public List<BestellingProduct> GetOpenBestellingen(List<BestellingProduct> producten)
->>>>>>> origin/master
         {
             List<BestellingProduct> openBestelling = new List<BestellingProduct>();
 
@@ -45,13 +34,5 @@ namespace Logica
 
             return openBestelling;
         }
-
-<<<<<<< HEAD
-    */
-=======
-
-            
-        
->>>>>>> origin/master
     }
 }
