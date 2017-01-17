@@ -79,7 +79,7 @@
             // lblFooi
             // 
             this.lblFooi.AutoSize = true;
-            this.lblFooi.Location = new System.Drawing.Point(176, 334);
+            this.lblFooi.Location = new System.Drawing.Point(10, 330);
             this.lblFooi.Name = "lblFooi";
             this.lblFooi.Size = new System.Drawing.Size(36, 13);
             this.lblFooi.TabIndex = 2;
@@ -142,13 +142,6 @@
             this.Controls.Add(this.textBoxFooi);
             this.Controls.Add(this.listViewRekOverzicht);
             this.Name = "BetalenForm";
-            this.Controls.SetChildIndex(this.listViewRekOverzicht, 0);
-            this.Controls.SetChildIndex(this.textBoxFooi, 0);
-            this.Controls.SetChildIndex(this.lblFooi, 0);
-            this.Controls.SetChildIndex(this.label2, 0);
-            this.Controls.SetChildIndex(this.lblTotaal, 0);
-            this.Controls.SetChildIndex(this.betalen_btn, 0);
-            this.Controls.SetChildIndex(this.comboBox1, 0);
             this.ResumeLayout(false);
             this.PerformLayout();
 
