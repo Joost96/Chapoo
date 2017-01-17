@@ -84,8 +84,5 @@ namespace UI
                 panelEdit.Visible = true;
             }
         }
-
-
-      
     }
 }

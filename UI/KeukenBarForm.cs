@@ -14,7 +14,7 @@ namespace UI
     {
         private List<BestellingProduct> bestellingProducten = new List<BestellingProduct>();
         private KeukenBarService kbService = new KeukenBarService();
-        public KeukenBarForm(StyleGuide.BaseGuide vorigeForm, bool locatie)
+        public KeukenBarForm(StyleGuide.BaseGuide vorige, bool locatie)
         {
             InitializeComponent();
             loadBestellingen(locatie);
