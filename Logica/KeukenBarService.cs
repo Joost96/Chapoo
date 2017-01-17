@@ -10,29 +10,18 @@ namespace Logica
 {
     class KeukenBarService
     {
-       private BestellingDAO bestellingDal = new BestellingDAO();
+        private BestellingDAO bestellingDAO = new BestellingDAO();
+        private BestellingProductDAO bestellingProductDAO = new BestellingProductDAO();
 
         // bestelling status veranderen
         public void changeBestellingStatus(BestellingProduct product, BestellingStatus newStatus)
         {
-            product.Status = newStatus;
+            bestellingProductDAO.updateBestellingProduct(product, newStatus);
         }
 
-        public List<BestellingProduct> GetOpenBestellingen(List<BestellingProduct> producten)
+        public List<BestellingProduct> GetOpenBestellingen(bool isKeuken)
         {
-            List<BestellingProduct> openBestelling = new List<BestellingProduct>();
-
-            foreach(BestellingProduct p in producten)
-            {
-               
-                if (p.Status == BestellingStatus.Prepare || p.Status == BestellingStatus.Queue)
-                {
-                    openBestelling.Add(p);
-                }
-                          
-            }
-
-            return openBestelling;
+            return bestellingDAO.ReadKeukenBarOverzicht(isKeuken);
         }
     }
 }

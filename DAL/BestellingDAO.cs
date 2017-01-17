@@ -154,7 +154,7 @@ namespace DAL
             conn.Close();
         }
 
-        public List<BestellingProduct>ReadKeukenBarOverzicht(int keukenBar)
+        public List<BestellingProduct>ReadKeukenBarOverzicht(bool isKeuken)
         {
             SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["constr"].ConnectionString);
             conn.Open();
@@ -163,11 +163,11 @@ namespace DAL
                 " JOIN[RBS_1617F_db01].[dbo].[PRODUCT] p ON pb.[ProductId] = p.[p_nr] " +
                 " JOIN[RBS_1617F_db01].[dbo].[BESTELLING] b ON pb.[BestellingId] = b.[id]" +
                 " JOIN [RBS_1617F_db01].[dbo].[KAART] k ON p.[KaartId] = k.[id]" +
-                " WHERE k.[is_keuken] = @keukenBar" +
+                " WHERE k.[is_keuken] = @isKeuken" +
                 " order by tijd ";
 
             SqlCommand command = new SqlCommand(sql, conn);
-            command.Parameters.Add("@keukenBar", System.Data.SqlDbType.Int).Value = keukenBar;
+            command.Parameters.Add("@isKeuken", System.Data.SqlDbType.Bit).Value = isKeuken;
             command.Prepare();
             SqlDataReader reader = command.ExecuteReader();
             
