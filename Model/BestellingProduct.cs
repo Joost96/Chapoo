@@ -32,7 +32,10 @@ namespace Model
 
         public BestellingProduct(int id, string naam, int aantal, string commentaar, DateTime tijd, BestellingStatus status) : base(id, naam)
         {
-
+            Aantal = aantal;
+            Commentaar = commentaar;
+            Tijd = tijd;
+            Status = status;
         }
     }
 }

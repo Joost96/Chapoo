@@ -19,5 +19,9 @@ namespace Model
             this.status = status;
             this.zitplaatsen = zitplaatsen;
         }
+        public Tafel(int tafelNummer)
+        {
+            this.tafelNummer = tafelNummer;
+        }
     }
 }

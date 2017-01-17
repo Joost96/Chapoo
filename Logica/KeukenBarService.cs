@@ -8,7 +8,7 @@ using DAL;
 
 namespace Logica
 {
-    class KeukenBarService
+    public class KeukenBarService
     {
         private BestellingDAO bestellingDAO = new BestellingDAO();
         private BestellingProductDAO bestellingProductDAO = new BestellingProductDAO();

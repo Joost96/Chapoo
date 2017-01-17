@@ -158,7 +158,7 @@ namespace DAL
         {
             SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["constr"].ConnectionString);
             conn.Open();
-            string sql = "SELECT pb.[ProductId], pb.[BestellingId], pb.[b_status], pb.[aantal], pb.[tijd], pb.[commentaar], p.[naam],b.[TafelId], k.[is_keuken]" +
+            string sql = "SELECT pb.[ProductId], pb.[BestellingId], pb.[b_status], pb.[aantal], pb.[tijd], pb.[commentaar], p.[naam],b.[TafelId]" +
                 " FROM[RBS_1617F_db01].[dbo].[PRODUCTEN_IN_BESTELLING] pb " +
                 " JOIN[RBS_1617F_db01].[dbo].[PRODUCT] p ON pb.[ProductId] = p.[p_nr] " +
                 " JOIN[RBS_1617F_db01].[dbo].[BESTELLING] b ON pb.[BestellingId] = b.[id]" +
@@ -182,8 +182,11 @@ namespace DAL
                 DateTime tijd = reader.GetDateTime(4);
                 string commentaar = reader.GetString(5);
                 string naam = reader.GetString(6);
-
-                overzicht_K_B.Add(new BestellingProduct(id, naam, aantal, commentaar, tijd, bStatus));
+                int tafelId = reader.GetInt32(7);
+                BestellingProduct bestellingProduct = new BestellingProduct(id, naam, aantal, commentaar, tijd, bStatus);
+                bestellingProduct.ProductBestelling = new Bestelling(bestellingId);
+                bestellingProduct.ProductBestelling.TafelBestelling = new Tafel(tafelId);
+                overzicht_K_B.Add(bestellingProduct);
             }
             conn.Close();
             return overzicht_K_B;

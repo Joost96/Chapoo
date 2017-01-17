@@ -36,6 +36,10 @@ namespace Model
             Producten = new List<BestellingProduct>();
             CreateProducten();
        }
+       public Bestelling(int id)
+        {
+            Id = id;
+        }
 
        public List<BestellingProduct> CreateProducten()
        {
