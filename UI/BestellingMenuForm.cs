@@ -18,7 +18,7 @@ namespace UI
         private BestellingProduct editProduct;
 
         private Bestelling bestelling;
-        public BestellingMenuForm(int id)
+        public BestellingMenuForm(StyleGuide.BaseGuide vorige, int id) : base(vorige)
         {
             InitializeComponent();
             bestelling = kaartService.getBestelling(id);

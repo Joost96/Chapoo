@@ -11,9 +11,24 @@ namespace StyleGuide
     public partial class PhoneGuide : StyleGuide.BaseGuide
     {
         private StyleGuide.BaseGuide vorige;
+        private System.Windows.Forms.Button back_btn;
+        public PhoneGuide(BaseGuide vorige)
+        {
+            this.vorige = vorige;
+            InitializeComponent();
+            this.back_btn = new System.Windows.Forms.Button();
+            this.back_btn.Image = Image.FromFile("../../../images/icon/Back.png");
+            //this.back_btn.Image = ((System.Drawing.Image)(resources.GetObject("back_btn.Image")));
+            this.back_btn.Location = new System.Drawing.Point(3, 441);
+            this.back_btn.Name = "back_btn";
+            this.back_btn.Size = new System.Drawing.Size(37, 30);
+            this.back_btn.TabIndex = 0;
+            this.back_btn.UseVisualStyleBackColor = true;
+            this.back_btn.Click += new System.EventHandler(this.back_btn_Click);
+            this.Controls.Add(this.back_btn);
+        }
         public PhoneGuide()
         {
-        
             InitializeComponent();
         }
 
