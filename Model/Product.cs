@@ -32,5 +32,11 @@ namespace Model
             Prijs = prijs;
             Voorraad = voorraad;
         }
+
+        public Product(int id, string naam)
+        {
+            Id = id;
+            Naam = naam;
+        }
     }
 }

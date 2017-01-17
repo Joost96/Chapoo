@@ -146,12 +146,39 @@ namespace DAL
             conn.Close();
         }
 
-        public Product ReadKeukenBarOverzicht ()
+        public List<BestellingProduct>ReadKeukenBarOverzicht(int keukenBar)
         {
-            List<Product> overzicht_K_B = new List<Product>();
+            SqlConnection conn = Connection.GetConnection("naam");
+            conn.Open();
+            string sql = "SELECT pb.[ProductId], pb.[BestellingId], pb.[b_status], pb.[aantal], pb.[tijd], pb.[commentaar], p.[naam],b.[TafelId], k.[is_keuken]" +
+                " FROM[RBS_1617F_db01].[dbo].[PRODUCTEN_IN_BESTELLING] pb " +
+                " JOIN[RBS_1617F_db01].[dbo].[PRODUCT] p ON pb.[ProductId] = p.[p_nr] " +
+                " JOIN[RBS_1617F_db01].[dbo].[BESTELLING] b ON pb.[BestellingId] = b.[id]" +
+                " JOIN [RBS_1617F_db01].[dbo].[KAART] k ON p.[KaartId] = k.[id]" +
+                " WHERE k.[is_keuken] = @keukenBar" +
+                " order by tijd ";
 
+            SqlCommand command = new SqlCommand(sql, conn);
+            command.Parameters.Add("@keukenBar", System.Data.SqlDbType.Int).Value = keukenBar;
+            command.Prepare();
+            SqlDataReader reader = command.ExecuteReader();
 
+            List<BestellingProduct> overzicht_K_B = new List<BestellingProduct>();
+            while (reader.Read())
+            {
+                int id = reader.GetInt32(0);
+                int bestellingId = reader.GetInt32(1);
+                int status = reader.GetInt32(2);
+                BestellingStatus bStatus = (BestellingStatus)status;
+                int aantal = reader.GetInt32(3);
+                DateTime tijd = reader.GetDateTime(4);
+                string commentaar = reader.GetString(5);
+                string naam = reader.GetString(6);
+
+                overzicht_K_B.Add(new BestellingProduct(id, naam, aantal, commentaar, tijd, bStatus));
+            }
+            conn.Close();
+            return overzicht_K_B;
         }
-
     }
 }

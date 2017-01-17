@@ -29,5 +29,10 @@ namespace Model
             Status = status;
             ProductBestelling = bestelling;
         }
+
+        public BestellingProduct(int id, string naam, int aantal, string commentaar, DateTime tijd, BestellingStatus status) : base(id, naam)
+        {
+
+        }
     }
 }

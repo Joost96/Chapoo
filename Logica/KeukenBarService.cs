@@ -12,16 +12,18 @@ namespace Logica
     {
         private BestellingDAO bestellingDal = new BestellingDAO();
 
-        public void changeBestellingStatus(int best)
+        // bestelling status veranderen
+        public void changeBestellingStatus()
         {
 
         }
-
-        public Bestelling getBestelling(int id)
+        /*
+        // lijst met bestellingen ophalen
+        public Bestelling getBestellingen()
         {
             return bestellingDal.ReadBestellingById(id);
         }
 
-
+    */
     }
 }
