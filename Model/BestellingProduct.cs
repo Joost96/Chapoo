@@ -20,8 +20,12 @@ namespace Model
             Commentaar = commentaar;
             Tijd = tijd;
             Status = status;
-            
-
+        }
+        public BestellingProduct(Product product , int aantal, BestellingStatus status)
+    : base(product.Id, product.CategoryProduct, product.Omschrijving, product.Naam, product.Prijs, product.Voorraad)
+        {
+            Aantal = aantal;
+            Status = status;
         }
     }
 }

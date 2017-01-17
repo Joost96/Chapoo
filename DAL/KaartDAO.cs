@@ -18,10 +18,10 @@ namespace DAL
             SqlConnection conn = Connection.GetConnection("naam");
             conn.Open();
             string sql = "SELECT p.[p_nr], p.[Naam], p.[prijs], p.[omschrijving], p.[voorraad], p.[CategoryId], c.[naam]" +
-                "FROM [RBS_1617F_db01].[dbo].[PRODUCT] AS p " +
+                "FROM [RBS_1617F_db01].[dbo].[PRODUCT] p " +
                 "JOIN [RBS_1617F_db01].[dbo].[KAART] ON KAART.id = p.KaartId " +
-                "JOIN [RBS_1617F_db01].[dbo].[Category] ON Category.id = p.CategoryId AS c" +
-                "WHERE KaartId = @KaartId";
+                "JOIN [RBS_1617F_db01].[dbo].[Category] c ON c.id = p.CategoryId " +
+                "WHERE p.KaartId = @KaartId";
             //KaartId
             //lunch = 1
             //diner = 2
