@@ -12,7 +12,7 @@ namespace UI
 {
     public partial class KeukenBarForm : StyleGuide.DesktopGuide
     {
-        public KeukenBarForm(bool locatie)
+        public KeukenBarForm(StyleGuide.BaseGuide vorigeForm, bool locatie)
         {
             InitializeComponent();
             loadBestellingen(locatie);

@@ -10,7 +10,7 @@ namespace UI
 {
     public partial class BetalenForm : StyleGuide.PhoneGuide
     {
-        public BetalenForm()
+        public BetalenForm(int bestellingId, StyleGuide.BaseGuide vorigeForm)
         {
             InitializeComponent();
         }

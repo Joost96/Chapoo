@@ -94,6 +94,9 @@
     <EmbeddedResource Include="BestellingMenuForm.resx">
       <DependentUpon>BestellingMenuForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="BetalenForm.resx">
+      <DependentUpon>BetalenForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EigenaarForm.resx">
       <DependentUpon>EigenaarForm.cs</DependentUpon>
     </EmbeddedResource>
