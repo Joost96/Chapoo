@@ -18,7 +18,7 @@ namespace UI
         }
         private List<BestellingProduct> bestellingProducten = new List<BestellingProduct>();
 
-        private void loadBestellingen(ListView lisoverzichtKB, int productId)
+        private void loadBestellingen(ListView lisoverzichtKB, Product product, int aantal, BestellingStatus status, Bestelling bestelling)
         {
             listView_keukenBar.Items.Clear();
             foreach (Product p in bestellingProducten.GetAllProducten(productId))
