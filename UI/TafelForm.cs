@@ -54,7 +54,7 @@ namespace UI
         private void bestellen_btn_Click(object sender, EventArgs e)
         {
             // verwijst door naar de Bestel kaart
-            BestellingMenuForm form = new BestellingMenuForm(tafelId);
+            BestellingMenuForm form = new BestellingMenuForm(this ,tafelId);
             form.Show();
             this.Close();
         }
