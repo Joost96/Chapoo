@@ -10,16 +10,17 @@ namespace Logica
 {
     class KeukenBarService
     {
-        private BestellingDAO bestellingDAL = new BestellingDAO();
+        private BestellingDAO bestellingDal = new BestellingDAO();
 
-        public void GetBestellingen()
+        public void changeBestellingStatus(int best)
         {
+            bool
 
         }
 
-        public void ChangeBestellingStatus(int best)
+        public Bestelling getBestelling(int id)
         {
-
+            return bestellingDal.ReadBestellingById(id);
         }
 
 
