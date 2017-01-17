@@ -85,6 +85,11 @@ namespace UI
             }
         }
 
+        private void panelEdit_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
 
       
     }
