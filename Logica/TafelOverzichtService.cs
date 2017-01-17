@@ -18,9 +18,9 @@ namespace Logica
             {
                 tafel.status = newStatus;
 
-                TafelDAO.Update(tafel);
+                tafelDAO.Update(tafel);
 
-                if (TafelDAO.Update(tafel) == false)
+                if (tafelDAO.Update(tafel) == false)
                     return false;
 
                 return true;
@@ -34,7 +34,7 @@ namespace Logica
         // Shahin = ik heb dit aangepast om static te verwijderen.
         public List<Tafel> GetTafels()
         {
-            List<Tafel> TafelOverzicht = TafelDAO.ReadAll();
+            List<Tafel> TafelOverzicht = tafelDAO.ReadAll();
             return TafelOverzicht; 
         }
     }

@@ -27,7 +27,7 @@ namespace Logica
             return totaalbedrag;
 
         }
-
+        //Gemaakt door mark. Voert betalinggegevens in voor bestellingId
         public void UpdateBetaalStatus(int bestellingId, BetaalMethode betaalmethode, double fooi)
         {
             int betalingmethode = (int)betaalmethode;

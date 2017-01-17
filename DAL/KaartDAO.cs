@@ -15,7 +15,7 @@ namespace DAL
     {
         public List<Product>ReadAllProduct(int KaartId)
         {
-            SqlConnection conn = Connection.GetConnection("naam");
+            SqlConnection conn = new SqlConnection("naam");
             conn.Open();
             string sql = "SELECT p.[p_nr], p.[Naam], p.[prijs], p.[omschrijving], p.[voorraad], p.[CategoryId], c.[naam]" +
                 "FROM [RBS_1617F_db01].[dbo].[PRODUCT] p " +

@@ -10,10 +10,9 @@ namespace Logica
 {
     public class TafelService
     {
-        private BestellingDAO bestellingDAO = new BestellingDAO();
-        public List<BestellingProduct> getBestellingProducten(int bestellingId)
+        public List<BestellingProduct> GetBestellingProducten(int bestellingId)
         {
-            List<BestellingProduct> bestelling = bestellingDAO.ReadBestellingById(bestellingId).Producten;
+            List<BestellingProduct> bestelling = BestellingDAO.ReadAllFromBestellingProducten(bestellingId);
 
             return bestelling;
 
@@ -33,7 +32,7 @@ namespace Logica
             List<Prijzen> Prijslijst = new List<Prijzen>();
             //Nieuw prijs struct en lijst bestellingproduct
             Prijzen PrijsPerProduct = new Prijzen();
-            List<BestellingProduct> bestelling = getBestellingProducten(bestellingId);
+            List<BestellingProduct> bestelling = GetBestellingProducten(bestellingId);
             
 
             //Voor ieder product in de lijst van de bestelling
