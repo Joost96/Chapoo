@@ -36,6 +36,7 @@
             this.userName_lbl = new System.Windows.Forms.Label();
             this.passWord_tb = new System.Windows.Forms.TextBox();
             this.userName_tb = new System.Windows.Forms.TextBox();
+            this.onbevoegd_lbl = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.password_icon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.people_icon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.logoChapoo)).BeginInit();
@@ -117,10 +118,23 @@
             this.userName_tb.Size = new System.Drawing.Size(166, 20);
             this.userName_tb.TabIndex = 8;
             // 
+            // onbevoegd_lbl
+            // 
+            this.onbevoegd_lbl.AutoSize = true;
+            this.onbevoegd_lbl.ForeColor = System.Drawing.Color.Red;
+            this.onbevoegd_lbl.Location = new System.Drawing.Point(99, 341);
+            this.onbevoegd_lbl.Name = "onbevoegd_lbl";
+            this.onbevoegd_lbl.Size = new System.Drawing.Size(233, 13);
+            this.onbevoegd_lbl.TabIndex = 16;
+            this.onbevoegd_lbl.Text = "Uw Gebruikersnaam of wachtwoord is incorrect!";
+            this.onbevoegd_lbl.Visible = false;
+            this.onbevoegd_lbl.Click += new System.EventHandler(this.label1_Click);
+            // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.ClientSize = new System.Drawing.Size(368, 473);
+            this.Controls.Add(this.onbevoegd_lbl);
             this.Controls.Add(this.password_icon);
             this.Controls.Add(this.people_icon);
             this.Controls.Add(this.logoChapoo);
@@ -148,5 +162,6 @@
         private System.Windows.Forms.Label userName_lbl;
         private System.Windows.Forms.TextBox passWord_tb;
         private System.Windows.Forms.TextBox userName_tb;
+        private System.Windows.Forms.Label onbevoegd_lbl;
     }
 }
