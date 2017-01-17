@@ -17,7 +17,7 @@ namespace Logica
 
         }
 
-        public void ChangeBestellingStatus()
+        public void ChangeBestellingStatus(int best)
         {
 
         }

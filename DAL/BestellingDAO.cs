@@ -12,7 +12,7 @@ namespace DAL
 {
     public class BestellingDAO
     {
-        public static List<BestellingProduct> ReadAllFromBestellingProducten(int bestellingId)
+        public Bestelling ReadBestellingById(int bestellingId)
         {
             {
                 List<BestellingProduct> BestellingProducten = new List<BestellingProduct>();
@@ -20,37 +20,37 @@ namespace DAL
                 SqlConnection conn = Connection.GetConnection("naam");
                 conn.Open();
                 string sqlBestelling = "SELECT b.[Id], b.[commentaar], b.[betaald], b.[betaalmethode], " +
-                    "b.[fooi], b.[datum], b.[totaalbedraag]," +
+                    "b.[fooi], b.[datum], b.[totaalbedrag]," +
                     "w.[w_nr], w.[voornaam], w.[achternaam], w.[rol], w.[wachtwoord], w.[username], " +
-                    "t.[tafel_nr], t.[t_status], t.[zitplaatsen]" +
-                    "FROM [RBS_1617F_db01].[dbo].[BESTELLING] b" +
-                    "JOIN [RBS_1617F_db01].[dbo].[Werknemer] w ON b.[WerkNemerId] = w.[w_nr]" +
-                    "JOIN [RBS_1617F_db01].[dbo].[Tafel] t ON b.[TafelId] = t.[tafel_nr]" +
+                    "t.[tafel_nr], t.[t_status], t.[zitplaatsen] " +
+                    "FROM [RBS_1617F_db01].[dbo].[BESTELLING] b " +
+                    "JOIN [RBS_1617F_db01].[dbo].[Werknemer] w ON b.[WerkNemerId] = w.[w_nr] " +
+                    "JOIN [RBS_1617F_db01].[dbo].[Tafel] t ON b.[TafelId] = t.[tafel_nr] " +
                     "WHERE Id = @BestellingId";
-                string sqlProducten = "SELECT p.[id], p.[Naam], p.[prijs], p.[omschrijving], p.[voorraad], " +
-                    "pb.[aantal], pb.[tijd], pb.[prijs], pb.[commentaar], " +
+                string sqlProducten = "SELECT p.[p_nr], p.[Naam], p.[prijs], p.[omschrijving], p.[voorraad], " +
+                    "pb.[b_status], pb.[aantal], pb.[tijd], pb.[commentaar], " +
                     "c.[id], c.[naam], c.[btw], " +
-                    "k.[id], k.[naam], k.[is_keuken]" +
-                    "FROM [RBS_1617F_db01].[dbo].[PRODUCTEN_IN_BESTELLING] pb" +
-                    "JOIN [RBS_1617F_db01].[dbo].[PRODUCT] p ON p.ProductId = pb.ProductId" +
-                    "JOIN [RBS_1617F_db01].[dbo].[Category] p ON c.Id = p.CategoryId" +
-                    "JOIN [RBS_1617F_db01].[dbo].[Kaart] k ON k.Id = c.KaartId" +
+                    "k.[id], k.[naam], k.[is_keuken] " +
+                    "FROM [RBS_1617F_db01].[dbo].[PRODUCTEN_IN_BESTELLING] pb " +
+                    "JOIN [RBS_1617F_db01].[dbo].[PRODUCT] p ON p.p_nr = pb.ProductId " +
+                    "JOIN [RBS_1617F_db01].[dbo].[Category] c ON c.Id = p.CategoryId " +
+                    "JOIN [RBS_1617F_db01].[dbo].[Kaart] k ON k.Id = c.KaartId " +
                     "WHERE BestellingId = @BestellingId";
                 
                                     
                 SqlCommand commandBestelling = new SqlCommand(sqlBestelling, conn);
                 SqlCommand commandProducten = new SqlCommand(sqlProducten, conn);
 
-                commandBestelling.Parameters.Add("@BestellingId", System.Data.SqlDbType.VarChar).Value = bestellingId;
-                commandProducten.Parameters.Add("@BestellingId", System.Data.SqlDbType.VarChar).Value = bestellingId;
+                commandBestelling.Parameters.Add("@BestellingId", System.Data.SqlDbType.Int).Value = bestellingId;
+                commandProducten.Parameters.Add("@BestellingId", System.Data.SqlDbType.Int).Value = bestellingId;
 
                 commandBestelling.Prepare();
                 commandProducten.Prepare();
 
                 SqlDataReader readerBestelling = commandBestelling.ExecuteReader();
                 SqlDataReader readerProducten = commandProducten.ExecuteReader();
+                
 
-                conn.Close();
                 if (readerBestelling.Read())
                 {
                     //bestelling
@@ -58,9 +58,9 @@ namespace DAL
                     string commentaar = readerBestelling.GetString(1);
                     bool betaald = readerBestelling.GetBoolean(2);
                     BetaalMethode betaalMethode = (BetaalMethode)readerBestelling.GetInt32(3);
-                    double fooi = readerBestelling.GetDouble(4);
+                    double fooi = (Double)readerBestelling.GetDecimal(4);
                     DateTime datum = readerBestelling.GetDateTime(5);
-                    double totaalBedrag = readerBestelling.GetDouble(6);
+                    double totaalBedrag = (double)readerBestelling.GetDecimal(6);
                     //werknemer
                     int werknemerId = readerBestelling.GetInt32(7);
                     string voornaam = readerBestelling.GetString(8);
@@ -77,6 +77,7 @@ namespace DAL
                     Tafel tafel = new Tafel(tafelNummer, statusTafel, zitplaatsen);
                     bestelling = new Bestelling(bestellingId,werknemer,tafel, commentaar, betaald, betaalMethode, fooi, datum, totaalBedrag , BestellingProducten);
                 }
+
                 while (readerProducten.Read())
                 {
                     //bestellingProduct
@@ -101,15 +102,31 @@ namespace DAL
                     Kaart kaart = new Kaart(kaartId, isKeuken, kaartNaam);
                     Category category = new Category(btw, categoryId, categoryNaam, kaart);
                     BestellingProduct bestellingproduct = new BestellingProduct(id, omschrijving, naam, prijs, voorraad, aantal, commentaar, tijd, productStatus, category);
+                    bestelling.AddProduct(bestellingproduct);
                 }
+                
                 conn.Close();
-                return BestellingProducten;
+                return bestelling;
             }
         }
 
-        public void  Update (List<BestellingProduct> bestellingen)
+        public void AddProductToBestelling(BestellingProduct product)
         {
-
+            SqlConnection conn = Connection.GetConnection("naam");
+            conn.Open();
+            string sql = "INSERT INTO [RBS_1617F_db01].[dbo].[PRODUCTEN_IN_BESTELLING] " +
+                "([ProductId],[BestellingId],[b_status],[aantal],[tijd],[commentaar]) " +
+                "VALUES (@ProductId, @BestellingId, @b_status, @aantal, @tijd, @commentaar) ";
+            SqlCommand command = new SqlCommand(sql, conn);
+            command.Parameters.Add("@ProductId", System.Data.SqlDbType.Int).Value = product.Id;
+            command.Parameters.Add("@BestellingId", System.Data.SqlDbType.Int).Value = product.ProductBestelling.Id;
+            command.Parameters.Add("@b_status", System.Data.SqlDbType.Int).Value = (int)product.Status;
+            command.Parameters.Add("@aantal", System.Data.SqlDbType.Int).Value = product.Aantal;
+            command.Parameters.Add("@tijd", System.Data.SqlDbType.DateTime).Value = product.Tijd;
+            command.Parameters.Add("@commentaar", System.Data.SqlDbType.VarChar).Value = product.Commentaar;
+            command.Prepare();
+            command.ExecuteNonQuery();
+            conn.Close();
         }
 
         public  void UpdateBetaalStatus(int bestellingId, int betaalmethode, double fooi, double totaalbedrag)

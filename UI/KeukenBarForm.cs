@@ -17,7 +17,8 @@ namespace UI
 
         private void loadBestellingen()
         {
-            
+            listView_keukenBar.Items.Clear();
+
         }
 
         private void logout_btn_Click(object sender, EventArgs e)

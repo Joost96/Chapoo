@@ -39,7 +39,7 @@ namespace DAL
                 double prijs = (double)reader.GetDecimal(2);
                 string omschrijving = reader.GetString(3);
                 int voorraad = reader.GetInt32(4);
-                menuKaart.Add(new Product(id, naam,omschrijving, prijs, voorraad));
+                menuKaart.Add(new Product(id,naam ,omschrijving, prijs, voorraad));
             }
             conn.Close();
             return menuKaart;
