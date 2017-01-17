@@ -12,7 +12,7 @@ namespace DAL
 {
     public class WerknemerDAO
     {
-       public static void Create(string voornaam, string achternaam, int rol, string wachtwoord, string username)
+       public void Create(string voornaam, string achternaam, int rol, string wachtwoord, string username)
         {
             SqlConnection conn = Connection.GetConnection("naam");
             conn.Open();

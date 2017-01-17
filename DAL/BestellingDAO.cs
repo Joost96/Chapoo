@@ -17,7 +17,7 @@ namespace DAL
             {
                 List<BestellingProduct> BestellingProducten = new List<BestellingProduct>();
                 Bestelling bestelling = null;
-                SqlConnection conn = Connection.GetConnection("naam");
+                SqlConnection conn = new SqlConnection("naam");
                 conn.Open();
                 string sqlBestelling = "SELECT b.[Id], b.[commentaar], b.[betaald], b.[betaalmethode], " +
                     "b.[fooi], b.[datum], b.[totaalbedrag]," +
@@ -128,7 +128,7 @@ namespace DAL
             command.ExecuteNonQuery();
             conn.Close();
         }
-
+        //Gemaakt door Mark
         public  void UpdateBetaalStatus(int bestellingId, int betaalmethode, double fooi, double totaalbedrag)
         {
             SqlConnection conn = Connection.GetConnection("naam");
