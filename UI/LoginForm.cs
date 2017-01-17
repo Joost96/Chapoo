@@ -50,7 +50,7 @@ namespace UI
             else if (rolVanWerknemer == WerknemerRol.keuken)
             {
                 Hide();
-                KeukenForm from = new KeukenForm();
+                KeukenBarForm from = new KeukenBarForm();
                 from.Show();
             }
 

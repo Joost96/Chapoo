@@ -35,33 +35,33 @@
             this.listViewDrank = new System.Windows.Forms.ListView();
             this.drankNaam = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.drankPrijs = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.drankVoorraad = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.lunch_tab = new System.Windows.Forms.TabPage();
+            this.btnLunchRemove = new System.Windows.Forms.Button();
+            this.btnLunchAdd = new System.Windows.Forms.Button();
             this.listViewLunch = new System.Windows.Forms.ListView();
             this.lunchNaam = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.lunchPrijs = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.lunchVoorraad = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.btnDinerRemove = new System.Windows.Forms.Button();
+            this.btnDinerAdd = new System.Windows.Forms.Button();
             this.listViewDiner = new System.Windows.Forms.ListView();
             this.dinerNaam = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.dinerPrijs = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.dinerVoorraad = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.listviewBestelling = new System.Windows.Forms.ListView();
-            this.refresh_btn = new System.Windows.Forms.Button();
-            this.bewerken_btn = new System.Windows.Forms.Button();
-            this.bestellen_btn = new System.Windows.Forms.Button();
             this.BestellingNaam = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.BestellingPrijs = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.BestellingAantal = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.drankVoorraad = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.lunchVoorraad = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.dinerVoorraad = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.btnLunchRemove = new System.Windows.Forms.Button();
-            this.btnLunchAdd = new System.Windows.Forms.Button();
-            this.btnDinerRemove = new System.Windows.Forms.Button();
-            this.btnDinerAdd = new System.Windows.Forms.Button();
-            this.panelEdit = new System.Windows.Forms.Panel();
-            this.txtBoxComment = new System.Windows.Forms.RichTextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btnSave = new System.Windows.Forms.Button();
             this.BestellingComentaar = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.refresh_btn = new System.Windows.Forms.Button();
+            this.bewerken_btn = new System.Windows.Forms.Button();
+            this.bestellen_btn = new System.Windows.Forms.Button();
+            this.panelEdit = new System.Windows.Forms.Panel();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtBoxComment = new System.Windows.Forms.RichTextBox();
             this.menu_tab.SuspendLayout();
             this.drinken_tab.SuspendLayout();
             this.lunch_tab.SuspendLayout();
@@ -146,6 +146,10 @@
             // 
             this.drankPrijs.Text = "Prijs";
             // 
+            // drankVoorraad
+            // 
+            this.drankVoorraad.Text = "Voorraad";
+            // 
             // lunch_tab
             // 
             this.lunch_tab.Controls.Add(this.btnLunchRemove);
@@ -158,6 +162,32 @@
             this.lunch_tab.TabIndex = 1;
             this.lunch_tab.Text = "Lunch";
             this.lunch_tab.UseVisualStyleBackColor = true;
+            // 
+            // btnLunchRemove
+            // 
+            this.btnLunchRemove.BackColor = System.Drawing.Color.Silver;
+            this.btnLunchRemove.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLunchRemove.Image = global::UI.Properties.Resources.Remove;
+            this.btnLunchRemove.Location = new System.Drawing.Point(233, 227);
+            this.btnLunchRemove.Name = "btnLunchRemove";
+            this.btnLunchRemove.Size = new System.Drawing.Size(29, 29);
+            this.btnLunchRemove.TabIndex = 20;
+            this.btnLunchRemove.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnLunchRemove.UseVisualStyleBackColor = false;
+            this.btnLunchRemove.Click += new System.EventHandler(this.btnRemove_Click);
+            // 
+            // btnLunchAdd
+            // 
+            this.btnLunchAdd.BackColor = System.Drawing.Color.Silver;
+            this.btnLunchAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLunchAdd.Image = global::UI.Properties.Resources.Create;
+            this.btnLunchAdd.Location = new System.Drawing.Point(69, 227);
+            this.btnLunchAdd.Name = "btnLunchAdd";
+            this.btnLunchAdd.Size = new System.Drawing.Size(29, 29);
+            this.btnLunchAdd.TabIndex = 19;
+            this.btnLunchAdd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnLunchAdd.UseVisualStyleBackColor = false;
+            this.btnLunchAdd.Click += new System.EventHandler(this.btnLunchAdd_Click);
             // 
             // listViewLunch
             // 
@@ -183,6 +213,10 @@
             // 
             this.lunchPrijs.Text = "Prijs";
             // 
+            // lunchVoorraad
+            // 
+            this.lunchVoorraad.Text = "voorraad";
+            // 
             // tabPage1
             // 
             this.tabPage1.Controls.Add(this.btnDinerRemove);
@@ -194,6 +228,32 @@
             this.tabPage1.TabIndex = 2;
             this.tabPage1.Text = "Diner";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // btnDinerRemove
+            // 
+            this.btnDinerRemove.BackColor = System.Drawing.Color.Silver;
+            this.btnDinerRemove.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDinerRemove.Image = global::UI.Properties.Resources.Remove;
+            this.btnDinerRemove.Location = new System.Drawing.Point(234, 227);
+            this.btnDinerRemove.Name = "btnDinerRemove";
+            this.btnDinerRemove.Size = new System.Drawing.Size(29, 29);
+            this.btnDinerRemove.TabIndex = 20;
+            this.btnDinerRemove.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnDinerRemove.UseVisualStyleBackColor = false;
+            this.btnDinerRemove.Click += new System.EventHandler(this.btnRemove_Click);
+            // 
+            // btnDinerAdd
+            // 
+            this.btnDinerAdd.BackColor = System.Drawing.Color.Silver;
+            this.btnDinerAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDinerAdd.Image = global::UI.Properties.Resources.Create;
+            this.btnDinerAdd.Location = new System.Drawing.Point(70, 227);
+            this.btnDinerAdd.Name = "btnDinerAdd";
+            this.btnDinerAdd.Size = new System.Drawing.Size(29, 29);
+            this.btnDinerAdd.TabIndex = 19;
+            this.btnDinerAdd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnDinerAdd.UseVisualStyleBackColor = false;
+            this.btnDinerAdd.Click += new System.EventHandler(this.btnDinerAdd_Click);
             // 
             // listViewDiner
             // 
@@ -219,6 +279,10 @@
             // 
             this.dinerPrijs.Text = "Prijs";
             // 
+            // dinerVoorraad
+            // 
+            this.dinerVoorraad.Text = "Voorraad";
+            // 
             // listviewBestelling
             // 
             this.listviewBestelling.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
@@ -235,6 +299,26 @@
             this.listviewBestelling.TabIndex = 7;
             this.listviewBestelling.UseCompatibleStateImageBehavior = false;
             this.listviewBestelling.View = System.Windows.Forms.View.Details;
+            // 
+            // BestellingNaam
+            // 
+            this.BestellingNaam.Text = "Naam";
+            this.BestellingNaam.Width = 160;
+            // 
+            // BestellingPrijs
+            // 
+            this.BestellingPrijs.Text = "Prijs";
+            this.BestellingPrijs.Width = 40;
+            // 
+            // BestellingAantal
+            // 
+            this.BestellingAantal.Text = "Aantal";
+            this.BestellingAantal.Width = 40;
+            // 
+            // BestellingComentaar
+            // 
+            this.BestellingComentaar.Text = "Comentaar";
+            this.BestellingComentaar.Width = 105;
             // 
             // refresh_btn
             // 
@@ -280,82 +364,6 @@
             this.bestellen_btn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.bestellen_btn.UseVisualStyleBackColor = false;
             // 
-            // BestellingNaam
-            // 
-            this.BestellingNaam.Text = "Naam";
-            // 
-            // BestellingPrijs
-            // 
-            this.BestellingPrijs.Text = "Prijs";
-            // 
-            // BestellingAantal
-            // 
-            this.BestellingAantal.Text = "Aantal";
-            // 
-            // drankVoorraad
-            // 
-            this.drankVoorraad.Text = "Voorraad";
-            // 
-            // lunchVoorraad
-            // 
-            this.lunchVoorraad.Text = "voorraad";
-            // 
-            // dinerVoorraad
-            // 
-            this.dinerVoorraad.Text = "Voorraad";
-            // 
-            // btnLunchRemove
-            // 
-            this.btnLunchRemove.BackColor = System.Drawing.Color.Silver;
-            this.btnLunchRemove.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLunchRemove.Image = global::UI.Properties.Resources.Remove;
-            this.btnLunchRemove.Location = new System.Drawing.Point(233, 227);
-            this.btnLunchRemove.Name = "btnLunchRemove";
-            this.btnLunchRemove.Size = new System.Drawing.Size(29, 29);
-            this.btnLunchRemove.TabIndex = 20;
-            this.btnLunchRemove.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnLunchRemove.UseVisualStyleBackColor = false;
-            this.btnLunchRemove.Click += new System.EventHandler(this.btnRemove_Click);
-            // 
-            // btnLunchAdd
-            // 
-            this.btnLunchAdd.BackColor = System.Drawing.Color.Silver;
-            this.btnLunchAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLunchAdd.Image = global::UI.Properties.Resources.Create;
-            this.btnLunchAdd.Location = new System.Drawing.Point(69, 227);
-            this.btnLunchAdd.Name = "btnLunchAdd";
-            this.btnLunchAdd.Size = new System.Drawing.Size(29, 29);
-            this.btnLunchAdd.TabIndex = 19;
-            this.btnLunchAdd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnLunchAdd.UseVisualStyleBackColor = false;
-            this.btnLunchAdd.Click += new System.EventHandler(this.btnLunchAdd_Click);
-            // 
-            // btnDinerRemove
-            // 
-            this.btnDinerRemove.BackColor = System.Drawing.Color.Silver;
-            this.btnDinerRemove.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDinerRemove.Image = global::UI.Properties.Resources.Remove;
-            this.btnDinerRemove.Location = new System.Drawing.Point(234, 227);
-            this.btnDinerRemove.Name = "btnDinerRemove";
-            this.btnDinerRemove.Size = new System.Drawing.Size(29, 29);
-            this.btnDinerRemove.TabIndex = 20;
-            this.btnDinerRemove.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnDinerRemove.UseVisualStyleBackColor = false;
-            this.btnDinerRemove.Click += new System.EventHandler(this.btnRemove_Click);
-            // 
-            // btnDinerAdd
-            // 
-            this.btnDinerAdd.BackColor = System.Drawing.Color.Silver;
-            this.btnDinerAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDinerAdd.Image = global::UI.Properties.Resources.Create;
-            this.btnDinerAdd.Location = new System.Drawing.Point(70, 227);
-            this.btnDinerAdd.Name = "btnDinerAdd";
-            this.btnDinerAdd.Size = new System.Drawing.Size(29, 29);
-            this.btnDinerAdd.TabIndex = 19;
-            this.btnDinerAdd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnDinerAdd.UseVisualStyleBackColor = false;
-            this.btnDinerAdd.Click += new System.EventHandler(this.btnDinerAdd_Click);
-            // 
             // panelEdit
             // 
             this.panelEdit.Controls.Add(this.btnSave);
@@ -366,23 +374,6 @@
             this.panelEdit.Size = new System.Drawing.Size(350, 285);
             this.panelEdit.TabIndex = 19;
             this.panelEdit.Visible = false;
-            // 
-            // txtBoxComment
-            // 
-            this.txtBoxComment.Location = new System.Drawing.Point(4, 41);
-            this.txtBoxComment.Name = "txtBoxComment";
-            this.txtBoxComment.Size = new System.Drawing.Size(342, 192);
-            this.txtBoxComment.TabIndex = 0;
-            this.txtBoxComment.Text = "";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(7, 19);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(57, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Comment :";
             // 
             // btnSave
             // 
@@ -399,9 +390,22 @@
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // BestellingComentaar
+            // label1
             // 
-            this.BestellingComentaar.Text = "Comentaar";
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(7, 19);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(57, 13);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Comment :";
+            // 
+            // txtBoxComment
+            // 
+            this.txtBoxComment.Location = new System.Drawing.Point(4, 41);
+            this.txtBoxComment.Name = "txtBoxComment";
+            this.txtBoxComment.Size = new System.Drawing.Size(342, 192);
+            this.txtBoxComment.TabIndex = 0;
+            this.txtBoxComment.Text = "";
             // 
             // BestellingMenuForm
             // 

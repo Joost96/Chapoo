@@ -47,12 +47,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Bar.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Bar.Designer.cs">
-      <DependentUpon>Bar.cs</DependentUpon>
-    </Compile>
     <Compile Include="BestellingMenuForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -65,11 +59,11 @@
     <Compile Include="EigenaarForm.Designer.cs">
       <DependentUpon>EigenaarForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="KeukenForm.cs">
+    <Compile Include="KeukenBarForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="KeukenForm.Designer.cs">
-      <DependentUpon>KeukenForm.cs</DependentUpon>
+    <Compile Include="KeukenBarForm.Designer.cs">
+      <DependentUpon>KeukenBarForm.cs</DependentUpon>
     </Compile>
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
@@ -91,8 +85,8 @@
     <EmbeddedResource Include="EigenaarForm.resx">
       <DependentUpon>EigenaarForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="KeukenForm.resx">
-      <DependentUpon>KeukenForm.cs</DependentUpon>
+    <EmbeddedResource Include="KeukenBarForm.resx">
+      <DependentUpon>KeukenBarForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>

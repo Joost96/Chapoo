@@ -8,11 +8,16 @@ using System.Windows.Forms;
 
 namespace UI
 {
-    public partial class KeukenForm : StyleGuide.DesktopGuide
+    public partial class KeukenBarForm : StyleGuide.DesktopGuide
     {
-        public KeukenForm()
+        public KeukenBarForm()
         {
             InitializeComponent();
+        }
+
+        private void loadBestellingen()
+        {
+            
         }
 
         private void logout_btn_Click(object sender, EventArgs e)
