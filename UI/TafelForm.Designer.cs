@@ -28,59 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.bewerken_btn = new System.Windows.Forms.Button();
-            this.bestellen_btn = new System.Windows.Forms.Button();
-            this.betalen_btn = new System.Windows.Forms.Button();
             this.listview_bestelling = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.betalen_btn = new System.Windows.Forms.Button();
+            this.bestellen_btn = new System.Windows.Forms.Button();
+            this.bewerken_btn = new System.Windows.Forms.Button();
+            this.panelEdit = new System.Windows.Forms.Panel();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtBoxComment = new System.Windows.Forms.RichTextBox();
+            this.panelEdit.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // bewerken_btn
-            // 
-            this.bewerken_btn.BackColor = System.Drawing.Color.Silver;
-            this.bewerken_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bewerken_btn.Image = global::UI.Properties.Resources.Modify;
-            this.bewerken_btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bewerken_btn.Location = new System.Drawing.Point(139, 425);
-            this.bewerken_btn.Name = "bewerken_btn";
-            this.bewerken_btn.Size = new System.Drawing.Size(88, 36);
-            this.bewerken_btn.TabIndex = 7;
-            this.bewerken_btn.Text = "Bewerken";
-            this.bewerken_btn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.bewerken_btn.UseVisualStyleBackColor = false;
-            // 
-            // bestellen_btn
-            // 
-            this.bestellen_btn.BackColor = System.Drawing.Color.PaleGreen;
-            this.bestellen_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bestellen_btn.Image = global::UI.Properties.Resources.Save;
-            this.bestellen_btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bestellen_btn.Location = new System.Drawing.Point(12, 425);
-            this.bestellen_btn.Name = "bestellen_btn";
-            this.bestellen_btn.Size = new System.Drawing.Size(87, 36);
-            this.bestellen_btn.TabIndex = 8;
-            this.bestellen_btn.Text = "Bestellen";
-            this.bestellen_btn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.bestellen_btn.UseVisualStyleBackColor = false;
-            this.bestellen_btn.Click += new System.EventHandler(this.bestellen_btn_Click);
-            // 
-            // betalen_btn
-            // 
-            this.betalen_btn.BackColor = System.Drawing.Color.SandyBrown;
-            this.betalen_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.betalen_btn.Image = global::UI.Properties.Resources.Shopping_cart;
-            this.betalen_btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.betalen_btn.Location = new System.Drawing.Point(269, 425);
-            this.betalen_btn.Name = "betalen_btn";
-            this.betalen_btn.Size = new System.Drawing.Size(87, 36);
-            this.betalen_btn.TabIndex = 9;
-            this.betalen_btn.Text = "Betalen";
-            this.betalen_btn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.betalen_btn.UseVisualStyleBackColor = false;
-            this.betalen_btn.Click += new System.EventHandler(this.betalen_btn_Click);
             // 
             // listview_bestelling
             // 
@@ -118,16 +79,107 @@
             this.columnHeader4.Text = "Prijs";
             this.columnHeader4.Width = 43;
             // 
+            // betalen_btn
+            // 
+            this.betalen_btn.BackColor = System.Drawing.Color.SandyBrown;
+            this.betalen_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.betalen_btn.Image = global::UI.Properties.Resources.Shopping_cart;
+            this.betalen_btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.betalen_btn.Location = new System.Drawing.Point(269, 425);
+            this.betalen_btn.Name = "betalen_btn";
+            this.betalen_btn.Size = new System.Drawing.Size(87, 36);
+            this.betalen_btn.TabIndex = 9;
+            this.betalen_btn.Text = "Betalen";
+            this.betalen_btn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.betalen_btn.UseVisualStyleBackColor = false;
+            this.betalen_btn.Click += new System.EventHandler(this.betalen_btn_Click);
+            // 
+            // bestellen_btn
+            // 
+            this.bestellen_btn.BackColor = System.Drawing.Color.PaleGreen;
+            this.bestellen_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bestellen_btn.Image = global::UI.Properties.Resources.Save;
+            this.bestellen_btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bestellen_btn.Location = new System.Drawing.Point(12, 425);
+            this.bestellen_btn.Name = "bestellen_btn";
+            this.bestellen_btn.Size = new System.Drawing.Size(87, 36);
+            this.bestellen_btn.TabIndex = 8;
+            this.bestellen_btn.Text = "Bestellen";
+            this.bestellen_btn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.bestellen_btn.UseVisualStyleBackColor = false;
+            this.bestellen_btn.Click += new System.EventHandler(this.bestellen_btn_Click);
+            // 
+            // bewerken_btn
+            // 
+            this.bewerken_btn.BackColor = System.Drawing.Color.Silver;
+            this.bewerken_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bewerken_btn.Image = global::UI.Properties.Resources.Modify;
+            this.bewerken_btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bewerken_btn.Location = new System.Drawing.Point(139, 425);
+            this.bewerken_btn.Name = "bewerken_btn";
+            this.bewerken_btn.Size = new System.Drawing.Size(88, 36);
+            this.bewerken_btn.TabIndex = 7;
+            this.bewerken_btn.Text = "Bewerken";
+            this.bewerken_btn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.bewerken_btn.UseVisualStyleBackColor = false;
+            this.bewerken_btn.Click += new System.EventHandler(this.bewerken_btn_Click);
+            // 
+            // panelEdit
+            // 
+            this.panelEdit.Controls.Add(this.btnSave);
+            this.panelEdit.Controls.Add(this.label1);
+            this.panelEdit.Controls.Add(this.txtBoxComment);
+            this.panelEdit.Location = new System.Drawing.Point(12, 12);
+            this.panelEdit.Name = "panelEdit";
+            this.panelEdit.Size = new System.Drawing.Size(350, 387);
+            this.panelEdit.TabIndex = 20;
+            this.panelEdit.Visible = false;
+            // 
+            // btnSave
+            // 
+            this.btnSave.BackColor = System.Drawing.Color.Silver;
+            this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.Image = global::UI.Properties.Resources.Modify;
+            this.btnSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSave.Location = new System.Drawing.Point(282, 239);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(58, 36);
+            this.btnSave.TabIndex = 20;
+            this.btnSave.Text = "Save";
+            this.btnSave.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(7, 19);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(57, 13);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Comment :";
+            // 
+            // txtBoxComment
+            // 
+            this.txtBoxComment.Location = new System.Drawing.Point(4, 41);
+            this.txtBoxComment.Name = "txtBoxComment";
+            this.txtBoxComment.Size = new System.Drawing.Size(342, 192);
+            this.txtBoxComment.TabIndex = 0;
+            this.txtBoxComment.Text = "";
+            // 
             // TafelForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.ClientSize = new System.Drawing.Size(368, 473);
+            this.Controls.Add(this.panelEdit);
             this.Controls.Add(this.listview_bestelling);
             this.Controls.Add(this.betalen_btn);
             this.Controls.Add(this.bestellen_btn);
             this.Controls.Add(this.bewerken_btn);
             this.Name = "TafelForm";
             this.Load += new System.EventHandler(this.TafelForm_Load);
+            this.panelEdit.ResumeLayout(false);
+            this.panelEdit.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -142,6 +194,10 @@
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.Panel panelEdit;
+        private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.RichTextBox txtBoxComment;
 
     }
 }

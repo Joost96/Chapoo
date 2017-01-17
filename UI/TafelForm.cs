@@ -14,6 +14,8 @@ namespace UI
     {
         public int bestellingId;
         private int tafelId;
+        private BestellingProduct editProduct;
+
         public TafelForm(int tafelId)
         {
             InitializeComponent();
@@ -48,6 +50,7 @@ namespace UI
 
         private void bestellen_btn_Click(object sender, EventArgs e)
         {
+            // verwijst door naar de Bestel kaart
             BestellingMenuForm form = new BestellingMenuForm(tafelId);
             form.Show();
             this.Close();
@@ -56,6 +59,27 @@ namespace UI
         private void betalen_btn_Click(object sender, EventArgs e)
         {
             BetalenForm form = new BetalenForm(bestellingId);
+            form.Show();
+            this.Close();
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            editProduct.Commentaar = txtBoxComment.Text;
+            panelEdit.Visible = false;
+        }
+
+        private void bewerken_btn_Click(object sender, EventArgs e)
+        {
+            BestellingProduct bestellingProduct = (BestellingProduct)listview_bestelling.SelectedItems[0].Tag;
+         //   BestellingProduct bestellingProduct = bestellingProducten.Find(bp => bp.Id == betsellingProductTag.Id);
+           
+            
+            if (bestellingProduct != null)
+            {
+                editProduct = bestellingProduct;
+                panelEdit.Visible = true;
+            }
         }
 
 

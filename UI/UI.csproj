@@ -53,6 +53,9 @@
     <Compile Include="BestellingMenuForm.Designer.cs">
       <DependentUpon>BestellingMenuForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="BetalenForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="EigenaarForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -87,6 +90,9 @@
     </Compile>
     <EmbeddedResource Include="BestellingMenuForm.resx">
       <DependentUpon>BestellingMenuForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BetalenForm.resx">
+      <DependentUpon>BetalenForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EigenaarForm.resx">
       <DependentUpon>EigenaarForm.cs</DependentUpon>

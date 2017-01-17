@@ -154,7 +154,7 @@ namespace DAL
             conn.Close();
         }
 
-        public Product ReadKeukenBarOverzicht ()
+     /*  public Product ReadKeukenBarOverzicht ()
         {
             List<Product> overzicht_K_B = new List<Product>();
 
@@ -211,7 +211,7 @@ namespace DAL
             Category category = new Category(btw, categoryId, categoryNaam, kaart);
             return new BestellingProduct(id, omschrijving, naam, prijs, voorraad, aantal, commentaar, tijd, productStatus, category);
 
-        }
+        }*/
 
     }
 }

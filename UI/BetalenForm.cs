@@ -12,9 +12,13 @@ namespace UI
 {
     public partial class BetalenForm : Form
     {
-        public BetalenForm()
+        private int bestellingId;
+
+        public BetalenForm(int bestellingId)
         {
-            InitializeComponent();
+            this.bestellingId = bestellingId;
+          //  InitializeComponent();
+          
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
