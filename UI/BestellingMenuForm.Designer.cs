@@ -279,6 +279,7 @@
             this.bestellen_btn.Text = "Bestellen";
             this.bestellen_btn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.bestellen_btn.UseVisualStyleBackColor = false;
+            this.bestellen_btn.Click += new System.EventHandler(this.bestellen_btn_Click);
             // 
             // BestellingNaam
             // 

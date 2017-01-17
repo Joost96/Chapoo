@@ -34,7 +34,7 @@ namespace Model
            Datum = datum;
            TotaalBedrag = totaalBedrag;
             Producten = producten;
-
+            CreateProducten();
        }
 
        public List<BestellingProduct> CreateProducten()

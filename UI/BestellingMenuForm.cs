@@ -16,9 +16,10 @@ namespace UI
         private BestellenKaartService kaartService = new BestellenKaartService();
         private List<BestellingProduct> bestellingProducten = new List<BestellingProduct>();
         private BestellingProduct editProduct;
-        public BestellingMenuForm()
+        public BestellingMenuForm(int id)
         {
             InitializeComponent();
+            kaartService.getBestelling(id);
         }
 
         private void loadKaart(ListView listview , int kaartId)
@@ -149,6 +150,11 @@ namespace UI
                 editProduct = bestellingProduct;
                 panelEdit.Visible = true;
             }
+        }
+
+        private void bestellen_btn_Click(object sender, EventArgs e)
+        {
+            kaartService.AddToBestelling(bestellingProducten);
         }
     }
 }

@@ -14,7 +14,7 @@ namespace Model
         public BestellingStatus Status { get; set; }
 
         public BestellingProduct(int id, string omschrijving, string naam, double prijs,int voorraad ,int aantal, string commentaar, DateTime tijd, BestellingStatus status, Category category) 
-            :base(id,category, omschrijving, naam, prijs, voorraad)
+            :base(id,category, naam , omschrijving, prijs, voorraad)
         {
             Aantal = aantal;
             Commentaar = commentaar;
@@ -22,7 +22,7 @@ namespace Model
             Status = status;
         }
         public BestellingProduct(Product product , int aantal, BestellingStatus status)
-    : base(product.Id, product.CategoryProduct, product.Omschrijving, product.Naam, product.Prijs, product.Voorraad)
+    : base(product.Id, product.CategoryProduct, product.Naam, product.Omschrijving, product.Prijs, product.Voorraad)
         {
             Aantal = aantal;
             Status = status;

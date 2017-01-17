@@ -12,7 +12,7 @@ namespace DAL
 {
     public class BestellingDAO
     {
-        public static List<BestellingProduct> ReadAllFromBestellingProducten(int bestellingId)
+        public Bestelling ReadBestellingById(int bestellingId)
         {
             {
                 List<BestellingProduct> BestellingProducten = new List<BestellingProduct>();
@@ -101,13 +101,15 @@ namespace DAL
                     Kaart kaart = new Kaart(kaartId, isKeuken, kaartNaam);
                     Category category = new Category(btw, categoryId, categoryNaam, kaart);
                     BestellingProduct bestellingproduct = new BestellingProduct(id, omschrijving, naam, prijs, voorraad, aantal, commentaar, tijd, productStatus, category);
+                    bestelling.AddProduct(bestellingproduct);
                 }
+                
                 conn.Close();
-                return BestellingProducten;
+                return bestelling;
             }
         }
 
-        public void  Update (List<BestellingProduct> bestellingen)
+        public void AddProductToBestelling(BestellingProduct product)
         {
 
         }
