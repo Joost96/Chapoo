@@ -3,25 +3,38 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DAL;
 using Model;
+using DAL;
 
 namespace Logica
 {
     class KeukenBarService
     {
-        private BestellingDAO bestellingDal = new BestellingDAO();
-
-        public void changeBestellingStatus(int best)
+        public BestellingProduct ChangeStatus(BestellingProduct product, BestellingStatus newStatus)
         {
-
+            product.Status = newStatus;
+            return product;
         }
 
-        public Bestelling getBestelling(int id)
+        public List<BestellingProduct> GetOpenBestellingen(List<BestellingProduct> producten)
         {
-            return bestellingDal.ReadBestellingById(id);
+            List<BestellingProduct> openBestelling = new List<BestellingProduct>();
+
+            foreach(BestellingProduct p in producten)
+            {
+               
+                if (p.Status == BestellingStatus.Prepare || p.Status == BestellingStatus.Queue)
+                {
+                    openBestelling.Add(p);
+                }
+                          
+            }
+
+            return openBestelling;
         }
 
 
+            
+        
     }
 }
