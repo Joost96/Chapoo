@@ -22,7 +22,7 @@ namespace Model
 
 
 
-       public Bestelling(int id,Werknemer bediening, Tafel tafelBestelling, string commentaar, bool betaald, BetaalMethode betalingsMiddel,  double fooi, DateTime datum, double totaalBedrag, List<BestellingProduct> producten)
+       public Bestelling(int id,Werknemer bediening, Tafel tafelBestelling, string commentaar, bool betaald, BetaalMethode betalingsMiddel,  double fooi, DateTime datum, double totaalBedrag)
        {
            Id = id;
            Bediening = bediening;
@@ -33,7 +33,7 @@ namespace Model
            Fooi = fooi;
            Datum = datum;
            TotaalBedrag = totaalBedrag;
-            Producten = producten;
+            Producten = new List<BestellingProduct>();
             CreateProducten();
        }
 
