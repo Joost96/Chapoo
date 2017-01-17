@@ -65,6 +65,7 @@
             this.bestellen_btn.Text = "Bestellen";
             this.bestellen_btn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.bestellen_btn.UseVisualStyleBackColor = false;
+            this.bestellen_btn.Click += new System.EventHandler(this.bestellen_btn_Click);
             // 
             // betalen_btn
             // 
@@ -79,6 +80,7 @@
             this.betalen_btn.Text = "Betalen";
             this.betalen_btn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.betalen_btn.UseVisualStyleBackColor = false;
+            this.betalen_btn.Click += new System.EventHandler(this.betalen_btn_Click);
             // 
             // listview_bestelling
             // 
@@ -87,6 +89,7 @@
             this.columnHeader2,
             this.columnHeader3,
             this.columnHeader4});
+            this.listview_bestelling.FullRowSelect = true;
             this.listview_bestelling.GridLines = true;
             this.listview_bestelling.Location = new System.Drawing.Point(15, 12);
             this.listview_bestelling.Name = "listview_bestelling";

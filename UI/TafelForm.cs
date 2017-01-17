@@ -12,29 +12,31 @@ namespace UI
 {
     public partial class TafelForm : StyleGuide.PhoneGuide
     {
+        public int bestellingId;
+        private int tafelId;
         public TafelForm(int tafelId)
         {
             InitializeComponent();
-              
+            this.tafelId = tafelId;
         }
 
         private void TafelForm_Load(object sender, EventArgs e)
         {
-            // Add clear() oid !
+            // laad de kaart!
             LaadKaart();
 
         }
 
         private void LaadKaart()
         {
-            int bestellingid;
+           
             List<BestellingProduct> bestelling = new List<BestellingProduct>();
             TafelService tafel = new TafelService();
-            tafel.GetBestellingIdByTafelId(tafelId);
+           
             // vraagt bestellingId op
 
             listview_bestelling.Items.Clear();
-            foreach (BestellingProduct p in tafel.GetBestellingProducten(bestellingid)) // zet de items in de Listview
+            foreach (BestellingProduct p in tafel.GetBestellingByTafelId(tafelId)) // zet de items in de Listview
             {
 
                 ListViewItem bestellingItem = new ListViewItem(p.Naam + p.Aantal + p.Commentaar);
@@ -43,6 +45,19 @@ namespace UI
             }
 
         }
+
+        private void bestellen_btn_Click(object sender, EventArgs e)
+        {
+            BestellingMenuForm form = new BestellingMenuForm(tafelId);
+            form.Show();
+            this.Close();
+        }
+
+        private void betalen_btn_Click(object sender, EventArgs e)
+        {
+            BetalenForm form = new BetalenForm(bestellingId);
+        }
+
 
       
     }
