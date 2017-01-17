@@ -84,5 +84,13 @@ namespace UI
                 panelEdit.Visible = true;
             }
         }
+
+        private void panelEdit_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+
+      
     }
 }

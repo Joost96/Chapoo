@@ -18,6 +18,7 @@ namespace StyleGuide
             InitializeComponent();
             this.back_btn = new System.Windows.Forms.Button();
             this.back_btn.Image = Image.FromFile("../../../images/icon/Back.png");
+            this.back_btn.Text = "Back";
             //this.back_btn.Image = ((System.Drawing.Image)(resources.GetObject("back_btn.Image")));
             this.back_btn.Location = new System.Drawing.Point(3, 441);
             this.back_btn.Name = "back_btn";
@@ -27,6 +28,8 @@ namespace StyleGuide
             this.back_btn.Click += new System.EventHandler(this.back_btn_Click);
             this.Controls.Add(this.back_btn);
         }
+
+     
         public PhoneGuide()
         {
             InitializeComponent();

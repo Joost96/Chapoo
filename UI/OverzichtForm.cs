@@ -55,8 +55,11 @@ namespace UI
 
         private void logout_btn_Click(object sender, EventArgs e)
         {
-            LoginForm from = new LoginForm();
-            from.Show();
+            Hide();
+            LoginForm form = new LoginForm();
+            form.Show();
         }
+
+        
     }
 }

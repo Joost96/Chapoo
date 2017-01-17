@@ -46,16 +46,16 @@ namespace UI
             {
 
                 Hide();
-                EigenaarForm from = new EigenaarForm(this);
-                from.Show();
+                EigenaarForm form = new EigenaarForm(this);
+                form.Show();
                 // hide maar nog niet close ???
             }
 
             else if (rolVanWerknemer == WerknemerRol.keuken)
             {
                 Hide();
-                KeukenBarForm from = new KeukenBarForm(this,true);
-                from.Show();
+                KeukenBarForm form = new KeukenBarForm(this,true);
+                form.Show();
             }
 
             else if (rolVanWerknemer == WerknemerRol.onbevoegd)
