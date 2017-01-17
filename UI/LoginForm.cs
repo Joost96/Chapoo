@@ -20,6 +20,7 @@ namespace UI
 
         private void login_btn_Click(object sender, EventArgs e)
         {
+            
                         string userName = userName_tb.Text;
             string passWord = passWord_tb.Text;
 
@@ -30,14 +31,14 @@ namespace UI
             if (rolVanWerknemer == WerknemerRol.bar)
             {
                 Hide();
-                KeukenBarForm form = new KeukenBarForm(false);
+                KeukenBarForm form = new KeukenBarForm(this,false);
                 form.Show();
             }
 
             else if (rolVanWerknemer == WerknemerRol.bediening)
             {
                 Hide();
-                OverzichtForm overzicht = new OverzichtForm();
+                OverzichtForm overzicht = new OverzichtForm(this);
                 overzicht.Show();
             }
 
@@ -45,7 +46,7 @@ namespace UI
             {
 
                 Hide();
-                EigenaarForm from = new EigenaarForm();
+                EigenaarForm from = new EigenaarForm(this);
                 from.Show();
                 // hide maar nog niet close ???
             }
@@ -53,7 +54,7 @@ namespace UI
             else if (rolVanWerknemer == WerknemerRol.keuken)
             {
                 Hide();
-                KeukenBarForm from = new KeukenBarForm(true);
+                KeukenBarForm from = new KeukenBarForm(this,true);
                 from.Show();
             }
 

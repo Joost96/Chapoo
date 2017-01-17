@@ -10,7 +10,7 @@ namespace UI
 {
     public partial class EigenaarForm : StyleGuide.DesktopGuide
     {
-        public EigenaarForm()
+        public EigenaarForm(StyleGuide.BaseGuide vorige)
         {
             InitializeComponent();
         }

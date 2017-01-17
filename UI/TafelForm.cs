@@ -16,7 +16,7 @@ namespace UI
         private int tafelId;
         private BestellingProduct editProduct;
 
-        public TafelForm(int tafelId)
+        public TafelForm(StyleGuide.BaseGuide, int tafelId)
         {
             InitializeComponent();
             this.tafelId = tafelId;
