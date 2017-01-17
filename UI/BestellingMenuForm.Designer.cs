@@ -44,7 +44,6 @@
             this.dinerNaam = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.dinerPrijs = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.listviewBestelling = new System.Windows.Forms.ListView();
-            this.refresh_btn = new System.Windows.Forms.Button();
             this.bewerken_btn = new System.Windows.Forms.Button();
             this.bestellen_btn = new System.Windows.Forms.Button();
             this.BestellingNaam = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -236,21 +235,6 @@
             this.listviewBestelling.UseCompatibleStateImageBehavior = false;
             this.listviewBestelling.View = System.Windows.Forms.View.Details;
             // 
-            // refresh_btn
-            // 
-            this.refresh_btn.BackColor = System.Drawing.Color.Pink;
-            this.refresh_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.refresh_btn.Image = global::UI.Properties.Resources.Refresh;
-            this.refresh_btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.refresh_btn.Location = new System.Drawing.Point(9, 430);
-            this.refresh_btn.Name = "refresh_btn";
-            this.refresh_btn.Size = new System.Drawing.Size(90, 36);
-            this.refresh_btn.TabIndex = 16;
-            this.refresh_btn.Text = "Verversen";
-            this.refresh_btn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.refresh_btn.UseVisualStyleBackColor = false;
-            this.refresh_btn.Click += new System.EventHandler(this.refresh_btn_Click);
-            // 
             // bewerken_btn
             // 
             this.bewerken_btn.BackColor = System.Drawing.Color.Silver;
@@ -261,7 +245,7 @@
             this.bewerken_btn.Name = "bewerken_btn";
             this.bewerken_btn.Size = new System.Drawing.Size(83, 36);
             this.bewerken_btn.TabIndex = 6;
-            this.bewerken_btn.Text = "Bewerken";
+            this.bewerken_btn.Text = "Comentaar";
             this.bewerken_btn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.bewerken_btn.UseVisualStyleBackColor = false;
             this.bewerken_btn.Click += new System.EventHandler(this.bewerken_btn_Click);
@@ -409,7 +393,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.ClientSize = new System.Drawing.Size(368, 473);
             this.Controls.Add(this.panelEdit);
-            this.Controls.Add(this.refresh_btn);
             this.Controls.Add(this.menu_tab);
             this.Controls.Add(this.listviewBestelling);
             this.Controls.Add(this.bewerken_btn);
@@ -444,7 +427,6 @@
         private System.Windows.Forms.ListView listviewBestelling;
         private System.Windows.Forms.Button bewerken_btn;
         private System.Windows.Forms.Button bestellen_btn;
-        private System.Windows.Forms.Button refresh_btn;
         private System.Windows.Forms.Button btnDrankRemove;
         private System.Windows.Forms.Button btnDrankAdd;
         private System.Windows.Forms.ColumnHeader BestellingNaam;

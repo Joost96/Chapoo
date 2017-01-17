@@ -123,7 +123,7 @@ namespace DAL
             command.Parameters.Add("@b_status", System.Data.SqlDbType.Int).Value = (int)product.Status;
             command.Parameters.Add("@aantal", System.Data.SqlDbType.Int).Value = product.Aantal;
             command.Parameters.Add("@tijd", System.Data.SqlDbType.DateTime).Value = product.Tijd;
-            command.Parameters.Add("@commentaar", System.Data.SqlDbType.VarChar).Value = product.Commentaar;
+            command.Parameters.Add("@commentaar", System.Data.SqlDbType.VarChar,45).Value = product.Commentaar;
             command.Prepare();
             command.ExecuteNonQuery();
             conn.Close();

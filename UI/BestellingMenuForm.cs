@@ -105,13 +105,6 @@ namespace UI
             loadKaart(listViewDrank , 3);
         }
 
-        private void refresh_btn_Click(object sender, EventArgs e)
-        {
-            loadKaart(listViewLunch, 1);
-            loadKaart(listViewDiner, 2);
-            loadKaart(listViewDrank, 3);
-        }
-
         private void listView_dranken_SelectedIndexChanged(object sender, EventArgs e)
         {
 
@@ -156,6 +149,7 @@ namespace UI
 
         private void bestellen_btn_Click(object sender, EventArgs e)
         {
+            listviewBestelling.Items.Clear();
             kaartService.AddToBestelling(bestellingProducten);
         }
     }
