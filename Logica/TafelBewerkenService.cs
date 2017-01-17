@@ -11,9 +11,10 @@ namespace Logica
 {
     public class TafelBewerkenService
     {
+        private BestellingDAO bestellingdao = new BestellingDAO();
         public List<BestellingProduct> getBestellingProducten(int bestellingId)
         {
-            List<BestellingProduct> bestelling = BestellingDAO.ReadAllFromBestellingProducten(bestellingId);
+            List<BestellingProduct> bestelling = bestellingdao.ReadBestellingById(bestellingId).Producten;
 
            return bestelling;
 
@@ -34,7 +35,7 @@ namespace Logica
                               }
                           }
                       }
-                      BestellingDAO.Update(bestelling);
+                      //BestellingDAO.Update(bestelling);
             return bestelling;
         }
 

@@ -15,14 +15,13 @@ namespace DAL
     {
         public List<Product>ReadAllProduct(int KaartId)
         {
-            SqlConnection conn = Connection.GetConnection("naam");
+            SqlConnection conn = new SqlConnection("naam");
             conn.Open();
-            string sql = "SELECT p.[p_nr], p.[Naam], p.[prijs], p.[omschrijving], p.[voorraad]" +
-                "FROM [RBS_1617F_db01].[dbo].[PRODUCT] AS p " +
+            string sql = "SELECT p.[p_nr], p.[Naam], p.[prijs], p.[omschrijving], p.[voorraad], p.[CategoryId], c.[naam]" +
+                "FROM [RBS_1617F_db01].[dbo].[PRODUCT] p " +
                 "JOIN [RBS_1617F_db01].[dbo].[KAART] ON KAART.id = p.KaartId " +
-                "WHERE KaartId = @KaartId";
-
-
+                "JOIN [RBS_1617F_db01].[dbo].[Category] c ON c.id = p.CategoryId " +
+                "WHERE p.KaartId = @KaartId";
             //KaartId
             //lunch = 1
             //diner = 2
@@ -40,7 +39,7 @@ namespace DAL
                 double prijs = (double)reader.GetDecimal(2);
                 string omschrijving = reader.GetString(3);
                 int voorraad = reader.GetInt32(4);
-                menuKaart.Add(new Product(id, naam,omschrijving, prijs, voorraad));
+                menuKaart.Add(new Product(id,naam ,omschrijving, prijs, voorraad));
             }
             conn.Close();
             return menuKaart;

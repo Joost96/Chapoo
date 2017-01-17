@@ -32,8 +32,5 @@ namespace Model
             Prijs = prijs;
             Voorraad = voorraad;
         }
-
-
     }
 }
-

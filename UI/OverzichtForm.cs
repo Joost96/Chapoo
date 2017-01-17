@@ -19,7 +19,13 @@ namespace UI
 
         private void OverzichtForm_Load(object sender, EventArgs e)
         {
-            foreach (Tafel tafel in TafelOverzichtService.GetTafels())
+            TafelsLaden();
+        }
+
+        private void TafelsLaden()
+        {
+            TafelOverzichtService tOverzichtServ = new TafelOverzichtService();
+            foreach (Tafel tafel in tOverzichtServ.GetTafels())
             {
                 Button btn = new Button();
                 btn.Text = "Tafel " + tafel.tafelNummer.ToString() + ' ' + tafel.status.ToString();

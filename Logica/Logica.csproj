@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="BestellenKaartService.cs" />
     <Compile Include="BetalenService.cs" />
+    <Compile Include="KeukenBarService.cs" />
     <Compile Include="LoginService.cs" />
     <Compile Include="OrderOverzichtService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
