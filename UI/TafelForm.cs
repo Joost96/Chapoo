@@ -32,13 +32,14 @@ namespace UI
         private void LaadKaart()
         {
            
-            List<BestellingProduct> bestelling = new List<BestellingProduct>();
+            
             TafelService tafel = new TafelService();
            
             // vraagt bestellingId op
 
             listview_bestelling.Items.Clear();
-            foreach (BestellingProduct p in tafel.GetBestellingByTafelId(tafelId)) // zet de items in de Listview
+            Bestelling bestelling = tafel.GetBestellingByTafelId(tafelId);
+            foreach (BestellingProduct p in bestelling.Producten ) // zet de items in de Listview
             {
 
                 ListViewItem bestellingItem = new ListViewItem(p.Naam + p.Aantal + p.Commentaar);

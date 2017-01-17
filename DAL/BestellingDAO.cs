@@ -158,7 +158,7 @@ namespace DAL
         {
             List<Product> overzicht_K_B = new List<Product>();
 
-        }
+        }*/
         private Bestelling createBestellingFormReader(SqlDataReader reader)
         {
             //bestelling
@@ -211,7 +211,7 @@ namespace DAL
             Category category = new Category(btw, categoryId, categoryNaam, kaart);
             return new BestellingProduct(id, omschrijving, naam, prijs, voorraad, aantal, commentaar, tijd, productStatus, category);
 
-        }*/
+        }
 
     }
 }

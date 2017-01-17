@@ -69,6 +69,17 @@ namespace Logica
 
         }
 
+        public Bestelling GetBestellingByTafelId(int tafelId)
+        {
+            BestellingDAO bestellingDAO = new BestellingDAO();
+            Bestelling bestelling = bestellingDAO.ReadBestellingByTafelId(tafelId);
+            return bestelling;
+
+           
+
+            
+        }
+
     }
 }
 
