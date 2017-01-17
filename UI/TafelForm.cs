@@ -25,7 +25,7 @@ namespace UI
         private void TafelForm_Load(object sender, EventArgs e)
         {
             // laad de kaart!
-           LaadKaart();
+            LaadKaart();
 
         }
 
@@ -42,14 +42,12 @@ namespace UI
             foreach (BestellingProduct p in bestelling.Producten ) // zet de items in de Listview
             {
 
-                ListViewItem bestellingItem = new ListViewItem(p.Naam);
-                bestellingItem.SubItems.Add(p.Aantal.ToString());
-                bestellingItem.SubItems.Add(p.Commentaar);
+                ListViewItem bestellingItem = new ListViewItem(p.Naam + p.Aantal + p.Commentaar);
                 bestellingItem.SubItems.Add(p.Prijs.ToString("C2"));
                 listview_bestelling.Items.Add(bestellingItem);
             }
 
-        } 
+        }
 
         private void bestellen_btn_Click(object sender, EventArgs e)
         {
@@ -66,25 +64,7 @@ namespace UI
             this.Close();
         }
 
-        private void btnSave_Click(object sender, EventArgs e)
-        {
-            editProduct.Commentaar = txtBoxComment.Text;
-            panelEdit.Visible = false;
-        }
-
-        private void bewerken_btn_Click(object sender, EventArgs e)
-        {
-            BestellingProduct bestellingProduct = (BestellingProduct)listview_bestelling.SelectedItems[0].Tag;
-         //   BestellingProduct bestellingProduct = bestellingProducten.Find(bp => bp.Id == betsellingProductTag.Id);
-           
-            
-            if (bestellingProduct != null)
-            {
-                editProduct = bestellingProduct;
-                panelEdit.Visible = true;
-            }
-        }
-
+  
 
       
     }
