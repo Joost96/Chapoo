@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Model;
 using System.Data.SqlClient;
 using System.Data.SqlTypes;
+using System.Configuration;
 
 namespace DAL
 {
@@ -15,7 +16,7 @@ namespace DAL
     {
         public List<Product>ReadAllProduct(int KaartId)
         {
-            SqlConnection conn = new SqlConnection("naam");
+            SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["constr"].ConnectionString);
             conn.Open();
             string sql = "SELECT p.[p_nr], p.[Naam], p.[prijs], p.[omschrijving], p.[voorraad], p.[CategoryId], c.[naam]" +
                 "FROM [RBS_1617F_db01].[dbo].[PRODUCT] p " +

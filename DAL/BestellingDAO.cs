@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Model;
 using System.Data.SqlClient;
 using System.Data.SqlTypes;
-
+using System.Configuration;
 
 namespace DAL
 {
@@ -17,7 +17,7 @@ namespace DAL
             {
                 List<BestellingProduct> BestellingProducten = new List<BestellingProduct>();
                 Bestelling bestelling = null;
-                SqlConnection conn = new SqlConnection("naam");
+                SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["constr"].ConnectionString);
                 conn.Open();
                 string sqlBestelling = "SELECT b.[Id], b.[commentaar], b.[betaald], b.[betaalmethode], " +
                     "b.[fooi], b.[datum], b.[totaalbedrag]," +
@@ -71,7 +71,7 @@ namespace DAL
             {
                 List<BestellingProduct> BestellingProducten = new List<BestellingProduct>();
                 Bestelling bestelling = null;
-                SqlConnection conn = new SqlConnection("naam");
+                SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["constr"].ConnectionString);
                 conn.Open();
                 string sqlBestelling = "SELECT b.[Id], b.[commentaar], b.[betaald], b.[betaalmethode], " +
                     "b.[fooi], b.[datum], b.[totaalbedrag]," +
@@ -120,7 +120,7 @@ namespace DAL
         }
         public void AddProductToBestelling(BestellingProduct product)
         {
-            SqlConnection conn = Connection.GetConnection("naam");
+            SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["constr"].ConnectionString);
             conn.Open();
             string sql = "INSERT INTO [RBS_1617F_db01].[dbo].[PRODUCTEN_IN_BESTELLING] " +
                 "([ProductId],[BestellingId],[b_status],[aantal],[tijd],[commentaar]) " +
@@ -139,7 +139,7 @@ namespace DAL
         //Gemaakt door Mark
         public  void UpdateBetaalStatus(int bestellingId, int betaalmethode, double fooi, double totaalbedrag)
         {
-            SqlConnection conn = Connection.GetConnection("naam");
+            SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["constr"].ConnectionString);
             conn.Open();
             string sql = "INSERT INTO [RBS_1617F_db01].[dbo].[BESTELLING](betaalmethode, fooi, totaalbedrag) " +
                 "VALUES (@betaalmethode, @fooi, @totaalbedrag) " +
@@ -159,6 +159,7 @@ namespace DAL
             List<Product> overzicht_K_B = new List<Product>();
 
         }*/
+
         private Bestelling createBestellingFormReader(SqlDataReader reader)
         {
             //bestelling

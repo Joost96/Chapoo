@@ -17,7 +17,7 @@ namespace DAL
         public bool Update(Tafel tafel)
         {
             bool updatesuccesful = false;
-            SqlConnection conn = new SqlConnection("naam");
+            SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["constr"].ConnectionString);
             conn.Open();
             string sql = "UPDATE[RBS_1617F_db01].[dbo].[WERKNEMER](status, zitplaatsen) " +
                 "VALUES (@zitplaatsen, @status) ";
@@ -42,7 +42,7 @@ namespace DAL
             //    Tafel tafel = new Tafel();
             
 
-            SqlConnection conn = Connection.GetConnection("naam");
+            SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["constr"].ConnectionString);
             conn.Open();
             string sql = "SELECT [tafel_nr], [t_status], [zitplaatsen]" +
                 "FROM [RBS_1617F_db01].[dbo].[TAFEL] ";

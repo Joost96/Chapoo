@@ -25,11 +25,11 @@ namespace UI
         private void TafelForm_Load(object sender, EventArgs e)
         {
             // laad de kaart!
-            LaadKaart();
+            //LaadKaart();
 
         }
 
-        private void LaadKaart()
+     /*   private void LaadKaart()
         {
            
             
@@ -47,7 +47,7 @@ namespace UI
                 listview_bestelling.Items.Add(bestellingItem);
             }
 
-        }
+        } */
 
         private void bestellen_btn_Click(object sender, EventArgs e)
         {
