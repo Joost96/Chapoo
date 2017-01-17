@@ -8,9 +8,8 @@ namespace Model
 {
    public class Bestelling
     {
-       private int id;
-
-       public int Id { get; }
+      
+       public int Id { get; private set; }
        public Werknemer Bediening { get; set; }
        public Tafel TafelBestelling { get; set; }
        public string Commentaar { get; set; }
@@ -26,7 +25,7 @@ namespace Model
        public Bestelling(int id,Werknemer bediening, Tafel tafelBestelling, string commentaar, bool betaald, BetaalMethode betalingsMiddel,  double fooi, DateTime datum, double totaalBedrag, List<BestellingProduct> producten)
        {
            Id = id;
-            Bediening = bediening;
+           Bediening = bediening;
             TafelBestelling = tafelBestelling;
            Commentaar = commentaar;
            Betaald = betaald;
