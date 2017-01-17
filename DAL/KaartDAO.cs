@@ -17,11 +17,11 @@ namespace DAL
         {
             SqlConnection conn = Connection.GetConnection("naam");
             conn.Open();
-            string sql = "SELECT p.[p_nr], p.[Naam], p.[prijs], p.[omschrijving], p.[voorraad], p.[CategoryId], CATEGORY.[KaartId], CATEGORY.[btw], CATEGORY.[naam]" +
-                "FROM [RBS_1617F_db01].[dbo].[PRODUCT] AS p" +
-                "JOIN [RBS_1617F_db01].[dbo].[KAART] ON KAART.id = p.KaartId" +
-                "JOIN [RBS_1617F_db01].[dbo].[Category] ON Category.KaartId = p.KaartId" +
-                "WHERE KaartId = @KaartId";
+            string sql = "SELECT p.[p_nr], p.[Naam], p.[prijs], p.[omschrijving], p.[voorraad], p.[CategoryId], c.[naam]" +
+                "FROM [RBS_1617F_db01].[dbo].[PRODUCT] p " +
+                "JOIN [RBS_1617F_db01].[dbo].[KAART] ON KAART.id = p.KaartId " +
+                "JOIN [RBS_1617F_db01].[dbo].[Category] c ON c.id = p.CategoryId " +
+                "WHERE p.KaartId = @KaartId";
             //KaartId
             //lunch = 1
             //diner = 2

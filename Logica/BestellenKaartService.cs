@@ -24,7 +24,7 @@ namespace Logica
         {
             foreach (BestellingProduct p in productenOpLijst)
             {
-                bestellingDal.AddProduct(p);
+                //bestellingDal.AddProduct(p);
             }
         }  
         
