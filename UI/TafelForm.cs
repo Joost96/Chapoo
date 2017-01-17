@@ -21,21 +21,26 @@ namespace UI
         private void TafelForm_Load(object sender, EventArgs e)
         {
             // Add clear() oid !
+            LaadKaart();
+
+        }
+
+        private void LaadKaart()
+        {
             int bestellingid;
             List<BestellingProduct> bestelling = new List<BestellingProduct>();
             TafelService tafel = new TafelService();
             tafel.GetBestellingIdByTafelId(tafelId);
             // vraagt bestellingId op
-           
 
-            foreach(BestellingProduct p in  tafel.GetBestellingProducten(bestellingid)) // zet de items in de Listview
+            listview_bestelling.Items.Clear();
+            foreach (BestellingProduct p in tafel.GetBestellingProducten(bestellingid)) // zet de items in de Listview
             {
-                
+
                 ListViewItem bestellingItem = new ListViewItem(p.Naam + p.Aantal + p.Commentaar);
                 bestellingItem.SubItems.Add(p.Prijs.ToString("C2"));
                 listview_bestelling.Items.Add(bestellingItem);
             }
-
 
         }
 

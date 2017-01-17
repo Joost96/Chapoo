@@ -21,7 +21,7 @@ namespace UI
         private void loadBestellingen(ListView lisoverzichtKB, Product product, int aantal, BestellingStatus status, Bestelling bestelling)
         {
             listView_keukenBar.Items.Clear();
-            foreach (Product p in bestellingProducten.GetAllProducten(productId))
+          /*  foreach (Product p in bestellingProducten.GetAllProducten(productId))
             {
                 ListViewItem item = new ListViewItem(p.Naam + p.Omschrijving);
                 item.SubItems.Add(p.Prijs.ToString("C2"));
@@ -29,7 +29,7 @@ namespace UI
                 item.Tag = p;
                 lisoverzichtKB.Items.Add(item);
 
-            }
+            }*/
         }
 
         private void logout_btn_Click(object sender, EventArgs e)
