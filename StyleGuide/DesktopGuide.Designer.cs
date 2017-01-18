@@ -28,32 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.DateTime_lbl = new System.Windows.Forms.Label();
             this.SuspendLayout();
-            // 
-            // DateTime_lbl
-            // 
-            this.DateTime_lbl.AutoSize = true;
-            this.DateTime_lbl.Location = new System.Drawing.Point(585, 9);
-            this.DateTime_lbl.Name = "DateTime_lbl";
-            this.DateTime_lbl.Size = new System.Drawing.Size(73, 13);
-            this.DateTime_lbl.TabIndex = 1;
-            this.DateTime_lbl.Text = "Tijd en Datum";
             // 
             // DesktopGuide
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(784, 561);
-            this.Controls.Add(this.DateTime_lbl);
             this.Name = "DesktopGuide";
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Label DateTime_lbl;
     }
 }
