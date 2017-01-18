@@ -13,12 +13,12 @@ namespace Logica
     {
         
 
-        //Gemaakt door Mark. Haalt een lijst op van de prijzen van alle product in voor 1 bestellingid
-        public double getTotaalPrijsPerBestelling(int bestellingId)
+        //Gemaakt door Mark. Haalt totaalbedrag op voor alle producten in 1 bestelling
+        public double getTotaalPrijsPerBestelling(int tafelId)
         {
             double totaalbedrag = 0;
             TafelService service = new TafelService();
-            List<TafelService.Prijzen> prijslijst = service.GetPrijzen(bestellingId);
+            List<TafelService.Prijzen> prijslijst = service.GetPrijzen(tafelId);
 
             foreach(TafelService.Prijzen p in prijslijst)
             {
@@ -28,12 +28,12 @@ namespace Logica
 
         }
         //Gemaakt door mark. Voert betalinggegevens in voor bestellingId
-        public void UpdateBetaalStatus(int bestellingId, BetaalMethode betaalmethode, double fooi)
+        public void UpdateBetaalStatus(int tafelId, BetaalMethode betaalmethode, double fooi, string commentaar)
         {
             int betalingmethode = (int)betaalmethode;
-            double totaalbedrag = getTotaalPrijsPerBestelling(bestellingId);
+            double totaalbedrag = getTotaalPrijsPerBestelling(tafelId);
             BestellingDAO dao = new BestellingDAO();
-            dao.UpdateBetaalStatus(bestellingId, betalingmethode, fooi, totaalbedrag);
+            dao.UpdateBetaalStatus(tafelId, betalingmethode, fooi, totaalbedrag, commentaar);
         }
 
 

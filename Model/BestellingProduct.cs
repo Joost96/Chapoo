@@ -22,12 +22,12 @@ namespace Model
             Tijd = tijd;
             Status = status;
         }
-        public BestellingProduct(Product product , int aantal, BestellingStatus status , Bestelling bestelling)
+        public BestellingProduct(Product product , int aantal, BestellingStatus status)
     : base(product.Id, product.CategoryProduct, product.Naam, product.Omschrijving, product.Prijs, product.Voorraad)
         {
             Aantal = aantal;
+            Commentaar = "";
             Status = status;
-            ProductBestelling = bestelling;
         }
 
         public BestellingProduct(int id, string naam, int aantal, string commentaar, DateTime tijd, BestellingStatus status) : base(id, naam)

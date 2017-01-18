@@ -18,10 +18,10 @@ namespace UI
         private BestellingProduct editProduct;
 
         private Bestelling bestelling;
-        public BestellingMenuForm(StyleGuide.BaseGuide vorige, int id) : base(vorige)
+        public BestellingMenuForm(StyleGuide.BaseGuide vorige, int tafelId) : base(vorige)
         {
             InitializeComponent();
-            bestelling = kaartService.getBestelling(id);
+            bestelling = kaartService.getBestellingByTafelId(tafelId);
         }
 
         private void loadKaart(ListView listview , int kaartId)
@@ -76,7 +76,7 @@ namespace UI
                 }
                 else
                 {
-                    bestellingProducten.Add(new BestellingProduct(product, 1, BestellingStatus.Queue , bestelling));
+                    bestellingProducten.Add(new BestellingProduct(product, 1, BestellingStatus.Queue));
                 }
             }
             loadBestellingen();
@@ -150,6 +150,16 @@ namespace UI
         private void bestellen_btn_Click(object sender, EventArgs e)
         {
             listviewBestelling.Items.Clear();
+
+            if (bestelling == null)
+            {
+
+            }
+            foreach(BestellingProduct bp in bestellingProducten)
+            {
+                bp.ProductBestelling = bestelling;
+            }
+
             kaartService.AddToBestelling(bestellingProducten);
         }
     }

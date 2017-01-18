@@ -32,12 +32,18 @@
             this.Naam = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Aantal = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Prijs = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.textBoxFooi = new System.Windows.Forms.TextBox();
+            this.txtBoxFooi = new System.Windows.Forms.TextBox();
             this.lblFooi = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.lblTotaal = new System.Windows.Forms.Label();
+            this.lblSubtotaal = new System.Windows.Forms.Label();
             this.betalen_btn = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.BetaalDrop_btn = new System.Windows.Forms.ComboBox();
+            this.lblTotaal = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.CommentaarBox_txt = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // listViewRekOverzicht
@@ -49,7 +55,7 @@
             this.listViewRekOverzicht.GridLines = true;
             this.listViewRekOverzicht.Location = new System.Drawing.Point(13, 13);
             this.listViewRekOverzicht.Name = "listViewRekOverzicht";
-            this.listViewRekOverzicht.Size = new System.Drawing.Size(343, 307);
+            this.listViewRekOverzicht.Size = new System.Drawing.Size(343, 283);
             this.listViewRekOverzicht.TabIndex = 0;
             this.listViewRekOverzicht.UseCompatibleStateImageBehavior = false;
             this.listViewRekOverzicht.View = System.Windows.Forms.View.Details;
@@ -69,40 +75,42 @@
             this.Prijs.Text = "Prijs";
             this.Prijs.Width = 70;
             // 
-            // textBoxFooi
+            // txtBoxFooi
             // 
-            this.textBoxFooi.Location = new System.Drawing.Point(241, 327);
-            this.textBoxFooi.Name = "textBoxFooi";
-            this.textBoxFooi.Size = new System.Drawing.Size(114, 20);
-            this.textBoxFooi.TabIndex = 1;
+            this.txtBoxFooi.Location = new System.Drawing.Point(241, 328);
+            this.txtBoxFooi.Name = "txtBoxFooi";
+            this.txtBoxFooi.Size = new System.Drawing.Size(114, 20);
+            this.txtBoxFooi.TabIndex = 1;
+            this.txtBoxFooi.Text = "0,00";
+            this.txtBoxFooi.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // lblFooi
             // 
             this.lblFooi.AutoSize = true;
-            this.lblFooi.Location = new System.Drawing.Point(176, 334);
+            this.lblFooi.Location = new System.Drawing.Point(10, 331);
             this.lblFooi.Name = "lblFooi";
-            this.lblFooi.Size = new System.Drawing.Size(36, 13);
+            this.lblFooi.Size = new System.Drawing.Size(27, 13);
             this.lblFooi.TabIndex = 2;
-            this.lblFooi.Text = "Fooi +";
+            this.lblFooi.Text = "Fooi";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(176, 365);
+            this.label2.Location = new System.Drawing.Point(10, 308);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(37, 13);
+            this.label2.Size = new System.Drawing.Size(52, 13);
             this.label2.TabIndex = 3;
-            this.label2.Text = "Totaal";
+            this.label2.Text = "Subtotaal";
             // 
-            // lblTotaal
+            // lblSubtotaal
             // 
-            this.lblTotaal.AutoSize = true;
-            this.lblTotaal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotaal.Location = new System.Drawing.Point(318, 365);
-            this.lblTotaal.Name = "lblTotaal";
-            this.lblTotaal.Size = new System.Drawing.Size(32, 13);
-            this.lblTotaal.TabIndex = 4;
-            this.lblTotaal.Text = "0,00";
+            this.lblSubtotaal.AutoSize = true;
+            this.lblSubtotaal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSubtotaal.Location = new System.Drawing.Point(318, 308);
+            this.lblSubtotaal.Name = "lblSubtotaal";
+            this.lblSubtotaal.Size = new System.Drawing.Size(28, 13);
+            this.lblSubtotaal.TabIndex = 4;
+            this.lblSubtotaal.Text = "0,00";
             // 
             // betalen_btn
             // 
@@ -117,38 +125,85 @@
             this.betalen_btn.Text = "Betalen";
             this.betalen_btn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.betalen_btn.UseVisualStyleBackColor = false;
+            this.betalen_btn.Click += new System.EventHandler(this.betalen_btn_Click);
             // 
-            // comboBox1
+            // BetaalDrop_btn
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.BetaalDrop_btn.FormattingEnabled = true;
+            this.BetaalDrop_btn.Items.AddRange(new object[] {
             "Cash",
             "Pin",
             "MC"});
-            this.comboBox1.Location = new System.Drawing.Point(241, 390);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(114, 21);
-            this.comboBox1.TabIndex = 11;
+            this.BetaalDrop_btn.Location = new System.Drawing.Point(241, 396);
+            this.BetaalDrop_btn.Name = "BetaalDrop_btn";
+            this.BetaalDrop_btn.Size = new System.Drawing.Size(114, 21);
+            this.BetaalDrop_btn.TabIndex = 11;
+            // 
+            // lblTotaal
+            // 
+            this.lblTotaal.AutoSize = true;
+            this.lblTotaal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotaal.Location = new System.Drawing.Point(318, 363);
+            this.lblTotaal.Name = "lblTotaal";
+            this.lblTotaal.Size = new System.Drawing.Size(32, 13);
+            this.lblTotaal.TabIndex = 14;
+            this.lblTotaal.Text = "0,00";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(10, 363);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(43, 13);
+            this.label3.TabIndex = 13;
+            this.label3.Text = "Totaal";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::UI.Properties.Resources.Create;
+            this.pictureBox1.Location = new System.Drawing.Point(214, 328);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(21, 24);
+            this.pictureBox1.TabIndex = 15;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
+            // CommentaarBox_txt
+            // 
+            this.CommentaarBox_txt.Location = new System.Drawing.Point(12, 441);
+            this.CommentaarBox_txt.Name = "CommentaarBox_txt";
+            this.CommentaarBox_txt.Size = new System.Drawing.Size(171, 20);
+            this.CommentaarBox_txt.TabIndex = 16;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(13, 422);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(66, 13);
+            this.label1.TabIndex = 17;
+            this.label1.Text = "Commentaar";
             // 
             // BetalenForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.ClientSize = new System.Drawing.Size(368, 473);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.betalen_btn);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.CommentaarBox_txt);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lblTotaal);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.BetaalDrop_btn);
+            this.Controls.Add(this.betalen_btn);
+            this.Controls.Add(this.lblSubtotaal);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lblFooi);
-            this.Controls.Add(this.textBoxFooi);
+            this.Controls.Add(this.txtBoxFooi);
             this.Controls.Add(this.listViewRekOverzicht);
             this.Name = "BetalenForm";
-            this.Controls.SetChildIndex(this.listViewRekOverzicht, 0);
-            this.Controls.SetChildIndex(this.textBoxFooi, 0);
-            this.Controls.SetChildIndex(this.lblFooi, 0);
-            this.Controls.SetChildIndex(this.label2, 0);
-            this.Controls.SetChildIndex(this.lblTotaal, 0);
-            this.Controls.SetChildIndex(this.betalen_btn, 0);
-            this.Controls.SetChildIndex(this.comboBox1, 0);
+            this.Load += new System.EventHandler(this.BetalenForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -157,14 +212,19 @@
         #endregion
 
         private System.Windows.Forms.ListView listViewRekOverzicht;
-        private System.Windows.Forms.TextBox textBoxFooi;
+        private System.Windows.Forms.TextBox txtBoxFooi;
         private System.Windows.Forms.Label lblFooi;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label lblTotaal;
+        private System.Windows.Forms.Label lblSubtotaal;
         private System.Windows.Forms.Button betalen_btn;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox BetaalDrop_btn;
         private System.Windows.Forms.ColumnHeader Naam;
         private System.Windows.Forms.ColumnHeader Aantal;
         private System.Windows.Forms.ColumnHeader Prijs;
+        private System.Windows.Forms.Label lblTotaal;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox CommentaarBox_txt;
     }
 }
