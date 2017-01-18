@@ -43,6 +43,15 @@ namespace Model
             Datum = datum;
             Producten = new List<BestellingProduct>();
         }
+        public Bestelling(int id ,Werknemer bediening, Tafel tafelBestelling, bool betaald, DateTime datum)
+        {
+            Id = id;
+            Bediening = bediening;
+            TafelBestelling = tafelBestelling;
+            Betaald = betaald;
+            Datum = datum;
+            Producten = new List<BestellingProduct>();
+        }
         public Bestelling(int id)
         {
             Id = id;
