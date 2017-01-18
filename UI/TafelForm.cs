@@ -14,9 +14,8 @@ namespace UI
     {
         public int bestellingId;
         private int tafelId;
-        private BestellingProduct editProduct;
 
-        public TafelForm(StyleGuide.BaseGuide vorige, int tafelId)
+        public TafelForm(StyleGuide.BaseGuide vorige,Werknemer werknemer, int tafelId) :base(vorige,werknemer)
         {
             InitializeComponent();
             this.tafelId = tafelId;
@@ -54,7 +53,7 @@ namespace UI
         private void bestellen_btn_Click(object sender, EventArgs e)
         {
             // verwijst door naar de Bestel kaart
-            BestellingMenuForm form = new BestellingMenuForm(this ,tafelId);
+            BestellingMenuForm form = new BestellingMenuForm(this, werknemer, tafelId);
             form.Show();
             this.Close();
         }
@@ -65,6 +64,5 @@ namespace UI
             //form.Show();
             this.Close();
         }
-        //test
     }
 }
