@@ -141,8 +141,8 @@ namespace DAL
         {
             SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["constr"].ConnectionString);
             conn.Open();
-            string sql = "INSERT INTO [RBS_1617F_db01].[dbo].[BESTELLING](betaalmethode, fooi, totaalbedrag) " +
-                "VALUES (@betaalmethode, @fooi, @totaalbedrag) " +
+            string sql = "UPDATE [RBS_1617F_db01].[dbo].[BESTELLING] " +
+                " SET (betaalmethode = @betaalmethode, fooi = @fooi , totaalbedrag = @totaalbedrag , betaald = 1) " +
                 "WHERE id = @bestellingId";
             SqlCommand command = new SqlCommand(sql, conn);
             command.Parameters.Add("@bestellingId", System.Data.SqlDbType.Int).Value = bestellingId;
