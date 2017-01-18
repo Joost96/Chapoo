@@ -15,11 +15,12 @@ namespace UI
         public OverzichtForm(StyleGuide.BaseGuide vorige, Werknemer werknemer) :base(vorige, werknemer)
         {
             InitializeComponent();
+            TafelsLaden();
         }
 
         private void OverzichtForm_Load(object sender, EventArgs e)
         {
-            TafelsLaden();
+            //TafelsLaden();
         }
 
         private void TafelsLaden()
@@ -29,7 +30,7 @@ namespace UI
             {
                 Button btn = new Button();
                 btn.Text = "Tafel " + tafel.tafelNummer.ToString() + ' ' + tafel.status.ToString();
-                btn.Size = new Size(100, 80);
+                btn.Size = new Size(120, 60);
                 btn.Margin = new Padding(6);
                 if (tafel.status == TafelStatus.Vrij)
                 {
