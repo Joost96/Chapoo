@@ -47,7 +47,7 @@ namespace StyleGuide
         private void AddWerknemerToHeader(Werknemer werknemer)
         {
             string dateTime = DateTime.Now.ToShortTimeString();
-            this.Text = string.Format("Chapoo {0} {1} ", werknemer ,dateTime);
+            this.Text = string.Format("Chapoo - {0} - {1} ", werknemer ,dateTime);
         }
 
 
@@ -87,7 +87,7 @@ namespace StyleGuide
         private void GetCurrentTime()
         {
             string dateTime = DateTime.Now.ToShortTimeString();
-            this.Text = string.Format("Chapoo {0} ", dateTime);
+            this.Text = string.Format("Chapoo {0}", dateTime);
 
         }
         private void back_btn_Click(object sender, EventArgs e)
