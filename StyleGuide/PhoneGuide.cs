@@ -30,7 +30,7 @@ namespace StyleGuide
             this.back_btn.Click += new System.EventHandler(this.back_btn_Click);
             this.Controls.Add(this.back_btn);
 
-            CreateTimer();           
+            CreateTimer2();           
             AddWerknemerToHeader(werknemer);
         }
 
