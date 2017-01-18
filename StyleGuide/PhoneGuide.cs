@@ -62,6 +62,22 @@ namespace StyleGuide
             aTimer.Start();
         }
 
+        private void CreateTimer2()
+        {
+            Timer aTimer = new Timer();
+
+            aTimer.Interval = 10000;
+
+            aTimer.Enabled = true;
+            aTimer.Tick += new EventHandler(MyLittleTimer2);
+            aTimer.Start();
+        }
+
+        private void MyLittleTimer2(Object sender, EventArgs e)
+        {
+            AddWerknemerToHeader(werknemer);
+
+        }
         private void MyLittleTimer(Object sender, EventArgs e)
         {
             GetCurrentTime();
