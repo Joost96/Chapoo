@@ -15,11 +15,12 @@ namespace UI
         public OverzichtForm(StyleGuide.BaseGuide vorige, Werknemer werknemer) :base(vorige, werknemer)
         {
             InitializeComponent();
+            TafelsLaden();
         }
 
         private void OverzichtForm_Load(object sender, EventArgs e)
         {
-            TafelsLaden();
+            //TafelsLaden();
         }
 
         private void TafelsLaden()
@@ -29,19 +30,19 @@ namespace UI
             {
                 Button btn = new Button();
                 btn.Text = "Tafel " + tafel.tafelNummer.ToString() + ' ' + tafel.status.ToString();
-                btn.Size = new Size(100, 80);
-                btn.Margin = new Padding(6);
+                btn.Size = new Size(100, 60);
+                btn.Margin = new Padding(4);
                 if (tafel.status == TafelStatus.Vrij)
                 {
                     btn.BackColor = Color.Gray;
                 }
 
-                else if (tafel.status == TafelStatus.Gereserveerd)
+                else if (tafel.status == TafelStatus.Bezet)
                 {
                     btn.BackColor = Color.Orange;
                 }
 
-                else if (tafel.status == TafelStatus.Bezet)
+                else if (tafel.status == TafelStatus.Gereed)
                 {
                     btn.BackColor = Color.Green;
                 }

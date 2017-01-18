@@ -12,12 +12,13 @@ namespace DAL
 {
     public class BestellingDAO
     {
-        public void create(Bestelling bestelling)
+        public Bestelling create(Bestelling bestelling)
         {
             SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["constr"].ConnectionString);
             conn.Open();
             string sql = "INSERT INTO [dbo].[BESTELLING] ([WerkNemerId],[TafelId]" +
                 ",[betaald],[datum]) " +
+                "OUTPUT INSERTED.Id " +
                 "VALUES (@werknemerId, @tafelId, @betaald, @datum)";
             SqlCommand command = new SqlCommand(sql, conn);
             command.Parameters.Add("@werknemerId", System.Data.SqlDbType.Int).Value = bestelling.Bediening.Id;
@@ -25,8 +26,10 @@ namespace DAL
             command.Parameters.Add("@betaald", System.Data.SqlDbType.Bit).Value = bestelling.Betaald;
             command.Parameters.Add("@datum", System.Data.SqlDbType.DateTime).Value = bestelling.Datum;
             command.Prepare();
-            command.ExecuteNonQuery();
+            int id = (int)command.ExecuteScalar();
+            bestelling = new Bestelling(id,bestelling.Bediening,bestelling.TafelBestelling,bestelling.Betaald,bestelling.Datum);
             conn.Close();
+            return bestelling;
         }
         public Bestelling ReadBestellingById(int bestellingId)
         {
@@ -227,14 +230,6 @@ namespace DAL
 
         private Bestelling createBestellingFormReader(SqlDataReader reader)
         {
-            //bestelling
-            int id = reader.GetInt32(0);
-            string commentaar = reader.GetString(1);
-            bool betaald = reader.GetBoolean(2);
-            BetaalMethode betaalMethode = (BetaalMethode)reader.GetInt32(3);
-            double fooi = (Double)reader.GetDecimal(4);
-            DateTime datum = reader.GetDateTime(5);
-            double totaalBedrag = (double)reader.GetDecimal(6);
             //werknemer
             int werknemerId = reader.GetInt32(7);
             string voornaam = reader.GetString(8);
@@ -242,14 +237,37 @@ namespace DAL
             WerknemerRol rol = (WerknemerRol)reader.GetInt32(10);
             string wachtwoord = reader.GetString(11);
             string gebruikersnaam = reader.GetString(12);
+
+            Werknemer werknemer = new Werknemer(werknemerId, voornaam, achternaam, gebruikersnaam, wachtwoord, rol);
+
             //tafel
             int tafelNummer = reader.GetInt32(13);
             TafelStatus statusTafel = (TafelStatus)reader.GetInt32(14);
             int zitplaatsen = reader.GetInt32(15);
 
-            Werknemer werknemer = new Werknemer(werknemerId, voornaam, achternaam, gebruikersnaam, wachtwoord, rol);
             Tafel tafel = new Tafel(tafelNummer, statusTafel, zitplaatsen);
-            return new Bestelling(id, werknemer, tafel, commentaar, betaald, betaalMethode, fooi, datum, totaalBedrag);
+
+            //bestelling
+            Bestelling bestelling;
+            if (reader.GetBoolean(2)) //is betaald
+            {
+                int id = reader.GetInt32(0);
+                string commentaar = reader.GetString(1);
+                bool betaald = reader.GetBoolean(2);
+                BetaalMethode betaalMethode = (BetaalMethode)reader.GetInt32(3);
+                double fooi = (Double)reader.GetDecimal(4);
+                DateTime datum = reader.GetDateTime(5);
+                double totaalBedrag = (double)reader.GetDecimal(6);
+                bestelling = new Bestelling(id, werknemer, tafel, commentaar, betaald, betaalMethode, fooi, datum, totaalBedrag);
+            }
+            else
+            {
+                int id = reader.GetInt32(0);
+                bool betaald = reader.GetBoolean(2);
+                DateTime datum = reader.GetDateTime(5);
+                bestelling = new Bestelling(id, werknemer, tafel, betaald, datum);
+            }
+            return bestelling;
 
         }
         private BestellingProduct createBestellingProductFromReader(SqlDataReader reader)

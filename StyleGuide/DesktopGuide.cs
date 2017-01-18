@@ -16,5 +16,13 @@ namespace StyleGuide
             InitializeComponent();
             DateTime_lbl.Text = Convert.ToString(DateTime.Now);
         }
+
+        public DesktopGuide():base()
+        {
+            InitializeComponent();
+            DateTime_lbl.Text = Convert.ToString(DateTime.Now);
+        }
+
+
     }
 }
