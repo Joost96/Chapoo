@@ -26,9 +26,12 @@ namespace UI
 
             LoginService login = new LoginService();
             werknemer = login.CheckCredentials(passWord, userName);
-            Debug.WriteLine(werknemer.rol);
             onbevoegd_lbl.Visible = false;
-            if (werknemer.rol == WerknemerRol.bar)
+            if (werknemer == null)
+            {
+                onbevoegd_lbl.Visible = true;
+            }
+            else if (werknemer.rol == WerknemerRol.bar)
             {
                 Hide();
                 KeukenBarForm form = new KeukenBarForm(werknemer, false);
@@ -56,11 +59,6 @@ namespace UI
                 Hide();
                 KeukenBarForm form = new KeukenBarForm(werknemer, true);
                 form.Show();
-            }
-
-            else if (werknemer == null)
-            {
-                onbevoegd_lbl.Visible = true;
             }
         }
 
