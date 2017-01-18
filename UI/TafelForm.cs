@@ -35,10 +35,13 @@ namespace UI
         {
             TafelService tafel = new TafelService();
 
-            // vraagt bestellingId op
+            // vraagt de bestelling op aan de hand van het Tafel Id
 
             listview_bestelling.Items.Clear();
+
             this.bestelling = tafel.GetBestellingByTafelId(tafelId);
+               
+            if(bestelling != null)
             foreach (BestellingProduct p in bestelling.Producten) // zet de items in de Listview
             {
                 ListViewItem lvItem = new ListViewItem(p.Naam);
@@ -72,21 +75,10 @@ namespace UI
             
             foreach (ListViewItem item in listview_bestelling.SelectedItems)
             {
-                Product product = (Product)item.Tag;
-                BestellingProduct bestellingProduct = bestellingProducten.Find(bp => bp.Id == product.Id);
-                if (bestellingProduct != null)
-                {
-                    bestellingProduct.Aantal++;
-                }
-                else
-                {
-                    bestellingProducten.Add(new BestellingProduct(product, 1, BestellingStatus.Queue));
-                }
+                BestellingProduct product = (BestellingProduct)item.Tag;
+                keukenBar.ChangeBestellingStatus(product, BestellingStatus.Served);
             }
-            foreach(BestellingProduct product in bestelling.Producten)
-            { 
-            keukenBar.ChangeBestellingStatus( product,BestellingStatus.Served);
-            }
+          
         }
     }
 }
