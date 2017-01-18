@@ -20,7 +20,7 @@ namespace Logica
 
                 tafelDAO.Update(tafel);
 
-                if (tafelDAO.Update(tafel) == false)
+                if (!tafelDAO.Update(tafel))
                     return false;
 
                 return true;

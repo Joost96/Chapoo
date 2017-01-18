@@ -13,7 +13,8 @@ namespace StyleGuide
     {
         private StyleGuide.BaseGuide vorige;
         private System.Windows.Forms.Button back_btn;
-        public PhoneGuide(BaseGuide vorige , Werknemer werknemer) : base(werknemer)
+        public PhoneGuide(BaseGuide vorige, Werknemer werknemer)
+            : base(werknemer)
         {
             this.vorige = vorige;
             InitializeComponent();
@@ -28,25 +29,80 @@ namespace StyleGuide
             this.back_btn.UseVisualStyleBackColor = true;
             this.back_btn.Click += new System.EventHandler(this.back_btn_Click);
             this.Controls.Add(this.back_btn);
+
+            CreateTimer();           
+            AddWerknemerToHeader(werknemer);
         }
 
-     
+
         public PhoneGuide()
-        {  
-        
+        {
+
             InitializeComponent();
-            this.DateTime_lbl.Text = DateTime.Now.ToShortTimeString();
-        
+
+            CreateTimer();
+            GetCurrentTime();
+
+        }
+        private void AddWerknemerToHeader(Werknemer werknemer)
+        {
+            string dateTime = DateTime.Now.ToShortTimeString();
+            this.Text = string.Format("Chapoo {0} {1} ", werknemer ,dateTime);
         }
 
-        private void back_btn_Click(object sender, EventArgs e)
+
+        private void CreateTimer()
         {
-            Hide();         
-            vorige.Show();
+            Timer aTimer = new Timer();
+
+            aTimer.Interval = 10000;
+
+            aTimer.Enabled = true;
+            aTimer.Tick += new EventHandler(MyLittleTimer);
+            aTimer.Start();
+        }
+
+        private void CreateTimer2()
+        {
+            Timer aTimer = new Timer();
+
+            aTimer.Interval = 10000;
+
+            aTimer.Enabled = true;
+            aTimer.Tick += new EventHandler(MyLittleTimer2);
+            aTimer.Start();
+        }
+
+        private void MyLittleTimer2(Object sender, EventArgs e)
+        {
+            AddWerknemerToHeader(werknemer);
+
+        }
+        private void MyLittleTimer(Object sender, EventArgs e)
+        {
+            GetCurrentTime();
             
         }
 
+        private void GetCurrentTime()
+        {
+            string dateTime = DateTime.Now.ToShortTimeString();
+            this.Text = string.Format("Chapoo {0} ", dateTime);
+
+        }
+        private void back_btn_Click(object sender, EventArgs e)
+        {
+            Hide();
+            vorige.Show();
+
+        }
+
         private void DateTime_lbl_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PhoneGuide_Load(object sender, EventArgs e)
         {
 
         }
