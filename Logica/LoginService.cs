@@ -12,19 +12,19 @@ namespace Logica
     {
         private WerknemerDAO werknemerDAO = new WerknemerDAO(); 
 
-        public WerknemerRol CheckCredentials(string password, string username)
+        public Werknemer CheckCredentials(string password, string username)
         {
             
-            Werknemer werkNemer = werknemerDAO.GetWerknemer(username);
-            if (werkNemer != null)
+            Werknemer werknemer = werknemerDAO.GetWerknemer(username);
+            if (werknemer != null)
             {
-                if (werkNemer.Gebruikersnaam == username && werkNemer.Wachtwoord == password)
+                if (werknemer.Gebruikersnaam == username && werknemer.Wachtwoord == password)
                 {
-                    return werkNemer.rol;
+                    return werknemer;
                 }
 
             }          
-                return (WerknemerRol)4;           
+            return null;           
         }
 
     }

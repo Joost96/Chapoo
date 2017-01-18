@@ -51,7 +51,6 @@ namespace DAL
            
 
             command.Prepare();
-            command.ExecuteNonQuery();
             SqlDataReader reader = command.ExecuteReader();
             while (reader.Read())
             {
@@ -69,7 +68,31 @@ namespace DAL
         }
 
 
+        public Tafel ReadByTafelNummer(int tafelId)
+        {
+            Tafel tafel = null;
 
 
+            SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["constr"].ConnectionString);
+            conn.Open();
+            string sql = "SELECT [tafel_nr], [t_status], [zitplaatsen]" +
+                "FROM [RBS_1617F_db01].[dbo].[TAFEL] " +
+                "WHERE tafel_nr = @tafelId";
+            SqlCommand command = new SqlCommand(sql, conn);
+            command.Parameters.Add("@tafelId", System.Data.SqlDbType.Int).Value = tafelId;
+            command.Prepare();
+
+            SqlDataReader reader = command.ExecuteReader();
+            if (reader.Read())
+            {
+                int tafelnummer = reader.GetInt32(0);
+                TafelStatus status = (TafelStatus)reader.GetInt32(1);
+                int zitplaatsen = reader.GetInt32(2);
+                tafel = new Tafel(tafelnummer, status, zitplaatsen);
+            }
+
+
+            return tafel;
+        }
     }
 }

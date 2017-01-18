@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using Model;
 
 namespace StyleGuide
 {
@@ -12,7 +13,7 @@ namespace StyleGuide
     {
         private StyleGuide.BaseGuide vorige;
         private System.Windows.Forms.Button back_btn;
-        public PhoneGuide(BaseGuide vorige)
+        public PhoneGuide(BaseGuide vorige , Werknemer werknemer) : base(werknemer)
         {
             this.vorige = vorige;
             InitializeComponent();
@@ -31,8 +32,10 @@ namespace StyleGuide
 
      
         public PhoneGuide()
-        {
+        {  
+            this.DateTime_lbl.Text = DateTime.Now.ToShortTimeString();
             InitializeComponent();
+        
         }
 
         private void back_btn_Click(object sender, EventArgs e)
@@ -40,6 +43,11 @@ namespace StyleGuide
             Hide();         
             vorige.Show();
             
+        }
+
+        private void DateTime_lbl_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

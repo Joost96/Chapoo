@@ -12,7 +12,7 @@ namespace UI
 {
     public partial class OverzichtForm : StyleGuide.PhoneGuide
     {
-        public OverzichtForm(StyleGuide.BaseGuide vorige) :base(vorige)
+        public OverzichtForm(StyleGuide.BaseGuide vorige, Werknemer werknemer) :base(vorige, werknemer)
         {
             InitializeComponent();
         }
@@ -29,7 +29,7 @@ namespace UI
             {
                 Button btn = new Button();
                 btn.Text = "Tafel " + tafel.tafelNummer.ToString() + ' ' + tafel.status.ToString();
-                btn.Size = new Size(100, 60);
+                btn.Size = new Size(100, 80);
                 btn.Margin = new Padding(6);
                 if (tafel.status == TafelStatus.Vrij)
                 {

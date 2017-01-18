@@ -12,6 +12,22 @@ namespace DAL
 {
     public class BestellingDAO
     {
+        public void create(Bestelling bestelling)
+        {
+            SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["constr"].ConnectionString);
+            conn.Open();
+            string sql = "INSERT INTO [dbo].[BESTELLING] ([WerkNemerId],[TafelId]" +
+                ",[betaald],[datum]) " +
+                "VALUES (@werknemerId, @tafelId, @betaald, @datum)";
+            SqlCommand command = new SqlCommand(sql, conn);
+            command.Parameters.Add("@werknemerId", System.Data.SqlDbType.Int).Value = bestelling.Bediening.Id;
+            command.Parameters.Add("@tafelId", System.Data.SqlDbType.Int).Value = bestelling.TafelBestelling.tafelNummer;
+            command.Parameters.Add("@betaald", System.Data.SqlDbType.Bit).Value = bestelling.Betaald;
+            command.Parameters.Add("@datum", System.Data.SqlDbType.DateTime).Value = bestelling.Datum;
+            command.Prepare();
+            command.ExecuteNonQuery();
+            conn.Close();
+        }
         public Bestelling ReadBestellingById(int bestellingId)
         {
             {
@@ -105,15 +121,17 @@ namespace DAL
                 {
                     bestelling = createBestellingFormReader(readerBestelling);
                 }
-                commandProducten.Parameters.Add("@BestellingId", System.Data.SqlDbType.Int).Value = bestelling.Id;
-                commandProducten.Prepare();
-                SqlDataReader readerProducten = commandProducten.ExecuteReader();
-                while (readerProducten.Read())
+                if (bestelling != null)
                 {
-                    //bestellingProduct
-                    bestelling.AddProduct(createBestellingProductFromReader(readerProducten));
+                    commandProducten.Parameters.Add("@BestellingId", System.Data.SqlDbType.Int).Value = bestelling.Id;
+                    commandProducten.Prepare();
+                    SqlDataReader readerProducten = commandProducten.ExecuteReader();
+                    while (readerProducten.Read())
+                    {
+                        //bestellingProduct
+                        bestelling.AddProduct(createBestellingProductFromReader(readerProducten));
+                    }
                 }
-
                 conn.Close();
                 return bestelling;
             }
@@ -137,7 +155,7 @@ namespace DAL
             conn.Close();
         }
         //Gemaakt door Mark
-        public  void UpdateBetaalStatus(int tafelId, int betaalmethode, double fooi, double totaalbedrag, string commentaar)
+        public void UpdateBetaalStatus(int tafelId, int betaalmethode, double fooi, double totaalbedrag, string commentaar)
         {
             SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["constr"].ConnectionString);
             conn.Open();
@@ -147,7 +165,7 @@ namespace DAL
             SqlCommand command = new SqlCommand(sql, conn);
             command.Parameters.Add("@tafelId", System.Data.SqlDbType.Int).Value = tafelId;
             command.Parameters.Add("@betaalmethode", System.Data.SqlDbType.Int).Value = betaalmethode;
-            command.Parameters.Add("@commentaar", System.Data.SqlDbType.VarChar).Value = commentaar;
+            command.Parameters.Add("@commentaar", System.Data.SqlDbType.VarChar,200).Value = commentaar;
 
             //Decimal parameters kan ik alleen op deze lelijke manier toevoegen
             SqlParameter fooiparam = new SqlParameter("@fooi", System.Data.SqlDbType.Decimal);
@@ -162,7 +180,7 @@ namespace DAL
             totaalparam.Scale = 2;
 
 
-            
+
             command.Prepare();
             command.ExecuteNonQuery();
             conn.Close();

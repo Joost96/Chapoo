@@ -17,10 +17,12 @@ namespace UI
         private List<BestellingProduct> bestellingProducten = new List<BestellingProduct>();
         private BestellingProduct editProduct;
 
+        private int tafelId;
         private Bestelling bestelling;
-        public BestellingMenuForm(StyleGuide.BaseGuide vorige, int tafelId) : base(vorige)
+        public BestellingMenuForm(StyleGuide.BaseGuide vorige, Werknemer werknemer, int tafelId) : base(vorige, werknemer)
         {
             InitializeComponent();
+            this.tafelId = tafelId;
             bestelling = kaartService.getBestellingByTafelId(tafelId);
         }
 
@@ -150,17 +152,7 @@ namespace UI
         private void bestellen_btn_Click(object sender, EventArgs e)
         {
             listviewBestelling.Items.Clear();
-
-            if (bestelling == null)
-            {
-
-            }
-            foreach(BestellingProduct bp in bestellingProducten)
-            {
-                bp.ProductBestelling = bestelling;
-            }
-
-            kaartService.AddToBestelling(bestellingProducten);
+            kaartService.AddToBestelling(bestellingProducten,bestelling,werknemer , tafelId);
         }
     }
 }
