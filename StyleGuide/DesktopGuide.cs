@@ -13,6 +13,7 @@ namespace StyleGuide
         public DesktopGuide()
         {
             InitializeComponent();
+            DateTime_lbl.Text = Convert.ToString(DateTime.Now);
         }
     }
 }

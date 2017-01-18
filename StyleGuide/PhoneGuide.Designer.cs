@@ -34,7 +34,7 @@
             // DateTime_lbl
             // 
             this.DateTime_lbl.AutoSize = true;
-            this.DateTime_lbl.Location = new System.Drawing.Point(283, 9);
+            this.DateTime_lbl.Location = new System.Drawing.Point(263, 9);
             this.DateTime_lbl.Name = "DateTime_lbl";
             this.DateTime_lbl.Size = new System.Drawing.Size(73, 13);
             this.DateTime_lbl.TabIndex = 0;

@@ -31,9 +31,10 @@ namespace StyleGuide
 
      
         public PhoneGuide()
-        {
+        {  
+            this.DateTime_lbl.Text = DateTime.Now.ToShortTimeString();
             InitializeComponent();
-            DateTime_lbl.Text = Convert.ToString(DateTime.Now);
+        
         }
 
         private void back_btn_Click(object sender, EventArgs e)
