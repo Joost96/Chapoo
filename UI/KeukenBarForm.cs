@@ -16,6 +16,9 @@ namespace UI
         private KeukenBarService kbService = new KeukenBarService();
 
         private BestellingProduct producten;
+
+
+
         public KeukenBarForm(Werknemer werknemer, bool locatie) :base(werknemer)
         {
             InitializeComponent();
