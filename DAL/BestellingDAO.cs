@@ -78,7 +78,7 @@ namespace DAL
                 while (readerProducten.Read())
                 {
                     //bestellingProduct
-                     bestelling.AddProduct(createBestellingProductFromReader(readerProducten));
+                     bestelling.AddProduct(createBestellingProductFromReader(readerProducten, bestelling));
                 }
                 
                 conn.Close();
@@ -132,7 +132,7 @@ namespace DAL
                     while (readerProducten.Read())
                     {
                         //bestellingProduct
-                        bestelling.AddProduct(createBestellingProductFromReader(readerProducten));
+                        bestelling.AddProduct(createBestellingProductFromReader(readerProducten,bestelling));
                     }
                 }
                 conn.Close();
@@ -270,7 +270,7 @@ namespace DAL
             return bestelling;
 
         }
-        private BestellingProduct createBestellingProductFromReader(SqlDataReader reader)
+        private BestellingProduct createBestellingProductFromReader(SqlDataReader reader, Bestelling bestelling)
         {
             //bestellingProduct
             int id = reader.GetInt32(0);
@@ -293,7 +293,9 @@ namespace DAL
 
             Kaart kaart = new Kaart(kaartId, isKeuken, kaartNaam);
             Category category = new Category(btw, categoryId, categoryNaam, kaart);
-            return new BestellingProduct(id, omschrijving, naam, prijs, voorraad, aantal, commentaar, tijd, productStatus, category);
+            BestellingProduct bestellingProduct = new BestellingProduct(id, omschrijving, naam, prijs, voorraad, aantal, commentaar, tijd, productStatus, category);
+            bestellingProduct.ProductBestelling = bestelling;
+            return bestellingProduct;
         }
 
     }
