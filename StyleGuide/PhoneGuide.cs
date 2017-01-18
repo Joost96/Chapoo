@@ -32,8 +32,10 @@ namespace StyleGuide
 
      
         public PhoneGuide()
-        {
+        {  
+            this.DateTime_lbl.Text = DateTime.Now.ToShortTimeString();
             InitializeComponent();
+        
         }
 
         private void back_btn_Click(object sender, EventArgs e)
@@ -41,6 +43,11 @@ namespace StyleGuide
             Hide();         
             vorige.Show();
             
+        }
+
+        private void DateTime_lbl_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

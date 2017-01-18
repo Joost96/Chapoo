@@ -87,7 +87,7 @@
             // 
             this.logout_btn.Image = global::UI.Properties.Resources.Exit;
             this.logout_btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.logout_btn.Location = new System.Drawing.Point(289, 19);
+            this.logout_btn.Location = new System.Drawing.Point(289, 26);
             this.logout_btn.Name = "logout_btn";
             this.logout_btn.Size = new System.Drawing.Size(67, 28);
             this.logout_btn.TabIndex = 15;
@@ -106,6 +106,11 @@
             this.Controls.Add(this.beschikbaar_lbl);
             this.Controls.Add(this.logout_btn);
             this.Name = "OverzichtForm";
+            this.Controls.SetChildIndex(this.logout_btn, 0);
+            this.Controls.SetChildIndex(this.beschikbaar_lbl, 0);
+            this.Controls.SetChildIndex(this.gereserveerd_lbl, 0);
+            this.Controls.SetChildIndex(this.bezet_lbl, 0);
+            this.Controls.SetChildIndex(this.flowLayoutPanel1, 0);
             this.ResumeLayout(false);
             this.PerformLayout();
 

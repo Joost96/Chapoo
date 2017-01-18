@@ -14,6 +14,7 @@ namespace StyleGuide
         public DesktopGuide(Werknemer werknemer) :base(werknemer)
         {
             InitializeComponent();
+            DateTime_lbl.Text = Convert.ToString(DateTime.Now);
         }
     }
 }
