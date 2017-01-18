@@ -14,6 +14,8 @@ namespace UI
     {
         private List<BestellingProduct> bestellingProducten = new List<BestellingProduct>();
         private KeukenBarService kbService = new KeukenBarService();
+
+        private BestellingProduct producten;
         public KeukenBarForm(Werknemer werknemer, bool locatie) :base(werknemer)
         {
             InitializeComponent();
@@ -45,6 +47,26 @@ namespace UI
         {
             LoginForm from = new LoginForm();
             from.Show();
+        }
+
+        private void statusPrepare(ListView listView_keukenBar)
+        {
+            foreach (ListViewItem item in listView_keukenBar.SelectedItems)
+            {
+                BestellingProduct product = (BestellingProduct)item.Tag;
+                product.Status = BestellingStatus.Prepare;
+                
+            }
+        }
+
+        private void statusReady(ListView listView_keukenBar)
+        {
+            foreach (ListViewItem item in listView_keukenBar.SelectedItems)
+            {
+                BestellingProduct product = (BestellingProduct)item.Tag;
+                product.Status = BestellingStatus.Ready;
+
+            }
         }
     }
 }

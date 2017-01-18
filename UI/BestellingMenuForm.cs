@@ -10,7 +10,7 @@ using Logica;
 
 namespace UI
 {
-    //shahin
+    //shahin + joost
     public partial class BestellingMenuForm : StyleGuide.PhoneGuide
     {
         private BestellenKaartService kaartService = new BestellenKaartService();
