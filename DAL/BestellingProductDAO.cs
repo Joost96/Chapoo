@@ -22,6 +22,7 @@ namespace DAL
             command.Parameters.Add("@ProductId", System.Data.SqlDbType.Int).Value = product.Id;
             command.Parameters.Add("@BestellingId", System.Data.SqlDbType.Int).Value = product.ProductBestelling.Id;
             command.Parameters.Add("@b_status", System.Data.SqlDbType.Int).Value = (int)newStatus;
+            command.Parameters.Add("@Tijd", System.Data.SqlDbType.DateTime).Value = product.Tijd;
             command.Prepare();
             command.ExecuteNonQuery();
             conn.Close();

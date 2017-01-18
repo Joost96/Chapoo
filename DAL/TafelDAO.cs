@@ -100,7 +100,7 @@ namespace DAL
             
             SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["constr"].ConnectionString);
             conn.Open();
-            string sql = "UPDATE[RBS_1617F_db01].[dbo].[TAFEL](status) " +
+            string sql = "UPDATE[RBS_1617F_db01].[dbo].[TAFEL] (status) " +
                 "VALUES (@status) " +
                 "WHERE tafel_nr = @tafelId";
             SqlCommand command = new SqlCommand(sql, conn);

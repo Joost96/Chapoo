@@ -109,6 +109,7 @@
             this.cm,
             this.tijd});
             this.listView_keukenBar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listView_keukenBar.FullRowSelect = true;
             this.listView_keukenBar.GridLines = true;
             this.listView_keukenBar.Location = new System.Drawing.Point(12, 49);
             this.listView_keukenBar.Name = "listView_keukenBar";
@@ -161,13 +162,8 @@
             this.Controls.Add(this.klaar_btn);
             this.Controls.Add(this.listView_keukenBar);
             this.Name = "KeukenBarForm";
-            this.Controls.SetChildIndex(this.listView_keukenBar, 0);
-            this.Controls.SetChildIndex(this.klaar_btn, 0);
-            this.Controls.SetChildIndex(this.bereiden_btn, 0);
-            this.Controls.SetChildIndex(this.refresh_btn, 0);
-            this.Controls.SetChildIndex(this.logout_btn, 0);
+            this.Text = "Chapoo 4:40 PM";
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
