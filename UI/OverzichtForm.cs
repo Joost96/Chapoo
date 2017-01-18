@@ -60,6 +60,10 @@ namespace UI
             form.Show();
         }
 
-        
+        private void btnReload_Click(object sender, EventArgs e)
+        {
+            
+            TafelsLaden();
+        }
     }
 }

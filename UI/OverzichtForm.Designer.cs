@@ -33,6 +33,7 @@
             this.gereserveerd_lbl = new System.Windows.Forms.Label();
             this.beschikbaar_lbl = new System.Windows.Forms.Label();
             this.logout_btn = new System.Windows.Forms.Button();
+            this.btnReload = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // flowLayoutPanel1
@@ -96,10 +97,25 @@
             this.logout_btn.UseVisualStyleBackColor = true;
             this.logout_btn.Click += new System.EventHandler(this.logout_btn_Click);
             // 
+            // btnReload
+            // 
+            this.btnReload.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReload.Image = global::UI.Properties.Resources.Refresh;
+            this.btnReload.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnReload.Location = new System.Drawing.Point(248, 390);
+            this.btnReload.Name = "btnReload";
+            this.btnReload.Size = new System.Drawing.Size(105, 50);
+            this.btnReload.TabIndex = 20;
+            this.btnReload.Text = "Vernieuwen";
+            this.btnReload.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnReload.UseVisualStyleBackColor = true;
+            this.btnReload.Click += new System.EventHandler(this.btnReload_Click);
+            // 
             // OverzichtForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.ClientSize = new System.Drawing.Size(368, 473);
+            this.Controls.Add(this.btnReload);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.bezet_lbl);
             this.Controls.Add(this.gereserveerd_lbl);
@@ -123,5 +139,6 @@
         private System.Windows.Forms.Label gereserveerd_lbl;
         private System.Windows.Forms.Label beschikbaar_lbl;
         private System.Windows.Forms.Button logout_btn;
+        private System.Windows.Forms.Button btnReload;
     }
 }

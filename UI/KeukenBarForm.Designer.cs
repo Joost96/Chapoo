@@ -57,12 +57,12 @@
             // refresh_btn
             // 
             this.refresh_btn.BackColor = System.Drawing.Color.Pink;
-            this.refresh_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.refresh_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.refresh_btn.Image = global::UI.Properties.Resources.Refresh;
             this.refresh_btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.refresh_btn.Location = new System.Drawing.Point(12, 515);
+            this.refresh_btn.Location = new System.Drawing.Point(12, 502);
             this.refresh_btn.Name = "refresh_btn";
-            this.refresh_btn.Size = new System.Drawing.Size(90, 34);
+            this.refresh_btn.Size = new System.Drawing.Size(110, 51);
             this.refresh_btn.TabIndex = 15;
             this.refresh_btn.Text = "Verversen";
             this.refresh_btn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -71,11 +71,12 @@
             // bereiden_btn
             // 
             this.bereiden_btn.BackColor = System.Drawing.Color.Yellow;
+            this.bereiden_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bereiden_btn.Image = global::UI.Properties.Resources.History;
             this.bereiden_btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bereiden_btn.Location = new System.Drawing.Point(598, 514);
+            this.bereiden_btn.Location = new System.Drawing.Point(543, 502);
             this.bereiden_btn.Name = "bereiden_btn";
-            this.bereiden_btn.Size = new System.Drawing.Size(87, 34);
+            this.bereiden_btn.Size = new System.Drawing.Size(108, 51);
             this.bereiden_btn.TabIndex = 14;
             this.bereiden_btn.Text = "Bereiden";
             this.bereiden_btn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -87,9 +88,9 @@
             this.klaar_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.klaar_btn.Image = global::UI.Properties.Resources.OK;
             this.klaar_btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.klaar_btn.Location = new System.Drawing.Point(691, 514);
+            this.klaar_btn.Location = new System.Drawing.Point(657, 502);
             this.klaar_btn.Name = "klaar_btn";
-            this.klaar_btn.Size = new System.Drawing.Size(81, 34);
+            this.klaar_btn.Size = new System.Drawing.Size(115, 51);
             this.klaar_btn.TabIndex = 13;
             this.klaar_btn.Text = "Klaar";
             this.klaar_btn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -106,7 +107,7 @@
             this.tijd});
             this.listView_keukenBar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listView_keukenBar.GridLines = true;
-            this.listView_keukenBar.Location = new System.Drawing.Point(12, 63);
+            this.listView_keukenBar.Location = new System.Drawing.Point(12, 49);
             this.listView_keukenBar.Name = "listView_keukenBar";
             this.listView_keukenBar.Size = new System.Drawing.Size(760, 445);
             this.listView_keukenBar.TabIndex = 12;
