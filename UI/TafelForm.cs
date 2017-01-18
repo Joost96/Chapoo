@@ -66,31 +66,6 @@ namespace UI
             this.Close();
         }
 
-        private void btnSave_Click(object sender, EventArgs e)
-        {
-            editProduct.Commentaar = txtBoxComment.Text;
-            panelEdit.Visible = false;
-        }
-
-        private void bewerken_btn_Click(object sender, EventArgs e)
-        {
-            BestellingProduct bestellingProduct = (BestellingProduct)listview_bestelling.SelectedItems[0].Tag;
-         //   BestellingProduct bestellingProduct = bestellingProducten.Find(bp => bp.Id == betsellingProductTag.Id);
-           
-            
-            if (bestellingProduct != null)
-            {
-                editProduct = bestellingProduct;
-                panelEdit.Visible = true;
-            }
-        }
-
-        private void panelEdit_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-
       
     }
 }
