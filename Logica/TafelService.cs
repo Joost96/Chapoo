@@ -28,13 +28,14 @@ namespace Logica
             public double productMetBTW;
         }
         //gemaakt door mark
-        public List<Prijzen> GetPrijzen(int bestellingId)
+        public List<Prijzen> GetPrijzen(int tafelId)
         {
             //Deze methode haalt aan de hand van een gegeven bestellingId een struct op met per product de prijs, de afzonderlijke BTW per product en de totaalprijs (productprijs + btw)
             List<Prijzen> Prijslijst = new List<Prijzen>();
             //Nieuw prijs struct en lijst bestellingproduct
             Prijzen PrijsPerProduct = new Prijzen();
-            List<BestellingProduct> bestelling = GetBestellingProducten(bestellingId);
+            BestellingDAO dao = new BestellingDAO();
+            List<BestellingProduct> bestelling = GetBestellingByTafelId(tafelId).Producten;
             
 
             //Voor ieder product in de lijst van de bestelling
