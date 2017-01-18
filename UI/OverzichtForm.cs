@@ -37,12 +37,12 @@ namespace UI
                     btn.BackColor = Color.Gray;
                 }
 
-                else if (tafel.status == TafelStatus.Gereserveerd)
+                else if (tafel.status == TafelStatus.Bezet)
                 {
                     btn.BackColor = Color.Orange;
                 }
 
-                else if (tafel.status == TafelStatus.Bezet)
+                else if (tafel.status == TafelStatus.Gereed)
                 {
                     btn.BackColor = Color.Green;
                 }
