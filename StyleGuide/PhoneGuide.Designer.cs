@@ -39,6 +39,7 @@
             this.DateTime_lbl.Size = new System.Drawing.Size(73, 13);
             this.DateTime_lbl.TabIndex = 0;
             this.DateTime_lbl.Text = "Tijd en Datum";
+            this.DateTime_lbl.Visible = false;
             this.DateTime_lbl.Click += new System.EventHandler(this.DateTime_lbl_Click);
             // 
             // PhoneGuide
