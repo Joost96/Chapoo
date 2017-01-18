@@ -77,7 +77,14 @@ namespace UI
 
         private void bereiden_btn_Click(object sender, EventArgs e)
         {
-            statusPrepare(listView_keukenBar);
+            foreach (ListViewItem item in listView_keukenBar.SelectedItems)
+            {
+                BestellingProduct product = (BestellingProduct)item.Tag;
+                int status = 2;
+
+                tafelservice.WijzigStatus(product.ProductBestelling.TafelBestelling.tafelNummer, status);
+            }
+
         }
 
         private void klaar_btn_Click(object sender, EventArgs e)
