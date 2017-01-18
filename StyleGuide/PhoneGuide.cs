@@ -33,8 +33,9 @@ namespace StyleGuide
      
         public PhoneGuide()
         {  
-            this.DateTime_lbl.Text = DateTime.Now.ToShortTimeString();
+        
             InitializeComponent();
+            this.DateTime_lbl.Text = DateTime.Now.ToShortTimeString();
         
         }
 
