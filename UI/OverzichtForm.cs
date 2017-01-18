@@ -63,7 +63,8 @@ namespace UI
 
         private void btnReload_Click(object sender, EventArgs e)
         {
-            
+
+            flowLayoutPanel1.Controls.Clear();
             TafelsLaden();
         }
     }

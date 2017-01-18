@@ -57,8 +57,8 @@ namespace UI
             foreach (ListViewItem item in listView_keukenBar.SelectedItems)
             {
                 BestellingProduct product = (BestellingProduct)item.Tag;
-                product.Status = BestellingStatus.Prepare;
-                
+                kbService.changeBestellingStatus(product, BestellingStatus.Prepare);
+
             }
         }
 
@@ -67,9 +67,26 @@ namespace UI
             foreach (ListViewItem item in listView_keukenBar.SelectedItems)
             {
                 BestellingProduct product = (BestellingProduct)item.Tag;
-                product.Status = BestellingStatus.Ready;
+                kbService.changeBestellingStatus(product, BestellingStatus.Ready);
+                //product.Status = BestellingStatus.Ready;
 
             }
+        }
+
+        private void bereiden_btn_Click(object sender, EventArgs e)
+        {
+            statusPrepare(listView_keukenBar);
+        }
+
+        private void klaar_btn_Click(object sender, EventArgs e)
+        {
+            statusReady(listView_keukenBar);
+        }
+
+        private void refresh_btn_Click(object sender, EventArgs e, bool locatie)
+        {
+            listView_keukenBar.Controls.Clear();
+            loadBestellingen(locatie);
         }
     }
 }
