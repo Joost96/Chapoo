@@ -30,7 +30,7 @@ namespace Logica
             if(bestelling == null)
             {
                 bestelling = new Bestelling(werknemer, tafelDAO.ReadByTafelNummer(tafelId), false, DateTime.Now);
-                bestellingDAO.create(bestelling);
+                bestelling = bestellingDAO.create(bestelling);
             }
             DateTime tijd = DateTime.Now;
             foreach (BestellingProduct p in producten)
