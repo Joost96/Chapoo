@@ -80,7 +80,7 @@ namespace DAL
                     "FROM [RBS_1617F_db01].[dbo].[BESTELLING] b " +
                     "JOIN [RBS_1617F_db01].[dbo].[Werknemer] w ON b.[WerkNemerId] = w.[w_nr] " +
                     "JOIN [RBS_1617F_db01].[dbo].[Tafel] t ON b.[TafelId] = t.[tafel_nr] " +
-                    "WHERE TafelId = @tafelId";
+                    "WHERE TafelId = @tafelId AND b.betaald = 'false'";
                 string sqlProducten = "SELECT p.[p_nr], p.[Naam], p.[prijs], p.[omschrijving], p.[voorraad], " +
                     "pb.[b_status], pb.[aantal], pb.[tijd], pb.[commentaar], " +
                     "c.[id], c.[naam], c.[btw], " +

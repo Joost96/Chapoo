@@ -20,18 +20,18 @@ namespace Logica
             return menuKaart;
         }
 
-        public Bestelling getBestelling(int id)
+        public Bestelling getBestellingByTafelId(int id)
         {
-            return bestellingDal.ReadBestellingById(id);
+            return bestellingDal.ReadBestellingByTafelId(id);
         }
         public void AddToBestelling(List<BestellingProduct> producten)
         {
+            DateTime tijd = DateTime.Now;
             foreach (BestellingProduct p in producten)
             {
-                p.Tijd = DateTime.Now;
+                p.Tijd = tijd;
                 bestellingDal.AddProductToBestelling(p);
             }
-        }  
-        //item verwijderen en aantal aanpassen wordt in UI laag gedaan.    
+        }   
     }
 }
