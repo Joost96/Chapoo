@@ -67,6 +67,7 @@
             this.refresh_btn.Text = "Verversen";
             this.refresh_btn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.refresh_btn.UseVisualStyleBackColor = false;
+            this.refresh_btn.Click += new System.EventHandler(this.refresh_btn_Click);
             // 
             // bereiden_btn
             // 
@@ -81,6 +82,7 @@
             this.bereiden_btn.Text = "Bereiden";
             this.bereiden_btn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.bereiden_btn.UseVisualStyleBackColor = false;
+            this.bereiden_btn.Click += new System.EventHandler(this.bereiden_btn_Click);
             // 
             // klaar_btn
             // 
@@ -95,6 +97,7 @@
             this.klaar_btn.Text = "Klaar";
             this.klaar_btn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.klaar_btn.UseVisualStyleBackColor = false;
+            this.klaar_btn.Click += new System.EventHandler(this.klaar_btn_Click);
             // 
             // listView_keukenBar
             // 
@@ -158,7 +161,13 @@
             this.Controls.Add(this.klaar_btn);
             this.Controls.Add(this.listView_keukenBar);
             this.Name = "KeukenBarForm";
+            this.Controls.SetChildIndex(this.listView_keukenBar, 0);
+            this.Controls.SetChildIndex(this.klaar_btn, 0);
+            this.Controls.SetChildIndex(this.bereiden_btn, 0);
+            this.Controls.SetChildIndex(this.refresh_btn, 0);
+            this.Controls.SetChildIndex(this.logout_btn, 0);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
