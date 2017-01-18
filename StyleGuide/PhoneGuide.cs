@@ -28,15 +28,22 @@ namespace StyleGuide
             this.back_btn.UseVisualStyleBackColor = true;
             this.back_btn.Click += new System.EventHandler(this.back_btn_Click);
             this.Controls.Add(this.back_btn);
+            GetCurrentTime();
         }
 
      
         public PhoneGuide()
-        {  
-        
+        {
+
             InitializeComponent();
-            this.DateTime_lbl.Text = DateTime.Now.ToShortTimeString();
-        
+            GetCurrentTime();
+
+            
+ 
+        }
+        private void GetCurrentTime()
+        {
+
         }
 
         private void back_btn_Click(object sender, EventArgs e)
@@ -47,6 +54,11 @@ namespace StyleGuide
         }
 
         private void DateTime_lbl_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PhoneGuide_Load(object sender, EventArgs e)
         {
 
         }

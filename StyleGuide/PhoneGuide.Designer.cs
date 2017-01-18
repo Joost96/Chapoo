@@ -47,6 +47,7 @@
             this.ClientSize = new System.Drawing.Size(368, 473);
             this.Controls.Add(this.DateTime_lbl);
             this.Name = "PhoneGuide";
+            this.Load += new System.EventHandler(this.PhoneGuide_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
