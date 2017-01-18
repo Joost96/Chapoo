@@ -26,6 +26,7 @@ namespace UI
         private void LaadTafel()
         {
             TafelService tafel = new TafelService();
+            BetalenService betalen = new BetalenService();
 
             listViewRekOverzicht.Items.Clear();
             Bestelling bestelling = tafel.GetBestellingByTafelId(tafelId);
@@ -37,6 +38,8 @@ namespace UI
                 listViewRekOverzicht.Items.Add(bestellingItem);
 
             }
+
+            lblTotaal.Text = Convert.ToString(betalen.getTotaalPrijsPerBestelling(tafelId));
 
             // fooi toevoegen aan de bestellingProductTafel en aan de hand hier van brekenen
             // btw laten zien of niet???
