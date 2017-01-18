@@ -12,9 +12,10 @@ namespace UI
 {
     public partial class TafelForm : StyleGuide.PhoneGuide
     {
-        //     public int bestellingId;
+   
         private int tafelId;
         private Bestelling bestelling;
+        private List<BestellingProduct> bestellingProducten = new List<BestellingProduct>();
 
         public TafelForm(StyleGuide.BaseGuide vorige, Werknemer werknemer, int tafelId)
             : base(vorige, werknemer)
@@ -66,8 +67,26 @@ namespace UI
 
         private void serveer_btn_Click(object sender, EventArgs e)
         {
-            TafelService tafel = new TafelService();
-            tafel.ChangeBestellingStatus(bestelling);
+           
+            KeukenBarService keukenBar = new KeukenBarService();
+            
+            foreach (ListViewItem item in listview_bestelling.SelectedItems)
+            {
+                Product product = (Product)item.Tag;
+                BestellingProduct bestellingProduct = bestellingProducten.Find(bp => bp.Id == product.Id);
+                if (bestellingProduct != null)
+                {
+                    bestellingProduct.Aantal++;
+                }
+                else
+                {
+                    bestellingProducten.Add(new BestellingProduct(product, 1, BestellingStatus.Queue));
+                }
+            }
+            foreach(BestellingProduct product in bestelling.Producten)
+            { 
+            keukenBar.ChangeBestellingStatus( product,BestellingStatus.Served);
+            }
         }
     }
 }

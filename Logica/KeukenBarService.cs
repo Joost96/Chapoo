@@ -14,7 +14,7 @@ namespace Logica
         private BestellingProductDAO bestellingProductDAO = new BestellingProductDAO();
 
         // bestelling status veranderen
-        public void changeBestellingStatus(BestellingProduct product, BestellingStatus newStatus)
+        public void ChangeBestellingStatus(BestellingProduct product, BestellingStatus newStatus)
         {
             bestellingProductDAO.updateBestellingProduct(product, newStatus);
         }

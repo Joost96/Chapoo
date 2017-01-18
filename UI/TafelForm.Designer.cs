@@ -115,7 +115,7 @@
             this.serveer_btn.Name = "serveer_btn";
             this.serveer_btn.Size = new System.Drawing.Size(87, 36);
             this.serveer_btn.TabIndex = 11;
-            this.serveer_btn.Text = "Bestellen";
+            this.serveer_btn.Text = "Serveren";
             this.serveer_btn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.serveer_btn.UseVisualStyleBackColor = false;
             this.serveer_btn.Click += new System.EventHandler(this.serveer_btn_Click);
@@ -129,7 +129,7 @@
             this.Controls.Add(this.betalen_btn);
             this.Controls.Add(this.bestellen_btn);
             this.Name = "TafelForm";
-            this.Text = "Chapoo 16:16";
+            this.Text = "Chapoo 16:29";
             this.Load += new System.EventHandler(this.TafelForm_Load);
             this.ResumeLayout(false);
 

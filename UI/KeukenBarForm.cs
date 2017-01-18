@@ -56,7 +56,7 @@ namespace UI
             foreach (ListViewItem item in listView_keukenBar.SelectedItems)
             {
                 BestellingProduct product = (BestellingProduct)item.Tag;
-                kbService.changeBestellingStatus(product, BestellingStatus.Prepare);
+                kbService.ChangeBestellingStatus(product, BestellingStatus.Prepare);
 
             }
         }
@@ -66,7 +66,7 @@ namespace UI
             foreach (ListViewItem item in listView_keukenBar.SelectedItems)
             {
                 BestellingProduct product = (BestellingProduct)item.Tag;
-                kbService.changeBestellingStatus(product, BestellingStatus.Ready);
+                kbService.ChangeBestellingStatus(product, BestellingStatus.Ready);
                 //product.Status = BestellingStatus.Ready;
 
             }
