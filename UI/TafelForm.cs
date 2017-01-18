@@ -14,6 +14,7 @@ namespace UI
     {
         //     public int bestellingId;
         private int tafelId;
+        private Bestelling bestelling;
 
         public TafelForm(StyleGuide.BaseGuide vorige, Werknemer werknemer, int tafelId)
             : base(vorige, werknemer)
@@ -36,7 +37,7 @@ namespace UI
             // vraagt bestellingId op
 
             listview_bestelling.Items.Clear();
-            Bestelling bestelling = tafel.GetBestellingByTafelId(tafelId);
+            this.bestelling = tafel.GetBestellingByTafelId(tafelId);
             foreach (BestellingProduct p in bestelling.Producten) // zet de items in de Listview
             {
                 ListViewItem lvItem = new ListViewItem(p.Naam);
@@ -61,6 +62,12 @@ namespace UI
             BetalenForm form = new BetalenForm(this, werknemer, tafelId);
             form.Show();
             this.Close();
+        }
+
+        private void serveer_btn_Click(object sender, EventArgs e)
+        {
+            TafelService tafel = new TafelService();
+            tafel.ChangeBestellingStatus(bestelling);
         }
     }
 }
