@@ -39,7 +39,7 @@ namespace UI
 
             }
 
-            lblTotaal.Text = Convert.ToString(betalen.getTotaalPrijsPerBestelling(tafelId));
+            lblTotaal.Text = betalen.getTotaalPrijsPerBestelling(tafelId).ToString("C2");
 
             // fooi toevoegen aan de bestellingProductTafel en aan de hand hier van brekenen
             // btw laten zien of niet???

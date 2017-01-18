@@ -38,6 +38,8 @@
             this.lblTotaal = new System.Windows.Forms.Label();
             this.betalen_btn = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // listViewRekOverzicht
@@ -130,10 +132,20 @@
             this.comboBox1.Size = new System.Drawing.Size(114, 21);
             this.comboBox1.TabIndex = 11;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::UI.Properties.Resources.Create;
+            this.pictureBox1.Location = new System.Drawing.Point(215, 327);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(20, 24);
+            this.pictureBox1.TabIndex = 12;
+            this.pictureBox1.TabStop = false;
+            // 
             // BetalenForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.ClientSize = new System.Drawing.Size(368, 473);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.betalen_btn);
             this.Controls.Add(this.lblTotaal);
@@ -142,6 +154,7 @@
             this.Controls.Add(this.textBoxFooi);
             this.Controls.Add(this.listViewRekOverzicht);
             this.Name = "BetalenForm";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -159,5 +172,6 @@
         private System.Windows.Forms.ColumnHeader Naam;
         private System.Windows.Forms.ColumnHeader Aantal;
         private System.Windows.Forms.ColumnHeader Prijs;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
