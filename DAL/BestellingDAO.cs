@@ -148,7 +148,7 @@ namespace DAL
             command.Parameters.Add("@tafelId", System.Data.SqlDbType.Int).Value = tafelId;
             command.Parameters.Add("@betaalmethode", System.Data.SqlDbType.Int).Value = betaalmethode;
             command.Parameters.Add("@fooi", System.Data.SqlDbType.Decimal).Value = (Decimal) fooi;
-            command.Parameters.Add("@totaalbedrag", System.Data.SqlDbType.Decimal).Value = totaalbedrag;
+            command.Parameters.Add("@totaalbedrag", System.Data.SqlDbType.Decimal).Value = (Decimal) totaalbedrag;
             command.Parameters.Add("@commentaar", System.Data.SqlDbType.VarChar).Value = commentaar;
             command.Prepare();
             command.ExecuteNonQuery();
