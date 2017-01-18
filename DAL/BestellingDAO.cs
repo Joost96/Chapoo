@@ -147,9 +147,22 @@ namespace DAL
             SqlCommand command = new SqlCommand(sql, conn);
             command.Parameters.Add("@tafelId", System.Data.SqlDbType.Int).Value = tafelId;
             command.Parameters.Add("@betaalmethode", System.Data.SqlDbType.Int).Value = betaalmethode;
-            command.Parameters.Add("@fooi", System.Data.SqlDbType.Decimal).Value = (Decimal) fooi;
-            command.Parameters.Add("@totaalbedrag", System.Data.SqlDbType.Decimal).Value = (Decimal) totaalbedrag;
             command.Parameters.Add("@commentaar", System.Data.SqlDbType.VarChar).Value = commentaar;
+
+            //Decimal parameters kan ik alleen op deze lelijke manier toevoegen
+            SqlParameter fooiparam = new SqlParameter("@fooi", System.Data.SqlDbType.Decimal);
+            fooiparam.Value = fooi;
+            fooiparam.Precision = 18;
+            fooiparam.Scale = 2;
+
+
+            SqlParameter totaalparam = new SqlParameter("@totaalbedrag", System.Data.SqlDbType.Decimal);
+            totaalparam.Value = totaalbedrag;
+            totaalparam.Precision = 18;
+            totaalparam.Scale = 2;
+
+
+            
             command.Prepare();
             command.ExecuteNonQuery();
             conn.Close();
