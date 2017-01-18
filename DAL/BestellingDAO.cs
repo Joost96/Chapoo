@@ -137,15 +137,15 @@ namespace DAL
             conn.Close();
         }
         //Gemaakt door Mark
-        public  void UpdateBetaalStatus(int bestellingId, int betaalmethode, double fooi, double totaalbedrag, string commentaar)
+        public  void UpdateBetaalStatus(int tafelId, int betaalmethode, double fooi, double totaalbedrag, string commentaar)
         {
             SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["constr"].ConnectionString);
             conn.Open();
             string sql = "UPDATE [RBS_1617F_db01].[dbo].[BESTELLING] " +
                 " SET (betaalmethode = @betaalmethode, fooi = @fooi , totaalbedrag = @totaalbedrag , betaald = 1, commentaar = @commentaar) " +
-                "WHERE id = @bestellingId";
+                "WHERE TafelId = @tafelId";
             SqlCommand command = new SqlCommand(sql, conn);
-            command.Parameters.Add("@bestellingId", System.Data.SqlDbType.Int).Value = bestellingId;
+            command.Parameters.Add("@tafelId", System.Data.SqlDbType.Int).Value = tafelId;
             command.Parameters.Add("@betaalmethode", System.Data.SqlDbType.Int).Value = betaalmethode;
             command.Parameters.Add("@fooi", System.Data.SqlDbType.Decimal).Value = fooi;
             command.Parameters.Add("@totaalbedrag", System.Data.SqlDbType.Decimal).Value = totaalbedrag;

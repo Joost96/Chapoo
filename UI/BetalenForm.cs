@@ -60,5 +60,18 @@ namespace UI
             brekenTotaalEnFooi(tafelId);
             lblTotaal.Text = brekenTotaalEnFooi(tafelId).ToString("C2");
         }
+
+        private void BetalenForm_Load(object sender, EventArgs e)
+        {
+            BetaalDrop_btn.DataSource = Enum.GetValues(typeof(BetaalMethode));
+        }
+
+        private void betalen_btn_Click(object sender, EventArgs e)
+        {
+            BetaalMethode betaalmethode = (BetaalMethode)BetaalDrop_btn.SelectedItem;
+            double fooi = double.Parse(txtBoxFooi.Text);
+            string commentaar = CommentaarBox_txt.Text;
+            betalen.UpdateBetaalStatus(tafelId, betaalmethode, fooi, commentaar);
+        }
     }
 }

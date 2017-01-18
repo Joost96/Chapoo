@@ -28,12 +28,12 @@ namespace Logica
 
         }
         //Gemaakt door mark. Voert betalinggegevens in voor bestellingId
-        public void UpdateBetaalStatus(int bestellingId, BetaalMethode betaalmethode, double fooi, string commentaar)
+        public void UpdateBetaalStatus(int tafelId, BetaalMethode betaalmethode, double fooi, string commentaar)
         {
             int betalingmethode = (int)betaalmethode;
-            double totaalbedrag = getTotaalPrijsPerBestelling(bestellingId);
+            double totaalbedrag = getTotaalPrijsPerBestelling(tafelId);
             BestellingDAO dao = new BestellingDAO();
-            dao.UpdateBetaalStatus(bestellingId, betalingmethode, fooi, totaalbedrag, commentaar);
+            dao.UpdateBetaalStatus(tafelId, betalingmethode, fooi, totaalbedrag, commentaar);
         }
 
 

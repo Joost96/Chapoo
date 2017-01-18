@@ -37,10 +37,12 @@
             this.label2 = new System.Windows.Forms.Label();
             this.lblSubtotaal = new System.Windows.Forms.Label();
             this.betalen_btn = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.BetaalDrop_btn = new System.Windows.Forms.ComboBox();
             this.lblTotaal = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.CommentaarBox_txt = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -123,18 +125,19 @@
             this.betalen_btn.Text = "Betalen";
             this.betalen_btn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.betalen_btn.UseVisualStyleBackColor = false;
+            this.betalen_btn.Click += new System.EventHandler(this.betalen_btn_Click);
             // 
-            // comboBox1
+            // BetaalDrop_btn
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.BetaalDrop_btn.FormattingEnabled = true;
+            this.BetaalDrop_btn.Items.AddRange(new object[] {
             "Cash",
             "Pin",
             "MC"});
-            this.comboBox1.Location = new System.Drawing.Point(241, 396);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(114, 21);
-            this.comboBox1.TabIndex = 11;
+            this.BetaalDrop_btn.Location = new System.Drawing.Point(241, 396);
+            this.BetaalDrop_btn.Name = "BetaalDrop_btn";
+            this.BetaalDrop_btn.Size = new System.Drawing.Size(114, 21);
+            this.BetaalDrop_btn.TabIndex = 11;
             // 
             // lblTotaal
             // 
@@ -166,14 +169,32 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
+            // CommentaarBox_txt
+            // 
+            this.CommentaarBox_txt.Location = new System.Drawing.Point(12, 441);
+            this.CommentaarBox_txt.Name = "CommentaarBox_txt";
+            this.CommentaarBox_txt.Size = new System.Drawing.Size(171, 20);
+            this.CommentaarBox_txt.TabIndex = 16;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(13, 422);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(66, 13);
+            this.label1.TabIndex = 17;
+            this.label1.Text = "Commentaar";
+            // 
             // BetalenForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.ClientSize = new System.Drawing.Size(368, 473);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.CommentaarBox_txt);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lblTotaal);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.BetaalDrop_btn);
             this.Controls.Add(this.betalen_btn);
             this.Controls.Add(this.lblSubtotaal);
             this.Controls.Add(this.label2);
@@ -181,6 +202,7 @@
             this.Controls.Add(this.txtBoxFooi);
             this.Controls.Add(this.listViewRekOverzicht);
             this.Name = "BetalenForm";
+            this.Load += new System.EventHandler(this.BetalenForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -195,12 +217,14 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblSubtotaal;
         private System.Windows.Forms.Button betalen_btn;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox BetaalDrop_btn;
         private System.Windows.Forms.ColumnHeader Naam;
         private System.Windows.Forms.ColumnHeader Aantal;
         private System.Windows.Forms.ColumnHeader Prijs;
         private System.Windows.Forms.Label lblTotaal;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox CommentaarBox_txt;
     }
 }
