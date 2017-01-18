@@ -13,7 +13,7 @@ namespace Logica
     {
         
 
-        //Gemaakt door Mark. Haalt een lijst op van de prijzen van alle product in voor 1 bestellingid
+        //Gemaakt door Mark. Haalt totaalbedrag op voor alle producten in 1 bestelling
         public double getTotaalPrijsPerBestelling(int bestellingId)
         {
             double totaalbedrag = 0;
