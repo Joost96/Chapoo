@@ -60,8 +60,8 @@ namespace UI
 
         private void betalen_btn_Click(object sender, EventArgs e)
         {
-            //BetalenForm form = new BetalenForm(bestellingId);
-            //form.Show();
+            BetalenForm form = new BetalenForm(this,werknemer,tafelId);
+            form.Show();
             this.Close();
         }
     }
