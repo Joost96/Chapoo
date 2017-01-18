@@ -19,12 +19,13 @@ namespace DAL
             bool updatesuccesful = false;
             SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["constr"].ConnectionString);
             conn.Open();
-            string sql = "UPDATE[RBS_1617F_db01].[dbo].[WERKNEMER](status, zitplaatsen) " +
-                "VALUES (@zitplaatsen, @status) ";
+            string sql = "UPDATE[RBS_1617F_db01].[dbo].[TAFEL](status, zitplaatsen) " +
+                "VALUES (@zitplaatsen, @status) " +
+                "WHERE tafel_nr = @tafelnummer";
             SqlCommand command = new SqlCommand(sql, conn);
             command.Parameters.Add("@status", System.Data.SqlDbType.Int).Value = tafel.status;
             command.Parameters.Add("@zitplaatsen", System.Data.SqlDbType.Int).Value = tafel.zitplaatsen;
-
+            command.Parameters.Add("@tafelnummer", System.Data.SqlDbType.Int).Value = tafel.tafelNummer;
             command.Prepare();
             int rowsaffected = command.ExecuteNonQuery();
             conn.Close();
