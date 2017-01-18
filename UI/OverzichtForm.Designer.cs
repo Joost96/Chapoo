@@ -39,10 +39,10 @@
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(14, 67);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(14, 56);
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(10);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(340, 309);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(335, 320);
             this.flowLayoutPanel1.TabIndex = 19;
             // 
             // bezet_lbl
@@ -53,9 +53,9 @@
             this.bezet_lbl.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.bezet_lbl.Location = new System.Drawing.Point(12, 423);
             this.bezet_lbl.Name = "bezet_lbl";
-            this.bezet_lbl.Size = new System.Drawing.Size(68, 17);
+            this.bezet_lbl.Size = new System.Drawing.Size(142, 17);
             this.bezet_lbl.TabIndex = 18;
-            this.bezet_lbl.Text = "      Bezet";
+            this.bezet_lbl.Text = "      Bestelling gereed";
             this.bezet_lbl.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // gereserveerd_lbl
@@ -66,9 +66,9 @@
             this.gereserveerd_lbl.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.gereserveerd_lbl.Location = new System.Drawing.Point(12, 406);
             this.gereserveerd_lbl.Name = "gereserveerd_lbl";
-            this.gereserveerd_lbl.Size = new System.Drawing.Size(120, 17);
+            this.gereserveerd_lbl.Size = new System.Drawing.Size(68, 17);
             this.gereserveerd_lbl.TabIndex = 17;
-            this.gereserveerd_lbl.Text = "      Gereserveerd";
+            this.gereserveerd_lbl.Text = "      Bezet";
             this.gereserveerd_lbl.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // beschikbaar_lbl
@@ -115,13 +115,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.ClientSize = new System.Drawing.Size(368, 473);
-            this.Controls.Add(this.btnReload);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.bezet_lbl);
             this.Controls.Add(this.gereserveerd_lbl);
             this.Controls.Add(this.beschikbaar_lbl);
             this.Controls.Add(this.logout_btn);
+            this.Controls.Add(this.btnReload);
             this.Name = "OverzichtForm";
+            this.Controls.SetChildIndex(this.btnReload, 0);
             this.Controls.SetChildIndex(this.logout_btn, 0);
             this.Controls.SetChildIndex(this.beschikbaar_lbl, 0);
             this.Controls.SetChildIndex(this.gereserveerd_lbl, 0);
