@@ -5,12 +5,13 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using Model;
 
 namespace UI
 {
     public partial class EigenaarForm : StyleGuide.DesktopGuide
     {
-        public EigenaarForm(StyleGuide.BaseGuide vorige)
+        public EigenaarForm(Werknemer werknemer) :base(werknemer)
         {
             InitializeComponent();
         }

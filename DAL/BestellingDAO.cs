@@ -12,6 +12,22 @@ namespace DAL
 {
     public class BestellingDAO
     {
+        public void create(Bestelling bestelling)
+        {
+            SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["constr"].ConnectionString);
+            conn.Open();
+            string sql = "INSERT INTO [dbo].[BESTELLING] ([WerkNemerId],[TafelId]" +
+                ",[betaald],[datum]) " +
+                "VALUES (@werknemerId, @tafelId, @betaald, @datum)";
+            SqlCommand command = new SqlCommand(sql, conn);
+            command.Parameters.Add("@werknemerId", System.Data.SqlDbType.Int).Value = bestelling.Bediening.Id;
+            command.Parameters.Add("@tafelId", System.Data.SqlDbType.Int).Value = bestelling.TafelBestelling.tafelNummer;
+            command.Parameters.Add("@betaald", System.Data.SqlDbType.Bit).Value = bestelling.Betaald;
+            command.Parameters.Add("@datum", System.Data.SqlDbType.DateTime).Value = bestelling.Datum;
+            command.Prepare();
+            command.ExecuteNonQuery();
+            conn.Close();
+        }
         public Bestelling ReadBestellingById(int bestellingId)
         {
             {
@@ -105,15 +121,17 @@ namespace DAL
                 {
                     bestelling = createBestellingFormReader(readerBestelling);
                 }
-                commandProducten.Parameters.Add("@BestellingId", System.Data.SqlDbType.Int).Value = bestelling.Id;
-                commandProducten.Prepare();
-                SqlDataReader readerProducten = commandProducten.ExecuteReader();
-                while (readerProducten.Read())
+                if (bestelling != null)
                 {
-                    //bestellingProduct
-                    bestelling.AddProduct(createBestellingProductFromReader(readerProducten));
+                    commandProducten.Parameters.Add("@BestellingId", System.Data.SqlDbType.Int).Value = bestelling.Id;
+                    commandProducten.Prepare();
+                    SqlDataReader readerProducten = commandProducten.ExecuteReader();
+                    while (readerProducten.Read())
+                    {
+                        //bestellingProduct
+                        bestelling.AddProduct(createBestellingProductFromReader(readerProducten));
+                    }
                 }
-
                 conn.Close();
                 return bestelling;
             }

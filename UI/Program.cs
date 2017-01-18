@@ -16,7 +16,7 @@ namespace UI
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new BestellingMenuForm(new LoginForm(),1));
+            Application.Run(new BestellingMenuForm(new LoginForm(),new Model.Werknemer(1,"","","","",Model.WerknemerRol.bediening),2));
         }
     }
 }

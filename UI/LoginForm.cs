@@ -21,44 +21,44 @@ namespace UI
         private void login_btn_Click(object sender, EventArgs e)
         {
             
-                        string userName = userName_tb.Text;
+           string userName = userName_tb.Text;
             string passWord = passWord_tb.Text;
 
             LoginService login = new LoginService();
-            WerknemerRol rolVanWerknemer = login.CheckCredentials(passWord, userName);
-            Debug.WriteLine(rolVanWerknemer);
+            werknemer = login.CheckCredentials(passWord, userName);
+            Debug.WriteLine(werknemer.rol);
             onbevoegd_lbl.Visible = false;
-            if (rolVanWerknemer == WerknemerRol.bar)
+            if (werknemer.rol == WerknemerRol.bar)
             {
                 Hide();
-                KeukenBarForm form = new KeukenBarForm(this,false);
+                KeukenBarForm form = new KeukenBarForm(werknemer, false);
                 form.Show();
             }
 
-            else if (rolVanWerknemer == WerknemerRol.bediening)
+            else if (werknemer.rol == WerknemerRol.bediening)
             {
                 Hide();
-                OverzichtForm overzicht = new OverzichtForm(this);
+                OverzichtForm overzicht = new OverzichtForm(this, werknemer);
                 overzicht.Show();
             }
 
-            else if (rolVanWerknemer == WerknemerRol.eigenaar)
+            else if (werknemer.rol == WerknemerRol.eigenaar)
             {
 
                 Hide();
-                EigenaarForm form = new EigenaarForm(this);
+                EigenaarForm form = new EigenaarForm(werknemer);
                 form.Show();
                 // hide maar nog niet close ???
             }
 
-            else if (rolVanWerknemer == WerknemerRol.keuken)
+            else if (werknemer.rol == WerknemerRol.keuken)
             {
                 Hide();
-                KeukenBarForm form = new KeukenBarForm(this,true);
+                KeukenBarForm form = new KeukenBarForm(werknemer, true);
                 form.Show();
             }
 
-            else if (rolVanWerknemer == WerknemerRol.onbevoegd)
+            else if (werknemer == null)
             {
                 onbevoegd_lbl.Visible = true;
             }

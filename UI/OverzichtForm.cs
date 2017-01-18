@@ -12,7 +12,7 @@ namespace UI
 {
     public partial class OverzichtForm : StyleGuide.PhoneGuide
     {
-        public OverzichtForm(StyleGuide.BaseGuide vorige) :base(vorige)
+        public OverzichtForm(StyleGuide.BaseGuide vorige, Werknemer werknemer) :base(vorige, werknemer)
         {
             InitializeComponent();
         }

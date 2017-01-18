@@ -34,23 +34,22 @@ namespace Model
            Datum = datum;
            TotaalBedrag = totaalBedrag;
             Producten = new List<BestellingProduct>();
-            CreateProducten();
        }
-       public Bestelling(int id)
+        public Bestelling(Werknemer bediening, Tafel tafelBestelling, bool betaald, DateTime datum)
+        {
+            Bediening = bediening;
+            TafelBestelling = tafelBestelling;
+            Betaald = betaald;
+            Datum = datum;
+            Producten = new List<BestellingProduct>();
+        }
+        public Bestelling(int id)
         {
             Id = id;
         }
 
-       public List<BestellingProduct> CreateProducten()
-       {
-
-           List<BestellingProduct> producten = new List<BestellingProduct>();
-           return producten;
-       }
-
        public List<BestellingProduct> AddProduct(BestellingProduct product)
        {
-         //  List<Product> producten = new List<Product>();
            Producten.Add(product);
 
            return Producten;

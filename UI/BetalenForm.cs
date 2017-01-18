@@ -15,7 +15,7 @@ namespace UI
         private int tafelId;
         private List<BestellingProduct> bestellingProducten = new List<BestellingProduct>();
         private TafelService tOverzicht = new TafelService();
-        public BetalenForm(StyleGuide.BaseGuide vorige, int tafelId) : base(vorige)
+        public BetalenForm(StyleGuide.BaseGuide vorige, int tafelId)
         {
             InitializeComponent();
             this.tafelId = tafelId;

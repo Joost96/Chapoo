@@ -7,11 +7,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Model;
 
 namespace StyleGuide
 {
     public partial class BaseGuide : Form
     {
+        protected Werknemer werknemer;
+        public BaseGuide(Werknemer werknemer)
+        {
+            this.werknemer = werknemer;
+            InitializeComponent();
+        }
         public BaseGuide()
         {
             InitializeComponent();
