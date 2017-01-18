@@ -45,19 +45,21 @@ namespace Logica
                 PrijsPerProduct.categorie = P.CategoryProduct;
                 
                 //Als de categorie binnen deze waardes valt is hij 6, of 12 procent.
-                int numCat = PrijsPerProduct.categorie.Btw;
-                if(numCat <= 8 || numCat == 12)
-                {
-                    double btw = 1.06;
-                    PrijsPerProduct.productMetBTW = (PrijsPerProduct.productprijs * btw) ;
+                double btw = PrijsPerProduct.categorie.Btw;
+                btw = (btw / 100 + 1);
+                
+
+
+               
+                   
+                    PrijsPerProduct.productMetBTW = (PrijsPerProduct.productprijs * btw ) ;
                     PrijsPerProduct.btwValue = (PrijsPerProduct.productMetBTW - PrijsPerProduct.productprijs);
 
-                }
-                else if (numCat >= 9 && numCat <= 11 )
-                {
-                    double btw = 1.21;
-                    PrijsPerProduct.productMetBTW = (PrijsPerProduct.productprijs * btw);
-                }
+                
+               
+               
+                    
+                
 
                 Prijslijst.Add(PrijsPerProduct);
 
