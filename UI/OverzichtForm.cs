@@ -29,7 +29,7 @@ namespace UI
             {
                 Button btn = new Button();
                 btn.Text = "Tafel " + tafel.tafelNummer.ToString() + ' ' + tafel.status.ToString();
-                btn.Size = new Size(100, 60);
+                btn.Size = new Size(100, 80);
                 btn.Margin = new Padding(6);
                 if (tafel.status == TafelStatus.Vrij)
                 {
