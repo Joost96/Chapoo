@@ -10,10 +10,12 @@ namespace Logica
 {
     public class TafelService
     {
+        TafelDAO tafeldao = new TafelDAO();
         public List<BestellingProduct> GetBestellingProducten(int bestellingId)
         {
 
             BestellingDAO bestellingDao = new BestellingDAO();
+            
             List<BestellingProduct> bestelling = bestellingDao.ReadBestellingById(bestellingId).Producten;
 
             return bestelling;
@@ -82,6 +84,12 @@ namespace Logica
 
             
         }
+
+        public void WijzigStatus(int tafelId, int status)
+        {
+            tafeldao.UpdateStatus(tafelId, status);
+        }
+
 
     }
 }

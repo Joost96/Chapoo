@@ -42,7 +42,7 @@ namespace UI
                     btn.BackColor = Color.Orange;
                 }
 
-                else if (tafel.status == TafelStatus.Gereed)
+                else if (tafel.status == TafelStatus.Serveren)
                 {
                     btn.BackColor = Color.Green;
                 }

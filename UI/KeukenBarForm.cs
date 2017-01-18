@@ -14,16 +14,15 @@ namespace UI
     {
         private List<BestellingProduct> bestellingProducten = new List<BestellingProduct>();
         private KeukenBarService kbService = new KeukenBarService();
-
-        private BestellingProduct producten;
-
+        private TafelService tafelservice = new TafelService();
+        public bool locatie;
 
 
         public KeukenBarForm(Werknemer werknemer, bool locatie) :base(werknemer)
         {
             InitializeComponent();
             loadBestellingen(locatie);
-            
+            this.locatie = locatie;
         }
         
 
@@ -73,6 +72,9 @@ namespace UI
             }
         }
 
+
+
+
         private void bereiden_btn_Click(object sender, EventArgs e)
         {
             statusPrepare(listView_keukenBar);
@@ -80,10 +82,17 @@ namespace UI
 
         private void klaar_btn_Click(object sender, EventArgs e)
         {
-            statusReady(listView_keukenBar);
+            foreach (ListViewItem item in listView_keukenBar.SelectedItems)
+            {
+                BestellingProduct product = (BestellingProduct)item.Tag;
+                int status = 3;
+
+                tafelservice.WijzigStatus(product.ProductBestelling.TafelBestelling.tafelNummer, status);
+            }
+
         }
 
-        private void refresh_btn_Click(object sender, EventArgs e, bool locatie)
+        private void refresh_btn_Click(object sender, EventArgs e)
         {
             listView_keukenBar.Controls.Clear();
             loadBestellingen(locatie);
