@@ -25,7 +25,7 @@ namespace UI
         }
         private void CreateTimer()
         {
-            Timer lilTimer = new Timer();
+           Timer lilTimer = new Timer();
            lilTimer.Interval =10000;
            lilTimer.Enabled = true;
            lilTimer.Tick += new EventHandler(MyLittleTimer);
