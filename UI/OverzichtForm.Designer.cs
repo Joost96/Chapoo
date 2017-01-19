@@ -53,9 +53,9 @@
             this.bezet_lbl.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.bezet_lbl.Location = new System.Drawing.Point(12, 423);
             this.bezet_lbl.Name = "bezet_lbl";
-            this.bezet_lbl.Size = new System.Drawing.Size(142, 17);
+            this.bezet_lbl.Size = new System.Drawing.Size(90, 17);
             this.bezet_lbl.TabIndex = 18;
-            this.bezet_lbl.Text = "      Bestelling gereed";
+            this.bezet_lbl.Text = "      Serveren";
             this.bezet_lbl.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // gereserveerd_lbl
@@ -79,16 +79,16 @@
             this.beschikbaar_lbl.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.beschikbaar_lbl.Location = new System.Drawing.Point(12, 389);
             this.beschikbaar_lbl.Name = "beschikbaar_lbl";
-            this.beschikbaar_lbl.Size = new System.Drawing.Size(110, 17);
+            this.beschikbaar_lbl.Size = new System.Drawing.Size(52, 17);
             this.beschikbaar_lbl.TabIndex = 16;
-            this.beschikbaar_lbl.Text = "      Beschikbaar";
+            this.beschikbaar_lbl.Text = "      Vrij";
             this.beschikbaar_lbl.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // logout_btn
             // 
             this.logout_btn.Image = global::UI.Properties.Resources.Exit;
             this.logout_btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.logout_btn.Location = new System.Drawing.Point(289, 26);
+            this.logout_btn.Location = new System.Drawing.Point(289, 12);
             this.logout_btn.Name = "logout_btn";
             this.logout_btn.Size = new System.Drawing.Size(67, 28);
             this.logout_btn.TabIndex = 15;
@@ -122,12 +122,6 @@
             this.Controls.Add(this.logout_btn);
             this.Controls.Add(this.btnReload);
             this.Name = "OverzichtForm";
-            this.Controls.SetChildIndex(this.btnReload, 0);
-            this.Controls.SetChildIndex(this.logout_btn, 0);
-            this.Controls.SetChildIndex(this.beschikbaar_lbl, 0);
-            this.Controls.SetChildIndex(this.gereserveerd_lbl, 0);
-            this.Controls.SetChildIndex(this.bezet_lbl, 0);
-            this.Controls.SetChildIndex(this.flowLayoutPanel1, 0);
             this.ResumeLayout(false);
             this.PerformLayout();
 
