@@ -27,6 +27,8 @@ namespace Logica
         }
         public void AddToBestelling(List<BestellingProduct> producten, Bestelling bestelling,Werknemer werknemer,int tafelId)
         {
+            ProductDAO productDAO = new ProductDAO();
+
             if(bestelling == null)
             {
                 bestelling = new Bestelling(werknemer, tafelDAO.ReadByTafelNummer(tafelId), false, DateTime.Now);
@@ -35,10 +37,14 @@ namespace Logica
             DateTime tijd = DateTime.Now;
             foreach (BestellingProduct p in producten)
             {
+                p.Voorraad -= p.Aantal;
                 p.Tijd = tijd;
                 p.ProductBestelling = bestelling;
+                productDAO.UpdateVoorraad(p);
                 bestellingDAO.AddProductToBestelling(p);
+
             }
         }   
+       
     }
 }
