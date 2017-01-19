@@ -1,6 +1,6 @@
 ﻿namespace UI
 {
-    partial class OverzichtForm
+    partial class RestOverzichtForm
     {
         /// <summary>
         /// Required designer variable.
