@@ -54,22 +54,19 @@ namespace UI
 
          private double brekenTotaalEnFooi()
          {
-
+            double totaal = betalen.getTotaalPrijsPerBestelling(tafelId);
             double fooi;
             if (double.TryParse(txtBoxFooi.Text, out fooi) == true)
             {
-                double totaal = betalen.getTotaalPrijsPerBestelling(tafelId);
-                double totaalMetFooi = fooi + totaal;
+                
+                totaal += fooi;
 
-                return totaalMetFooi;
+               
             }
-            else
-                    {
 
-                    }
+            return totaal;
 
-             
-         }
+        }
  
          private void pictureBox1_Click(object sender, EventArgs e)
          {

@@ -141,7 +141,7 @@
             this.txtBoxFooi.Name = "txtBoxFooi";
             this.txtBoxFooi.Size = new System.Drawing.Size(114, 20);
             this.txtBoxFooi.TabIndex = 1;
-            this.txtBoxFooi.Text = "0,00";
+            this.txtBoxFooi.Text = "0.00";
             this.txtBoxFooi.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtBoxFooi.TextChanged += new System.EventHandler(this.txtBoxFooi_TextChanged);
             // 
@@ -190,7 +190,7 @@
             this.Controls.Add(this.txtBoxFooi);
             this.Controls.Add(this.listViewRekOverzicht);
             this.Name = "BetalenForm";
-            this.Text = "Chapoo 12:28 PM";
+            this.Text = "Chapoo 12:51 PM";
             this.Load += new System.EventHandler(this.BetalenForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
