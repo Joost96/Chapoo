@@ -16,11 +16,17 @@ namespace UI
         {
             InitializeComponent();
             TafelsLaden();
+            CreateTimer();
         }
 
         private void OverzichtForm_Load(object sender, EventArgs e)
         {
             //TafelsLaden();
+        }
+        private void CreateTimer()
+        {
+            Timer lilTimer = new Timer();
+          //  lilTimer.Interval = ;
         }
 
         private void TafelsLaden()
