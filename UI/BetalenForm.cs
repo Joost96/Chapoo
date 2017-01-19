@@ -78,6 +78,8 @@ private void BetalenForm_Load(object sender, EventArgs e)
              double fooi = double.Parse(txtBoxFooi.Text);
              string commentaar = CommentaarBox_txt.Text;
              betalen.UpdateBetaalStatus(tafelId, betaalmethode, fooi, commentaar);
+            vorige.Show();
+            this.Close();
          }
 
     }
