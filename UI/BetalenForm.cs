@@ -59,7 +59,7 @@ namespace UI
             fooierror_lbl.Visible = false;
             double totaal = tafel.GetTotaal(tafelId);
             double fooi;
-            if (double.TryParse(txtBoxFooi.Text, out fooi) == true)
+            if (double.TryParse(txtBoxFooi.Text.Replace(",", "."), out fooi) == true)
             {        
                 totaal += fooi;
             }
@@ -88,7 +88,7 @@ namespace UI
              BetaalMethode betaalmethode = (BetaalMethode)BetaalDrop_btn.SelectedItem;
             if (double.TryParse(txtBoxFooi.Text, out fooi) == true)
             {
-                fooi = double.Parse(txtBoxFooi.Text);
+                fooi = double.Parse(txtBoxFooi.Text.Replace(",", "."));
             }           
 
 
