@@ -146,9 +146,9 @@
             this.warning2_lbl.ForeColor = System.Drawing.Color.Red;
             this.warning2_lbl.Location = new System.Drawing.Point(108, 451);
             this.warning2_lbl.Name = "warning2_lbl";
-            this.warning2_lbl.Size = new System.Drawing.Size(147, 13);
+            this.warning2_lbl.Size = new System.Drawing.Size(194, 13);
             this.warning2_lbl.TabIndex = 13;
-            this.warning2_lbl.Text = "Voeg eerst een bestelling toe!";
+            this.warning2_lbl.Text = "Nog niet alle producten zijn geserveerd!";
             this.warning2_lbl.Visible = false;
             // 
             // TafelForm
@@ -162,7 +162,7 @@
             this.Controls.Add(this.betalen_btn);
             this.Controls.Add(this.bestellen_btn);
             this.Name = "TafelForm";
-            this.Text = "Chapoo 17:21";
+            this.Text = "Chapoo 17:24";
             this.Load += new System.EventHandler(this.TafelForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
