@@ -31,8 +31,9 @@ namespace UI
                 Button btn = new Button();
                 btn.Name = tafel.tafelNummer.ToString();
                 btn.Text = "Tafel " + tafel.tafelNummer.ToString() + ' ' + tafel.status.ToString();
-                btn.Size = new Size(100, 60);
-                btn.Margin = new Padding(4);
+                btn.Size = new Size(160, 54);
+                btn.Margin = new Padding(3);
+                btn.FlatStyle = FlatStyle.Flat;
                 if (tafel.status == TafelStatus.Vrij)
                 {
                     btn.BackColor = Color.Gray;
