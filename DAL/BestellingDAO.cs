@@ -163,8 +163,8 @@ namespace DAL
             SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["constr"].ConnectionString);
             conn.Open();
             string sql = "UPDATE [RBS_1617F_db01].[dbo].[BESTELLING] " +
-                " SET (betaalmethode = @betaalmethode, fooi = @fooi , totaalbedrag = @totaalbedrag , betaald = 1, commentaar = @commentaar) " +
-                "WHERE TafelId = @tafelId";
+                " SET betaalmethode = @betaalmethode, fooi = @fooi , totaalbedrag = @totaalbedrag , betaald = 1, commentaar = @commentaar " +
+                " WHERE TafelId = @tafelId ";
             SqlCommand command = new SqlCommand(sql, conn);
             command.Parameters.Add("@tafelId", System.Data.SqlDbType.Int).Value = tafelId;
             command.Parameters.Add("@betaalmethode", System.Data.SqlDbType.Int).Value = betaalmethode;
@@ -175,13 +175,13 @@ namespace DAL
             fooiparam.Value = fooi;
             fooiparam.Precision = 18;
             fooiparam.Scale = 2;
-
+            command.Parameters.Add(fooiparam);
 
             SqlParameter totaalparam = new SqlParameter("@totaalbedrag", System.Data.SqlDbType.Decimal);
             totaalparam.Value = totaalbedrag;
             totaalparam.Precision = 18;
             totaalparam.Scale = 2;
-
+            command.Parameters.Add(totaalparam);
 
 
             command.Prepare();
