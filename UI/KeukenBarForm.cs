@@ -15,18 +15,18 @@ namespace UI
         private List<BestellingProduct> bestellingProducten = new List<BestellingProduct>();
         private KeukenBarService kbService = new KeukenBarService();
         private TafelService tafelservice = new TafelService();
-        public bool locatie;
+        private bool locatie;
 
 
         public KeukenBarForm(Werknemer werknemer, bool locatie) :base(werknemer)
         {
             InitializeComponent();
-            loadBestellingen(locatie);
+            loadBestellingen();
             this.locatie = locatie;
         }
         
 
-        private void loadBestellingen(bool locatie)
+        private void loadBestellingen()
         {
             listView_keukenBar.Items.Clear();
             bestellingProducten = kbService.GetOpenBestellingen(locatie);
@@ -67,7 +67,6 @@ namespace UI
             {
                 BestellingProduct product = (BestellingProduct)item.Tag;
                 kbService.ChangeBestellingStatus(product, BestellingStatus.Ready);
-                //product.Status = BestellingStatus.Ready;
 
             }
         }
@@ -81,8 +80,10 @@ namespace UI
             {
                 BestellingProduct product = (BestellingProduct)item.Tag;
                 //Nieuwe enum dit moet bereiden
+                kbService.ChangeBestellingStatus(product, BestellingStatus.Prepare);
                 tafelservice.WijzigStatus(product.ProductBestelling.TafelBestelling.tafelNummer, TafelStatus.Bezet);
             }
+            loadBestellingen();
 
         }
 
@@ -91,17 +92,19 @@ namespace UI
             foreach (ListViewItem item in listView_keukenBar.SelectedItems)
             {
                 BestellingProduct product = (BestellingProduct)item.Tag;
-               
+
                 //nieuwe enum dit moet ready to serve
+                kbService.ChangeBestellingStatus(product, BestellingStatus.Ready);
                 tafelservice.WijzigStatus(product.ProductBestelling.TafelBestelling.tafelNummer, TafelStatus.Serveren);
             }
+            loadBestellingen();
 
         }
 
         private void refresh_btn_Click(object sender, EventArgs e)
         {
             listView_keukenBar.Controls.Clear();
-            loadBestellingen(locatie);
+            loadBestellingen();
         }
     }
 }

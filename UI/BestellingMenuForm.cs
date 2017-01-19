@@ -153,6 +153,8 @@ namespace UI
         {
             listviewBestelling.Items.Clear();
             kaartService.AddToBestelling(bestellingProducten,bestelling,werknemer , tafelId);
+            this.vorige.Show();
+            this.Close();
         }
     }
 }

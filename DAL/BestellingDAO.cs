@@ -54,7 +54,8 @@ namespace DAL
                     "JOIN [RBS_1617F_db01].[dbo].[PRODUCT] p ON p.p_nr = pb.ProductId " +
                     "JOIN [RBS_1617F_db01].[dbo].[Category] c ON c.Id = p.CategoryId " +
                     "JOIN [RBS_1617F_db01].[dbo].[Kaart] k ON k.Id = c.KaartId " +
-                    "WHERE BestellingId = @BestellingId";
+                    "WHERE BestellingId = @BestellingId " +
+                    "ORDER BY pb.[b_status] ASC, pb.[tijd] ASC";
                 
                                     
                 SqlCommand commandBestelling = new SqlCommand(sqlBestelling, conn);
@@ -108,7 +109,8 @@ namespace DAL
                     "JOIN [RBS_1617F_db01].[dbo].[PRODUCT] p ON p.p_nr = pb.ProductId " +
                     "JOIN [RBS_1617F_db01].[dbo].[Category] c ON c.Id = p.CategoryId " +
                     "JOIN [RBS_1617F_db01].[dbo].[Kaart] k ON k.Id = c.KaartId " +
-                    "WHERE BestellingId = @BestellingId";
+                    "WHERE BestellingId = @BestellingId " +
+                    "ORDER BY pb.[b_status] ASC, pb.[tijd] ASC";
 
 
                 SqlCommand commandBestelling = new SqlCommand(sqlBestelling, conn);
@@ -199,7 +201,7 @@ namespace DAL
                 " JOIN[RBS_1617F_db01].[dbo].[BESTELLING] b ON pb.[BestellingId] = b.[id]" +
                 " JOIN [RBS_1617F_db01].[dbo].[KAART] k ON p.[KaartId] = k.[id]" +
                 " WHERE k.[is_keuken] = @isKeuken" +
-                " order by tijd ";
+                " ORDER BY pb.[b_status] ASC, pb.[tijd] ASC ";
 
             SqlCommand command = new SqlCommand(sql, conn);
             command.Parameters.Add("@isKeuken", System.Data.SqlDbType.Bit).Value = isKeuken;
