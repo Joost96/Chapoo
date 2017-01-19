@@ -82,8 +82,15 @@ namespace UI
 
         private void betalen_btn_Click(object sender, EventArgs e)
         {
-            if (bestelling != null)
+            bool betalen = true;
+            foreach(BestellingProduct p in bestelling.Producten)
             {
+                if(p.Status != BestellingStatus.Served)
+                betalen = false;
+            }
+            if (bestelling != null || betalen == true)
+            {
+                
                 BetalenForm form = new BetalenForm(this, werknemer, tafelId);
                 this.Hide();
                 form.Show();
