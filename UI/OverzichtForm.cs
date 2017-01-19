@@ -26,9 +26,16 @@ namespace UI
         private void CreateTimer()
         {
             Timer lilTimer = new Timer();
-          //  lilTimer.Interval = ;
-        }
+           lilTimer.Interval =10000;
+           lilTimer.Enabled = true;
+           lilTimer.Tick += new EventHandler(MyLittleTimer);
+           lilTimer.Start();
 
+        }
+        private void MyLittleTimer(Object sender, EventArgs e)
+        {
+            TafelsLaden();
+        }
         private void TafelsLaden()
         {
             TafelOverzichtService tOverzichtServ = new TafelOverzichtService();

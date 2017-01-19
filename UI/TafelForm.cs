@@ -29,7 +29,20 @@ namespace UI
         {
             // laad de kaart!
             LaadKaart();
+            CreateTimer();
 
+        }
+        private void CreateTimer()
+        {
+            Timer littleTimer = new Timer();
+            littleTimer.Interval = 10000;
+            littleTimer.Enabled = true;
+            littleTimer.Tick += new EventHandler(MyLittleTimer);
+            littleTimer.Start();
+        }
+        private void MyLittleTimer(Object sender, EventArgs e)
+        {
+            LaadKaart();
         }
 
         private void LaadKaart()
