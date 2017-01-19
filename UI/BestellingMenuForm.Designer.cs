@@ -388,6 +388,7 @@
             // txtBoxComment
             // 
             this.txtBoxComment.Location = new System.Drawing.Point(4, 41);
+            this.txtBoxComment.MaxLength = 200;
             this.txtBoxComment.Name = "txtBoxComment";
             this.txtBoxComment.Size = new System.Drawing.Size(342, 192);
             this.txtBoxComment.TabIndex = 0;
@@ -403,7 +404,7 @@
             this.Controls.Add(this.bewerken_btn);
             this.Controls.Add(this.bestellen_btn);
             this.Name = "BestellingMenuForm";
-            this.Text = "Chapoo 15:02";
+            this.Text = "Chapoo 15:06";
             this.Load += new System.EventHandler(this.BestellingMenuForm_Load);
             this.menu_tab.ResumeLayout(false);
             this.drinken_tab.ResumeLayout(false);

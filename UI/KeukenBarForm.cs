@@ -21,8 +21,8 @@ namespace UI
         public KeukenBarForm(Werknemer werknemer, bool locatie) :base(werknemer)
         {
             InitializeComponent();
-            loadBestellingen();
             this.locatie = locatie;
+            loadBestellingen();
         }
         
 
@@ -49,6 +49,7 @@ namespace UI
         {
             LoginForm from = new LoginForm();
             from.Show();
+            this.Close();
         }
 
         private void statusPrepare(ListView listView_keukenBar)
