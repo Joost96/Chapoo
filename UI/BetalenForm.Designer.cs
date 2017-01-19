@@ -50,15 +50,15 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 395);
+            this.label1.Location = new System.Drawing.Point(10, 391);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(66, 13);
+            this.label1.Size = new System.Drawing.Size(55, 13);
             this.label1.TabIndex = 17;
-            this.label1.Text = "Commentaar";
+            this.label1.Text = "Feedback";
             // 
             // CommentaarBox_txt
             // 
-            this.CommentaarBox_txt.Location = new System.Drawing.Point(13, 417);
+            this.CommentaarBox_txt.Location = new System.Drawing.Point(13, 412);
             this.CommentaarBox_txt.Name = "CommentaarBox_txt";
             this.CommentaarBox_txt.Size = new System.Drawing.Size(171, 20);
             this.CommentaarBox_txt.TabIndex = 16;
@@ -114,7 +114,7 @@
             // 
             this.lblSubtotaal.AutoSize = true;
             this.lblSubtotaal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSubtotaal.Location = new System.Drawing.Point(238, 314);
+            this.lblSubtotaal.Location = new System.Drawing.Point(238, 305);
             this.lblSubtotaal.Name = "lblSubtotaal";
             this.lblSubtotaal.Size = new System.Drawing.Size(28, 13);
             this.lblSubtotaal.TabIndex = 4;
@@ -132,7 +132,7 @@
             // lblFooi
             // 
             this.lblFooi.AutoSize = true;
-            this.lblFooi.Location = new System.Drawing.Point(10, 346);
+            this.lblFooi.Location = new System.Drawing.Point(10, 350);
             this.lblFooi.Name = "lblFooi";
             this.lblFooi.Size = new System.Drawing.Size(27, 13);
             this.lblFooi.TabIndex = 2;
@@ -189,7 +189,7 @@
             // 
             this.lblBTW.AutoSize = true;
             this.lblBTW.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBTW.Location = new System.Drawing.Point(238, 327);
+            this.lblBTW.Location = new System.Drawing.Point(238, 324);
             this.lblBTW.Name = "lblBTW";
             this.lblBTW.Size = new System.Drawing.Size(28, 13);
             this.lblBTW.TabIndex = 21;
@@ -225,7 +225,7 @@
             this.Controls.Add(this.txtBoxFooi);
             this.Controls.Add(this.listViewRekOverzicht);
             this.Name = "BetalenForm";
-            this.Text = "Chapoo 15:35";
+            this.Text = "Chapoo 17:19";
             this.Load += new System.EventHandler(this.BetalenForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

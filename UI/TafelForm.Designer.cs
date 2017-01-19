@@ -86,7 +86,7 @@
             // 
             // betalen_btn
             // 
-            this.betalen_btn.BackColor = System.Drawing.Color.SandyBrown;
+            this.betalen_btn.BackColor = System.Drawing.Color.Salmon;
             this.betalen_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.betalen_btn.Image = global::UI.Properties.Resources.Shopping_cart;
             this.betalen_btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -120,7 +120,7 @@
             this.serveer_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.serveer_btn.Image = ((System.Drawing.Image)(resources.GetObject("serveer_btn.Image")));
             this.serveer_btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.serveer_btn.Location = new System.Drawing.Point(138, 405);
+            this.serveer_btn.Location = new System.Drawing.Point(143, 405);
             this.serveer_btn.Name = "serveer_btn";
             this.serveer_btn.Size = new System.Drawing.Size(87, 36);
             this.serveer_btn.TabIndex = 11;
@@ -162,7 +162,7 @@
             this.Controls.Add(this.betalen_btn);
             this.Controls.Add(this.bestellen_btn);
             this.Name = "TafelForm";
-            this.Text = "Chapoo 15:43";
+            this.Text = "Chapoo 17:21";
             this.Load += new System.EventHandler(this.TafelForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
