@@ -42,7 +42,7 @@ namespace Logica
             //Voor ieder product in de lijst van de bestelling
             foreach (BestellingProduct P in bestelling)
             {
-                subtotaal += P.Prijs;
+                subtotaal += P.Prijs * P.Aantal;
             }
             //Geeft een struct terug met daarin de standaard productprijs, btw waarde per product en de Totaalprijs per product.
             return subtotaal;

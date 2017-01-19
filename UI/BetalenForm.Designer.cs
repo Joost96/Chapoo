@@ -67,7 +67,7 @@
             // 
             this.lblTotaal.AutoSize = true;
             this.lblTotaal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotaal.Location = new System.Drawing.Point(313, 372);
+            this.lblTotaal.Location = new System.Drawing.Point(238, 368);
             this.lblTotaal.Name = "lblTotaal";
             this.lblTotaal.Size = new System.Drawing.Size(32, 13);
             this.lblTotaal.TabIndex = 14;
@@ -114,7 +114,7 @@
             // 
             this.lblSubtotaal.AutoSize = true;
             this.lblSubtotaal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSubtotaal.Location = new System.Drawing.Point(318, 305);
+            this.lblSubtotaal.Location = new System.Drawing.Point(238, 314);
             this.lblSubtotaal.Name = "lblSubtotaal";
             this.lblSubtotaal.Size = new System.Drawing.Size(28, 13);
             this.lblSubtotaal.TabIndex = 4;
@@ -145,7 +145,6 @@
             this.txtBoxFooi.Size = new System.Drawing.Size(114, 20);
             this.txtBoxFooi.TabIndex = 1;
             this.txtBoxFooi.Text = "0.00";
-            this.txtBoxFooi.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtBoxFooi.TextChanged += new System.EventHandler(this.txtBoxFooi_TextChanged);
             // 
             // listViewRekOverzicht
@@ -190,7 +189,7 @@
             // 
             this.lblBTW.AutoSize = true;
             this.lblBTW.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBTW.Location = new System.Drawing.Point(318, 324);
+            this.lblBTW.Location = new System.Drawing.Point(238, 327);
             this.lblBTW.Name = "lblBTW";
             this.lblBTW.Size = new System.Drawing.Size(28, 13);
             this.lblBTW.TabIndex = 21;
@@ -205,6 +204,7 @@
             this.fooierror_lbl.Size = new System.Drawing.Size(78, 13);
             this.fooierror_lbl.TabIndex = 19;
             this.fooierror_lbl.Text = "Onjuiste Invoer";
+            this.fooierror_lbl.Visible = false;
             // 
             // BetalenForm
             // 
@@ -225,7 +225,7 @@
             this.Controls.Add(this.txtBoxFooi);
             this.Controls.Add(this.listViewRekOverzicht);
             this.Name = "BetalenForm";
-            this.Text = "Chapoo 14:59";
+            this.Text = "Chapoo 15:35";
             this.Load += new System.EventHandler(this.BetalenForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

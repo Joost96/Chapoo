@@ -41,7 +41,6 @@ namespace UI
 
                 ListViewItem bestellingItem = new ListViewItem(p.Naam);
                 bestellingItem.SubItems.Add(p.Aantal.ToString());
-                //bestellingItem.SubItems.Add(p.Commentaar);
                 bestellingItem.SubItems.Add(p.Prijs.ToString("C2"));
                 listViewRekOverzicht.Items.Add(bestellingItem);
 
@@ -58,14 +57,13 @@ namespace UI
          private double brekenTotaalEnFooi()
          {
             fooierror_lbl.Visible = false;
-            double totaal = betalen.getTotaalPrijsPerBestelling(tafelId);
+            double totaal = tafel.GetTotaal(tafelId);
             double fooi;
             if (double.TryParse(txtBoxFooi.Text, out fooi) == true)
             {        
                 totaal += fooi;
             }
-
-            else
+            else if (!txtBoxFooi.Text.Equals(""))
             {
                 fooierror_lbl.Visible = true;
             }
