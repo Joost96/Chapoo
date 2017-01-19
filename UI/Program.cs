@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -14,10 +15,23 @@ namespace UI
         [STAThread]
         static void Main()
         {
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new OverzichtForm(new LoginForm(),new Model.Werknemer(1,"","","","",Model.WerknemerRol.bediening)));
-            Application.Run(new LoginForm());
+           try
+            {
+                Application.EnableVisualStyles();
+                Application.SetCompatibleTextRenderingDefault(false);
+                Application.Run(new LoginForm());
+            }
+            catch (SqlException ex)
+            {
+                Application.Exit();
+                MessageBox.Show("Er kan geen verbinding met de database worden gemaakt!\n " +
+                    "Probeer dit opnieuw of neem contact op met de systeem beheerder",
+                    "Verbindingsproblemen",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Exclamation,
+                    MessageBoxDefaultButton.Button1,
+                    MessageBoxOptions.RightAlign);
+            } 
         }
     }
 }

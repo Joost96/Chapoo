@@ -20,12 +20,11 @@ namespace UI
 
         private void login_btn_Click(object sender, EventArgs e)
         {
-            
-           string userName = userName_tb.Text;
+            string userName = userName_tb.Text;
             string passWord = passWord_tb.Text;
-
             LoginService login = new LoginService();
             werknemer = login.CheckCredentials(passWord, userName);
+                        
             onbevoegd_lbl.Visible = false;
             if (werknemer == null)
             {
