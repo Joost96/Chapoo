@@ -136,7 +136,7 @@
             this.Controls.Add(this.betalen_btn);
             this.Controls.Add(this.bestellen_btn);
             this.Name = "TafelForm";
-            this.Text = "Chapoo 16:56";
+            this.Text = "Chapoo 17:01";
             this.Load += new System.EventHandler(this.TafelForm_Load);
             this.ResumeLayout(false);
 
