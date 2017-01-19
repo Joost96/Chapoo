@@ -22,11 +22,23 @@ namespace UI
         {
             InitializeComponent();
             this.locatie = locatie;
-            loadBestellingen();
+            LoadBestellingen();
+            CreateTimer();
         }
-        
+        private void MyLittleTimer(Object sender, EventArgs e)
+        {
+            LoadBestellingen();
+        }
+        private void CreateTimer()
+        {
+            Timer littleTimer = new Timer();
+            littleTimer.Interval = 10000;
+            littleTimer.Enabled = true;
+            littleTimer.Tick += new EventHandler(MyLittleTimer);
+            littleTimer.Start();
+        }
 
-        private void loadBestellingen()
+        private void LoadBestellingen()
         {
             listView_keukenBar.Items.Clear();
             bestellingProducten = kbService.GetOpenBestellingen(locatie);
@@ -61,7 +73,7 @@ namespace UI
                 kbService.ChangeBestellingStatus(product, BestellingStatus.Prepare);
                 tafelservice.WijzigStatus(product.ProductBestelling.TafelBestelling.tafelNummer, TafelStatus.Bezet);
             }
-            loadBestellingen();
+            LoadBestellingen();
 
         }
 
@@ -75,14 +87,14 @@ namespace UI
                 kbService.ChangeBestellingStatus(product, BestellingStatus.Ready);
                 tafelservice.WijzigStatus(product.ProductBestelling.TafelBestelling.tafelNummer, TafelStatus.Serveren);
             }
-            loadBestellingen();
+            LoadBestellingen();
 
         }
 
         private void refresh_btn_Click(object sender, EventArgs e)
         {
             listView_keukenBar.Controls.Clear();
-            loadBestellingen();
+            LoadBestellingen();
         }
     }
 }
