@@ -17,11 +17,13 @@ namespace UI
         private TafelService tOverzicht = new TafelService();
         private TafelService tafel = new TafelService();
         private BetalenService betalen = new BetalenService();
+        
         public BetalenForm(StyleGuide.BaseGuide vorige,Werknemer werknemer, int tafelId) :base(vorige,werknemer)
         {
             this.tafelId = tafelId;
             InitializeComponent();
             LaadTafel();
+            CommentaarBox_txt.MaxLength = 200;
         }
 
         private void LaadTafel()
@@ -46,6 +48,7 @@ namespace UI
             }
             lblSubtotaal.Text = betalen.getTotaalPrijsPerBestelling(tafelId).ToString("C2");
             lblTotaal.Text = brekenTotaalEnFooi().ToString("C2");
+            lblBTW.Text = tafel.GetBtwTotaal(tafelId).ToString("C2");
             
                         // fooi toevoegen aan de bestellingProductTafel en aan de hand hier van brekenen
                         // btw laten zien of niet???
@@ -88,12 +91,11 @@ namespace UI
             if (double.TryParse(txtBoxFooi.Text, out fooi) == true)
             {
                 fooi = double.Parse(txtBoxFooi.Text);
-            }
-            
+            }           
 
 
             string commentaar = CommentaarBox_txt.Text;
-             betalen.UpdateBetaalStatus(tafelId, betaalmethode, fooi, commentaar);
+            betalen.UpdateBetaalStatus(tafelId, betaalmethode, fooi, commentaar);
             vorige.Show();
             this.Close();
          }
