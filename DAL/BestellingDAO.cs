@@ -158,7 +158,7 @@ namespace DAL
             conn.Close();
         }
         //Gemaakt door Mark
-        public void UpdateBetaalStatus(int tafelId, int betaalmethode, double fooi, double totaalbedrag, string commentaar)
+        public void BetaalBestelling(int tafelId, int betaalmethode, double fooi, double totaalbedrag, string commentaar)
         {
             SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["constr"].ConnectionString);
             conn.Open();

@@ -11,8 +11,8 @@ namespace Logica
 {
     public class BetalenService
     {
-        
 
+        private TafelDAO tafelDAO = new TafelDAO();
         //Gemaakt door Mark. Haalt totaalbedrag op voor alle producten in 1 bestelling
         public double getTotaalPrijsPerBestelling(int tafelId)
         {
@@ -33,7 +33,8 @@ namespace Logica
             int betalingmethode = (int)betaalmethode;
             double totaalbedrag = getTotaalPrijsPerBestelling(tafelId);
             BestellingDAO dao = new BestellingDAO();
-            dao.UpdateBetaalStatus(tafelId, betalingmethode, fooi, totaalbedrag, commentaar);
+            dao.BetaalBestelling(tafelId, betalingmethode, fooi, totaalbedrag, commentaar);
+            tafelDAO.UpdateStatus(tafelId, TafelStatus.Vrij);
         }
 
 

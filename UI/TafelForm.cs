@@ -80,6 +80,7 @@ namespace UI
                 BestellingProduct product = (BestellingProduct)item.Tag;
                 keukenBar.ChangeBestellingStatus(product, BestellingStatus.Served);
             }
+            LaadKaart();
           
         }
     }
