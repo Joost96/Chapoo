@@ -48,6 +48,8 @@ namespace UI
                 lvItem.SubItems.Add(p.Aantal.ToString());
                 lvItem.SubItems.Add(p.Commentaar);
                 lvItem.SubItems.Add(p.Prijs.ToString("C2"));
+                lvItem.SubItems.Add(p.Status.ToString());
+                lvItem.Tag = p;
                 listview_bestelling.Items.Add(lvItem);
             }
 
