@@ -14,10 +14,24 @@ namespace UI
         [STAThread]
         static void Main()
         {
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new OverzichtForm(new LoginForm(),new Model.Werknemer(1,"","","","",Model.WerknemerRol.bediening)));
-            //Application.Run(new LoginForm());
+            try
+            {
+                Application.EnableVisualStyles();
+                Application.SetCompatibleTextRenderingDefault(false);
+                Application.Run(new LoginForm());
+            }
+            catch (Exception ex)
+            {
+                // MessageBox.Show(ex.Message.ToString());
+                Application.Exit();
+                MessageBox.Show("Op dit moment is er geen connectie met de server!",
+                    "Important Note",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Exclamation,
+                    MessageBoxDefaultButton.Button1,
+                    MessageBoxOptions.RightAlign);
+            }
+
         }
     }
 }
