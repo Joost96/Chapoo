@@ -45,26 +45,35 @@ namespace UI
 
             }
             lblSubtotaal.Text = betalen.getTotaalPrijsPerBestelling(tafelId).ToString("C2");
-            lblTotaal.Text = brekenTotaalEnFooi(tafelId).ToString("C2");
+            lblTotaal.Text = brekenTotaalEnFooi().ToString("C2");
             
                         // fooi toevoegen aan de bestellingProductTafel en aan de hand hier van brekenen
                         // btw laten zien of niet???
              
             }
 
-         private double brekenTotaalEnFooi(int tafelId)
+         private double brekenTotaalEnFooi()
          {
-             double fooi = double.Parse(txtBoxFooi.Text);
-             double totaal = betalen.getTotaalPrijsPerBestelling(tafelId);
-             double totaalMetFooi = fooi + totaal;
- 
-             return totaalMetFooi;
+
+            double fooi;
+            if (double.TryParse(txtBoxFooi.Text, out fooi) == true)
+            {
+                double totaal = betalen.getTotaalPrijsPerBestelling(tafelId);
+                double totaalMetFooi = fooi + totaal;
+
+                return totaalMetFooi;
+            }
+            else
+                    {
+
+                    }
+
+             
          }
  
          private void pictureBox1_Click(object sender, EventArgs e)
          {
-             brekenTotaalEnFooi(tafelId);
-             lblTotaal.Text = brekenTotaalEnFooi(tafelId).ToString("C2");
+             
          }
 
 private void BetalenForm_Load(object sender, EventArgs e)
@@ -82,6 +91,10 @@ private void BetalenForm_Load(object sender, EventArgs e)
             this.Close();
          }
 
+        private void txtBoxFooi_TextChanged(object sender, EventArgs e)
+        {
+            lblTotaal.Text = brekenTotaalEnFooi().ToString("C2");
+        }
     }
 }
 
