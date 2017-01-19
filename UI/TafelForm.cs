@@ -73,15 +73,17 @@ namespace UI
         {
             // verwijst door naar de Bestel kaart
             BestellingMenuForm form = new BestellingMenuForm(this, werknemer, tafelId);
-            form.Show();
             this.Hide();
+            form.Show();
+            
         }
 
         private void betalen_btn_Click(object sender, EventArgs e)
         {
             BetalenForm form = new BetalenForm(this, werknemer, tafelId);
-            form.Show();
             this.Hide();
+            form.Show();
+           
         }
 
         private void serveer_btn_Click(object sender, EventArgs e)
