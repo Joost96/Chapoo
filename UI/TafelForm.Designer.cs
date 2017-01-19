@@ -133,7 +133,7 @@
             // 
             this.warning_lbl.AutoSize = true;
             this.warning_lbl.ForeColor = System.Drawing.Color.Red;
-            this.warning_lbl.Location = new System.Drawing.Point(108, 457);
+            this.warning_lbl.Location = new System.Drawing.Point(108, 451);
             this.warning_lbl.Name = "warning_lbl";
             this.warning_lbl.Size = new System.Drawing.Size(224, 13);
             this.warning_lbl.TabIndex = 12;
@@ -144,7 +144,7 @@
             // 
             this.warning2_lbl.AutoSize = true;
             this.warning2_lbl.ForeColor = System.Drawing.Color.Red;
-            this.warning2_lbl.Location = new System.Drawing.Point(108, 444);
+            this.warning2_lbl.Location = new System.Drawing.Point(108, 451);
             this.warning2_lbl.Name = "warning2_lbl";
             this.warning2_lbl.Size = new System.Drawing.Size(147, 13);
             this.warning2_lbl.TabIndex = 13;
@@ -162,7 +162,7 @@
             this.Controls.Add(this.betalen_btn);
             this.Controls.Add(this.bestellen_btn);
             this.Name = "TafelForm";
-            this.Text = "Chapoo 14:42";
+            this.Text = "Chapoo 15:00";
             this.Load += new System.EventHandler(this.TafelForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
