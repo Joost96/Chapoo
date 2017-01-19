@@ -4,6 +4,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Diagnostics;
 
 namespace UI
 {
@@ -23,6 +24,7 @@ namespace UI
             }
             catch (SqlException ex)
             {
+                Debug.WriteLine(ex.ToString());
                 Application.Exit();
                 MessageBox.Show("Er kan geen verbinding met de database worden gemaakt!\n " +
                     "Probeer dit opnieuw of neem contact op met de systeem beheerder",

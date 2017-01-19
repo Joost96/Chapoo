@@ -7,7 +7,6 @@ using System.Text;
 using System.Windows.Forms;
 using Model;
 using Logica;
-using System.Diagnostics;
 
 namespace UI
 {

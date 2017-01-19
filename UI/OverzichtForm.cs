@@ -71,6 +71,7 @@ namespace UI
         }
         private void tafel_btn_Click(object sender,EventArgs e)
         {
+            this.Hide();
             int tafelNr = Int32.Parse(((Button)sender).Name);
             StyleGuide.BaseGuide form = new TafelForm(this,werknemer,tafelNr);
             form.Show();
