@@ -71,7 +71,6 @@ namespace UI
                 BestellingProduct product = (BestellingProduct)item.Tag;
                 //Nieuwe enum dit moet bereiden
                 kbService.ChangeBestellingStatus(product, BestellingStatus.Prepare);
-                tafelservice.WijzigStatus(product.ProductBestelling.TafelBestelling.tafelNummer, TafelStatus.Bezet);
             }
             LoadBestellingen();
 
@@ -85,7 +84,6 @@ namespace UI
 
                 //nieuwe enum dit moet ready to serve
                 kbService.ChangeBestellingStatus(product, BestellingStatus.Ready);
-                tafelservice.WijzigStatus(product.ProductBestelling.TafelBestelling.tafelNummer, TafelStatus.Serveren);
             }
             LoadBestellingen();
 
