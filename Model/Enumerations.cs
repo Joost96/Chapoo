@@ -13,4 +13,4 @@ namespace Model
 
 }
 // besteld,  bereiding,      klaar om te serveren     geserveerd. 
-//   queu      Prepare            Ready                   Serve
+//   Queu      Prepare            Ready                   Serve
