@@ -76,7 +76,7 @@ namespace UI
              
          }
 
-private void BetalenForm_Load(object sender, EventArgs e)
+         private void BetalenForm_Load(object sender, EventArgs e)
          {
              BetaalDrop_btn.DataSource = Enum.GetValues(typeof(BetaalMethode));
          }
