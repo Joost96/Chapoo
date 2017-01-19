@@ -31,6 +31,11 @@ namespace StyleGuide
 
            
         }
+        public PhoneGuide(Werknemer medewerker) : base(medewerker)
+        {
+            InitializeComponent();
+        }
+        
 
 
         public PhoneGuide()
