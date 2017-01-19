@@ -12,7 +12,8 @@ namespace UI
 {
     public partial class TafelForm : StyleGuide.PhoneGuide
     {
-   
+        private TafelService tafelService = new TafelService();
+
         private int tafelId;
         private Bestelling bestelling;
         private List<BestellingProduct> bestellingProducten = new List<BestellingProduct>();
@@ -79,6 +80,15 @@ namespace UI
             {
                 BestellingProduct product = (BestellingProduct)item.Tag;
                 keukenBar.ChangeBestellingStatus(product, BestellingStatus.Served);
+            }
+            bool AllServerd = true;
+            foreach (ListViewItem item in listview_bestelling.Items)
+            {
+                AllServerd = ((BestellingProduct)item.Tag).Status != BestellingStatus.Ready;
+            }
+            if(AllServerd)
+            {
+                tafelService.WijzigStatus(tafelId, TafelStatus.Bezet);
             }
             LaadKaart();
           
