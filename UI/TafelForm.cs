@@ -95,7 +95,23 @@ namespace UI
         {
            
             KeukenBarService keukenBar = new KeukenBarService();
+
             
+
+
+            bool AllServerd = true;
+            if (AllServerd)
+            {
+                tafelService.WijzigStatus(tafelId, TafelStatus.Bezet);
+            }
+
+            foreach (ListViewItem item in listview_bestelling.Items)
+            {
+                AllServerd = ((BestellingProduct)item.Tag).Status != BestellingStatus.Ready;
+            }
+
+
+
             foreach (ListViewItem item in listview_bestelling.SelectedItems)
             {
                 BestellingProduct product = (BestellingProduct)item.Tag;
@@ -110,15 +126,9 @@ namespace UI
                   
                 }
             }
-            bool AllServerd = true;
-            foreach (ListViewItem item in listview_bestelling.Items)
-            {
-                AllServerd = ((BestellingProduct)item.Tag).Status != BestellingStatus.Ready;
-            }
-            if(AllServerd)
-            {
-                tafelService.WijzigStatus(tafelId, TafelStatus.Bezet);
-            }
+            
+            
+            
             LaadKaart();
           
         }
