@@ -303,17 +303,17 @@
             // BestellingNaam
             // 
             this.BestellingNaam.Text = "Naam";
-            this.BestellingNaam.Width = 160;
+            this.BestellingNaam.Width = 150;
             // 
             // BestellingPrijs
             // 
             this.BestellingPrijs.Text = "Prijs";
-            this.BestellingPrijs.Width = 40;
+            this.BestellingPrijs.Width = 58;
             // 
             // BestellingAantal
             // 
             this.BestellingAantal.Text = "Aantal";
-            this.BestellingAantal.Width = 40;
+            this.BestellingAantal.Width = 50;
             // 
             // BestellingComentaar
             // 
@@ -403,6 +403,7 @@
             this.Controls.Add(this.bewerken_btn);
             this.Controls.Add(this.bestellen_btn);
             this.Name = "BestellingMenuForm";
+            this.Text = "Chapoo 15:02";
             this.Load += new System.EventHandler(this.BestellingMenuForm_Load);
             this.menu_tab.ResumeLayout(false);
             this.drinken_tab.ResumeLayout(false);

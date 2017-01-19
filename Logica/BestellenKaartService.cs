@@ -42,8 +42,8 @@ namespace Logica
                 p.ProductBestelling = bestelling;
                 productDAO.UpdateVoorraad(p);
                 bestellingDAO.AddProductToBestelling(p);
-
             }
+            tafelDAO.UpdateStatus(bestelling.TafelBestelling.tafelNummer, TafelStatus.Bezet);
         }   
        
     }

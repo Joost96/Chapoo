@@ -45,7 +45,7 @@ namespace UI
             LaadKaart();
         }
 
-        private void LaadKaart()
+        public void LaadKaart()
         {
             TafelService tafel = new TafelService();
 
