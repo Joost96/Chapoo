@@ -136,16 +136,21 @@ namespace UI
         {
             editProduct.Commentaar = txtBoxComment.Text;
             panelEdit.Visible = false;
+            loadBestellingen();
         }
 
         private void bewerken_btn_Click(object sender, EventArgs e)
         {
-            BestellingProduct betsellingProductTag = (BestellingProduct)listviewBestelling.SelectedItems[0].Tag;
-            BestellingProduct bestellingProduct = bestellingProducten.Find(bp => bp.Id == betsellingProductTag.Id);
-            if (bestellingProduct != null)
+            if (listviewBestelling.SelectedItems.Count!=0)
             {
-                editProduct = bestellingProduct;
-                panelEdit.Visible = true;
+                BestellingProduct betsellingProductTag = (BestellingProduct)listviewBestelling.SelectedItems[0].Tag;
+
+                BestellingProduct bestellingProduct = bestellingProducten.Find(bp => bp.Id == betsellingProductTag.Id);
+                if (bestellingProduct != null)
+                {
+                    editProduct = bestellingProduct;
+                    panelEdit.Visible = true;
+                }
             }
         }
 

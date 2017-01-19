@@ -293,6 +293,7 @@
             this.listviewBestelling.GridLines = true;
             this.listviewBestelling.HideSelection = false;
             this.listviewBestelling.Location = new System.Drawing.Point(9, 297);
+            this.listviewBestelling.MultiSelect = false;
             this.listviewBestelling.Name = "listviewBestelling";
             this.listviewBestelling.Size = new System.Drawing.Size(350, 127);
             this.listviewBestelling.TabIndex = 7;
@@ -403,11 +404,6 @@
             this.Controls.Add(this.bestellen_btn);
             this.Name = "BestellingMenuForm";
             this.Load += new System.EventHandler(this.BestellingMenuForm_Load);
-            this.Controls.SetChildIndex(this.bestellen_btn, 0);
-            this.Controls.SetChildIndex(this.bewerken_btn, 0);
-            this.Controls.SetChildIndex(this.listviewBestelling, 0);
-            this.Controls.SetChildIndex(this.menu_tab, 0);
-            this.Controls.SetChildIndex(this.panelEdit, 0);
             this.menu_tab.ResumeLayout(false);
             this.drinken_tab.ResumeLayout(false);
             this.lunch_tab.ResumeLayout(false);
