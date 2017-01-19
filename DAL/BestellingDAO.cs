@@ -200,7 +200,7 @@ namespace DAL
                 " JOIN[RBS_1617F_db01].[dbo].[PRODUCT] p ON pb.[ProductId] = p.[p_nr] " +
                 " JOIN[RBS_1617F_db01].[dbo].[BESTELLING] b ON pb.[BestellingId] = b.[id]" +
                 " JOIN [RBS_1617F_db01].[dbo].[KAART] k ON p.[KaartId] = k.[id]" +
-                " WHERE k.[is_keuken] = @isKeuken" +
+                " WHERE k.[is_keuken] = @isKeuken AND pb.[b_status] < 3" +
                 " ORDER BY pb.[b_status] ASC, pb.[tijd] ASC ";
 
             SqlCommand command = new SqlCommand(sql, conn);
