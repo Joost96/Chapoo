@@ -40,10 +40,8 @@
             this.BetaalDrop_btn = new System.Windows.Forms.ComboBox();
             this.lblTotaal = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.CommentaarBox_txt = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // listViewRekOverzicht
@@ -143,7 +141,7 @@
             // 
             this.lblTotaal.AutoSize = true;
             this.lblTotaal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotaal.Location = new System.Drawing.Point(318, 363);
+            this.lblTotaal.Location = new System.Drawing.Point(318, 353);
             this.lblTotaal.Name = "lblTotaal";
             this.lblTotaal.Size = new System.Drawing.Size(32, 13);
             this.lblTotaal.TabIndex = 14;
@@ -153,25 +151,15 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(10, 363);
+            this.label3.Location = new System.Drawing.Point(10, 353);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(43, 13);
             this.label3.TabIndex = 13;
             this.label3.Text = "Totaal";
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::UI.Properties.Resources.Create;
-            this.pictureBox1.Location = new System.Drawing.Point(214, 328);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(21, 24);
-            this.pictureBox1.TabIndex = 15;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
-            // 
             // CommentaarBox_txt
             // 
-            this.CommentaarBox_txt.Location = new System.Drawing.Point(12, 441);
+            this.CommentaarBox_txt.Location = new System.Drawing.Point(13, 397);
             this.CommentaarBox_txt.Name = "CommentaarBox_txt";
             this.CommentaarBox_txt.Size = new System.Drawing.Size(171, 20);
             this.CommentaarBox_txt.TabIndex = 16;
@@ -179,7 +167,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(13, 422);
+            this.label1.Location = new System.Drawing.Point(12, 375);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(66, 13);
             this.label1.TabIndex = 17;
@@ -191,7 +179,6 @@
             this.ClientSize = new System.Drawing.Size(368, 473);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.CommentaarBox_txt);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lblTotaal);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.BetaalDrop_btn);
@@ -202,8 +189,8 @@
             this.Controls.Add(this.txtBoxFooi);
             this.Controls.Add(this.listViewRekOverzicht);
             this.Name = "BetalenForm";
+            this.Text = "Chapoo 12:12 PM";
             this.Load += new System.EventHandler(this.BetalenForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -223,7 +210,6 @@
         private System.Windows.Forms.ColumnHeader Prijs;
         private System.Windows.Forms.Label lblTotaal;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox CommentaarBox_txt;
     }
