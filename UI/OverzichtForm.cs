@@ -38,6 +38,7 @@ namespace UI
         }
         private void TafelsLaden()
         {
+            flowLayoutPanel1.Controls.Clear();
             TafelOverzichtService tOverzichtServ = new TafelOverzichtService();
             foreach (Tafel tafel in tOverzichtServ.GetTafels())
             {
@@ -83,8 +84,6 @@ namespace UI
 
         private void btnReload_Click(object sender, EventArgs e)
         {
-
-            flowLayoutPanel1.Controls.Clear();
             TafelsLaden();
         }
     }
