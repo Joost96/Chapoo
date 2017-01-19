@@ -52,29 +52,6 @@ namespace UI
             this.Close();
         }
 
-        private void statusPrepare(ListView listView_keukenBar)
-        {
-            foreach (ListViewItem item in listView_keukenBar.SelectedItems)
-            {
-                BestellingProduct product = (BestellingProduct)item.Tag;
-                kbService.ChangeBestellingStatus(product, BestellingStatus.Prepare);
-
-            }
-        }
-
-        private void statusReady(ListView listView_keukenBar)
-        {
-            foreach (ListViewItem item in listView_keukenBar.SelectedItems)
-            {
-                BestellingProduct product = (BestellingProduct)item.Tag;
-                kbService.ChangeBestellingStatus(product, BestellingStatus.Ready);
-
-            }
-        }
-
-
-
-
         private void bereiden_btn_Click(object sender, EventArgs e)
         {
             foreach (ListViewItem item in listView_keukenBar.SelectedItems)
