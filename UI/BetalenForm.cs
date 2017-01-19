@@ -54,14 +54,17 @@ namespace UI
 
          private double brekenTotaalEnFooi()
          {
+            fooierror_lbl.Visible = false;
             double totaal = betalen.getTotaalPrijsPerBestelling(tafelId);
             double fooi;
             if (double.TryParse(txtBoxFooi.Text, out fooi) == true)
-            {
-                
+            {        
                 totaal += fooi;
+            }
 
-               
+            else
+            {
+                fooierror_lbl.Visible = true;
             }
 
             return totaal;
@@ -80,9 +83,16 @@ private void BetalenForm_Load(object sender, EventArgs e)
   
          private void betalen_btn_Click(object sender, EventArgs e)
          {
+            double fooi;
              BetaalMethode betaalmethode = (BetaalMethode)BetaalDrop_btn.SelectedItem;
-             double fooi = double.Parse(txtBoxFooi.Text);
-             string commentaar = CommentaarBox_txt.Text;
+            if (double.TryParse(txtBoxFooi.Text, out fooi) == true)
+            {
+                fooi = double.Parse(txtBoxFooi.Text);
+            }
+            
+
+
+            string commentaar = CommentaarBox_txt.Text;
              betalen.UpdateBetaalStatus(tafelId, betaalmethode, fooi, commentaar);
             vorige.Show();
             this.Close();
