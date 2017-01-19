@@ -41,13 +41,13 @@ namespace UI
 
                 ListViewItem bestellingItem = new ListViewItem(p.Naam);
                 bestellingItem.SubItems.Add(p.Aantal.ToString());
-                bestellingItem.SubItems.Add(p.Commentaar);
+                //bestellingItem.SubItems.Add(p.Commentaar);
                 bestellingItem.SubItems.Add(p.Prijs.ToString("C2"));
                 listViewRekOverzicht.Items.Add(bestellingItem);
 
             }
-            lblSubtotaal.Text = betalen.getTotaalPrijsPerBestelling(tafelId).ToString("C2");
-            lblTotaal.Text = brekenTotaalEnFooi().ToString("C2");
+            lblSubtotaal.Text = tafel.GetSubtotaal(tafelId).ToString("C2");
+            lblTotaal.Text = tafel.GetTotaal(tafelId).ToString("C2");
             lblBTW.Text = tafel.GetBtwTotaal(tafelId).ToString("C2");
             
                         // fooi toevoegen aan de bestellingProductTafel en aan de hand hier van brekenen

@@ -18,7 +18,7 @@ namespace Logica
         {
             double totaalbedrag = 0;
             TafelService service = new TafelService();
-            List<TafelService.Prijzen> prijslijst = service.GetPrijzen(tafelId);
+            List<TafelService.Prijzen> prijslijst = service.GetSubtotaal(tafelId);
 
             foreach(TafelService.Prijzen p in prijslijst)
             {

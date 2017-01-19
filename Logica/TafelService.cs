@@ -33,32 +33,19 @@ namespace Logica
             public double productMetBTW;
         }
         //gemaakt door mark
-        public List<Prijzen> GetPrijzen(int tafelId)
+        public double GetSubtotaal(int tafelId)
         {
             //Deze methode haalt aan de hand van een gegeven bestellingId een struct op met per product de prijs, de afzonderlijke BTW per product en de totaalprijs (productprijs + btw)
-            List<Prijzen> Prijslijst = new List<Prijzen>();
+            double subtotaal = 0;
             List<BestellingProduct> bestelling = GetBestellingByTafelId(tafelId).Producten;
 
-            double totaalBtwBedrag = 0;
             //Voor ieder product in de lijst van de bestelling
-            foreach (Product P in bestelling)
+            foreach (BestellingProduct P in bestelling)
             {
-                PrijsPerProduct.productprijs = P.Prijs;
-                PrijsPerProduct.categorie = P.CategoryProduct;
-
-                //Als de categorie binnen deze waardes valt is hij 6, of 12 procent.
-                double btw = PrijsPerProduct.categorie.Btw;
-                btw = (btw / 100 + 1);
-
-                PrijsPerProduct.productMetBTW = (PrijsPerProduct.productprijs * btw);
-                PrijsPerProduct.btwValue = (PrijsPerProduct.productMetBTW - PrijsPerProduct.productprijs);
-                totaalBtwBedrag += PrijsPerProduct.btwValue;
-
-                Prijslijst.Add(PrijsPerProduct);
-
+                subtotaal += P.Prijs;
             }
             //Geeft een struct terug met daarin de standaard productprijs, btw waarde per product en de Totaalprijs per product.
-            return Prijslijst;
+            return subtotaal;
 
         }
 
@@ -79,6 +66,7 @@ namespace Logica
         }
 
 
+        //BTW bedrag brekenen/ Shahin
         public double GetBtwTotaal(int tafelId)
         {
             //Deze methode haalt aan de hand van een gegeven bestellingId een struct op met per product de prijs, de afzonderlijke BTW per product en de totaalprijs (productprijs + btw)
@@ -104,5 +92,13 @@ namespace Logica
             return totaalBtwBedrag;
 
         }
+
+        public double GetTotaal(int tafelId)
+        {
+            double totaalBedrag = GetBtwTotaal(tafelId) + GetSubtotaal(tafelId);
+            return totaalBedrag; 
+
+        }
     }
+
 }
