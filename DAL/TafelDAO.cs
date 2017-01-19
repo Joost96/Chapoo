@@ -95,13 +95,13 @@ namespace DAL
             return tafel;
         }
 
-        public void UpdateStatus(int tafelId, int status)
+        public void UpdateStatus(int tafelId, TafelStatus status)
         {
             
             SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["constr"].ConnectionString);
             conn.Open();
             string sql = "UPDATE[RBS_1617F_db01].[dbo].[TAFEL] " +
-                "SET  (t_status = @status) " +
+                "SET  t_status = @status " +
                 "WHERE tafel_nr = @tafelId";
             SqlCommand command = new SqlCommand(sql, conn);
             command.Parameters.Add("@status", System.Data.SqlDbType.Int).Value = status;

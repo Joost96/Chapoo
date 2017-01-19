@@ -85,7 +85,7 @@ namespace Logica
             
         }
 
-        public void WijzigStatus(int tafelId, int status)
+        public void WijzigStatus(int tafelId, TafelStatus status)
         {
             tafeldao.UpdateStatus(tafelId, status);
         }

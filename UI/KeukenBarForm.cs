@@ -80,9 +80,8 @@ namespace UI
             foreach (ListViewItem item in listView_keukenBar.SelectedItems)
             {
                 BestellingProduct product = (BestellingProduct)item.Tag;
-                int status = 2;
-
-                tafelservice.WijzigStatus(product.ProductBestelling.TafelBestelling.tafelNummer, status);
+                //Nieuwe enum dit moet bereiden
+                tafelservice.WijzigStatus(product.ProductBestelling.TafelBestelling.tafelNummer, TafelStatus.Bezet);
             }
 
         }
@@ -92,9 +91,9 @@ namespace UI
             foreach (ListViewItem item in listView_keukenBar.SelectedItems)
             {
                 BestellingProduct product = (BestellingProduct)item.Tag;
-                int status = 3;
-
-                tafelservice.WijzigStatus(product.ProductBestelling.TafelBestelling.tafelNummer, status);
+               
+                //nieuwe enum dit moet ready to serve
+                tafelservice.WijzigStatus(product.ProductBestelling.TafelBestelling.tafelNummer, TafelStatus.Serveren);
             }
 
         }
