@@ -43,9 +43,10 @@ namespace StyleGuide
         }
        
         private void back_btn_Click(object sender, EventArgs e)
-        {
-            Hide();
+        { 
             vorige.Show();
+            Close();
+           
 
         }
 
