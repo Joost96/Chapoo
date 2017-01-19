@@ -92,7 +92,15 @@ namespace UI
             foreach (ListViewItem item in listview_bestelling.SelectedItems)
             {
                 BestellingProduct product = (BestellingProduct)item.Tag;
-                keukenBar.ChangeBestellingStatus(product, BestellingStatus.Served);
+                if (product.Status == BestellingStatus.Ready) // kijkt of bestelling status wel status Ready heeft!
+                {
+                    keukenBar.ChangeBestellingStatus(product, BestellingStatus.Served);                  
+                }
+                else 
+                {
+                    warning_lbl.Visible = true;                
+                    warning_lbl.Text = "Het product " + product.Naam + " kan nog niet geserveerd worden!";
+                }
             }
             bool AllServerd = true;
             foreach (ListViewItem item in listview_bestelling.Items)

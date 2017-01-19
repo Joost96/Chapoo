@@ -42,6 +42,8 @@
             this.Naam = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Aantal = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Prijs = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.label4 = new System.Windows.Forms.Label();
+            this.fooierror_lbl = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -174,10 +176,31 @@
             this.Prijs.Text = "Prijs";
             this.Prijs.Width = 70;
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(0, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(35, 13);
+            this.label4.TabIndex = 18;
+            this.label4.Text = "label4";
+            // 
+            // fooierror_lbl
+            // 
+            this.fooierror_lbl.AutoSize = true;
+            this.fooierror_lbl.ForeColor = System.Drawing.Color.Red;
+            this.fooierror_lbl.Location = new System.Drawing.Point(157, 331);
+            this.fooierror_lbl.Name = "fooierror_lbl";
+            this.fooierror_lbl.Size = new System.Drawing.Size(78, 13);
+            this.fooierror_lbl.TabIndex = 19;
+            this.fooierror_lbl.Text = "Onjuiste Invoer";
+            // 
             // BetalenForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.ClientSize = new System.Drawing.Size(368, 473);
+            this.Controls.Add(this.fooierror_lbl);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.CommentaarBox_txt);
             this.Controls.Add(this.lblTotaal);
@@ -190,7 +213,7 @@
             this.Controls.Add(this.txtBoxFooi);
             this.Controls.Add(this.listViewRekOverzicht);
             this.Name = "BetalenForm";
-            this.Text = "Chapoo 12:51 PM";
+            this.Text = "Chapoo 1:41 PM";
             this.Load += new System.EventHandler(this.BetalenForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -213,5 +236,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox CommentaarBox_txt;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label fooierror_lbl;
     }
 }

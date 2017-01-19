@@ -34,10 +34,11 @@
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.betalen_btn = new System.Windows.Forms.Button();
             this.bestellen_btn = new System.Windows.Forms.Button();
             this.serveer_btn = new System.Windows.Forms.Button();
-            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.warning_lbl = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // listview_bestelling
@@ -76,6 +77,11 @@
             // 
             this.columnHeader4.Text = "Prijs";
             this.columnHeader4.Width = 43;
+            // 
+            // columnHeader5
+            // 
+            this.columnHeader5.Text = "Status";
+            this.columnHeader5.Width = 42;
             // 
             // betalen_btn
             // 
@@ -122,23 +128,31 @@
             this.serveer_btn.UseVisualStyleBackColor = false;
             this.serveer_btn.Click += new System.EventHandler(this.serveer_btn_Click);
             // 
-            // columnHeader5
+            // warning_lbl
             // 
-            this.columnHeader5.Text = "Status";
-            this.columnHeader5.Width = 42;
+            this.warning_lbl.AutoSize = true;
+            this.warning_lbl.ForeColor = System.Drawing.Color.Red;
+            this.warning_lbl.Location = new System.Drawing.Point(108, 448);
+            this.warning_lbl.Name = "warning_lbl";
+            this.warning_lbl.Size = new System.Drawing.Size(35, 13);
+            this.warning_lbl.TabIndex = 12;
+            this.warning_lbl.Text = "label1";
+            this.warning_lbl.Visible = false;
             // 
             // TafelForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.ClientSize = new System.Drawing.Size(368, 473);
+            this.Controls.Add(this.warning_lbl);
             this.Controls.Add(this.serveer_btn);
             this.Controls.Add(this.listview_bestelling);
             this.Controls.Add(this.betalen_btn);
             this.Controls.Add(this.bestellen_btn);
             this.Name = "TafelForm";
-            this.Text = "Chapoo 17:01";
+            this.Text = "Chapoo 13:40";
             this.Load += new System.EventHandler(this.TafelForm_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -153,6 +167,7 @@
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.Button serveer_btn;
         private System.Windows.Forms.ColumnHeader columnHeader5;
+        private System.Windows.Forms.Label warning_lbl;
 
     }
 }
