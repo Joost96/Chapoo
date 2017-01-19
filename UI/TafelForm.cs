@@ -72,18 +72,23 @@ namespace UI
         private void bestellen_btn_Click(object sender, EventArgs e)
         {
             // verwijst door naar de Bestel kaart
+            warning2_lbl.Visible = false;
             BestellingMenuForm form = new BestellingMenuForm(this, werknemer, tafelId);
-            this.Hide();
+            this.Hide();        
             form.Show();
             
         }
 
         private void betalen_btn_Click(object sender, EventArgs e)
         {
-            BetalenForm form = new BetalenForm(this, werknemer, tafelId);
-            this.Hide();
-            form.Show();
-           
+            if (bestelling != null)
+            {
+                BetalenForm form = new BetalenForm(this, werknemer, tafelId);
+                this.Hide();
+                form.Show();
+            }
+            else
+            warning2_lbl.Visible = true;
         }
 
         private void serveer_btn_Click(object sender, EventArgs e)
@@ -96,12 +101,13 @@ namespace UI
                 BestellingProduct product = (BestellingProduct)item.Tag;
                 if (product.Status == BestellingStatus.Ready) // kijkt of bestelling status wel status Ready heeft!
                 {
+                    warning_lbl.Visible = false;
                     keukenBar.ChangeBestellingStatus(product, BestellingStatus.Served);                  
                 }
                 else 
                 {
                     warning_lbl.Visible = true;                
-                    warning_lbl.Text = "Het product " + product.Naam + " kan nog niet geserveerd worden!";
+                  
                 }
             }
             bool AllServerd = true;
