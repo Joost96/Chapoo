@@ -11,7 +11,7 @@ namespace StyleGuide
 {
     public partial class PhoneGuide : StyleGuide.BaseGuide
     {
-        private StyleGuide.BaseGuide vorige;
+        protected StyleGuide.BaseGuide vorige;
         private System.Windows.Forms.Button back_btn;
         public PhoneGuide(BaseGuide vorige, Werknemer werknemer)
             : base(werknemer)
