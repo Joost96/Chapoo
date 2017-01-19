@@ -73,6 +73,7 @@ namespace UI
         {
             // verwijst door naar de Bestel kaart
             warning2_lbl.Visible = false;
+            warning_lbl.Visible = false;
             BestellingMenuForm form = new BestellingMenuForm(this, werknemer, tafelId);
             this.Hide();        
             form.Show();
