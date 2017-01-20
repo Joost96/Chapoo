@@ -46,7 +46,7 @@ namespace UI
 
             }
             lblSubtotaal.Text = tafel.GetSubtotaal(tafelId).ToString("C2");
-            lblTotaal.Text = tafel.GetTotaal(tafelId).ToString("C2");
+            lblTotaal.Text = tafel.GetSubtotaal(tafelId).ToString("C2");
             lblBTW.Text = tafel.GetBtwTotaal(tafelId).ToString("C2");
             
                         // fooi toevoegen aan de bestellingProductTafel en aan de hand hier van brekenen
@@ -57,7 +57,7 @@ namespace UI
          private double brekenTotaalEnFooi()
          {
             fooierror_lbl.Visible = false;
-            double totaal = tafel.GetTotaal(tafelId);
+            double totaal = tafel.GetSubtotaal(tafelId);
             double fooi;
             if (double.TryParse(txtBoxFooi.Text.Replace(",", "."), out fooi) == true)
             {        
@@ -104,5 +104,3 @@ namespace UI
         }
     }
 }
-
-

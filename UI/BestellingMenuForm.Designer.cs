@@ -318,7 +318,7 @@
             // BestellingComentaar
             // 
             this.BestellingComentaar.Text = "Comentaar";
-            this.BestellingComentaar.Width = 105;
+            this.BestellingComentaar.Width = 88;
             // 
             // bewerken_btn
             // 
@@ -404,7 +404,7 @@
             this.Controls.Add(this.bewerken_btn);
             this.Controls.Add(this.bestellen_btn);
             this.Name = "BestellingMenuForm";
-            this.Text = "Chapoo 15:06";
+            this.Text = "Chapoo 16:29";
             this.Load += new System.EventHandler(this.BestellingMenuForm_Load);
             this.menu_tab.ResumeLayout(false);
             this.drinken_tab.ResumeLayout(false);

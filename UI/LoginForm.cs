@@ -39,7 +39,7 @@ namespace UI
             else if (werknemer.rol == WerknemerRol.bediening)
             {
                 Hide();
-                OverzichtForm overzicht = new OverzichtForm(werknemer);
+                RestOverzichtForm overzicht = new RestOverzichtForm(werknemer);
                 overzicht.Show();
             }
 

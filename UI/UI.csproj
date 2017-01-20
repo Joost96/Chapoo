@@ -77,11 +77,11 @@
     <Compile Include="LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="OverzichtForm.cs">
+    <Compile Include="RestOverzichtForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="OverzichtForm.Designer.cs">
-      <DependentUpon>OverzichtForm.cs</DependentUpon>
+    <Compile Include="RestOverzichtForm.Designer.cs">
+      <DependentUpon>RestOverzichtForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -106,8 +106,8 @@
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="OverzichtForm.resx">
-      <DependentUpon>OverzichtForm.cs</DependentUpon>
+    <EmbeddedResource Include="RestOverzichtForm.resx">
+      <DependentUpon>RestOverzichtForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

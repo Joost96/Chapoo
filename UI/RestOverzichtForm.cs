@@ -10,9 +10,9 @@ using Logica;
 
 namespace UI
 {
-    public partial class OverzichtForm : StyleGuide.PhoneGuide
+    public partial class RestOverzichtForm : StyleGuide.PhoneGuide
     {
-        public OverzichtForm(Werknemer werknemer) :base(werknemer)
+        public RestOverzichtForm(Werknemer werknemer) :base(werknemer)
         {
             InitializeComponent();
             TafelsLaden();

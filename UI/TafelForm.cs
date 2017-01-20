@@ -82,21 +82,26 @@ namespace UI
 
         private void betalen_btn_Click(object sender, EventArgs e)
         {
-            bool betalen = true;
-            foreach(BestellingProduct p in bestelling.Producten)
+            if (bestelling != null)
             {
-                if(p.Status != BestellingStatus.Served)
-                betalen = false;
-            }
-            if (bestelling != null || betalen == true)
-            {
-                
-                BetalenForm form = new BetalenForm(this, werknemer, tafelId);
-                this.Hide();
-                form.Show();
+                bool betalen = true;
+                foreach (BestellingProduct p in bestelling.Producten)
+                {
+                    if (p.Status != BestellingStatus.Served)
+                        betalen = false;
+                }
+                if (betalen == true)
+                {
+
+                    BetalenForm form = new BetalenForm(this, werknemer, tafelId);
+                    this.Hide();
+                    form.Show();
+                }
+                else
+                    warning2_lbl.Visible = true;
             }
             else
-            warning2_lbl.Visible = true;
+                warning2_lbl.Visible = true;
         }
 
         private void serveer_btn_Click(object sender, EventArgs e)
