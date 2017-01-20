@@ -12,24 +12,7 @@ namespace Logica
     {
        private TafelDAO tafelDAO = new TafelDAO();
 
-        public bool VeranderStatus(Tafel tafel, TafelStatus newStatus)
-        {
-            try
-            {
-                tafel.status = newStatus;
-
-                tafelDAO.Update(tafel);
-
-                if (!tafelDAO.Update(tafel))
-                    return false;
-
-                return true;
-            }
-            catch
-            {
-                return false;
-            }
-        }
+        
 
        
         public List<Tafel> GetTafels()
