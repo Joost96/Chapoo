@@ -32,7 +32,7 @@ namespace Logica
         public void UpdateBetaalStatus(int tafelId, BetaalMethode betaalmethode, double fooi, string commentaar)
         {
             int betalingmethode = (int)betaalmethode;
-            double totaalbedrag = tservice.GetTotaal(tafelId);
+            double totaalbedrag = tservice.GetSubtotaal(tafelId);
             BestellingDAO dao = new BestellingDAO();
             dao.BetaalBestelling(tafelId, betalingmethode, fooi, totaalbedrag, commentaar);
             tafelDAO.UpdateStatus(tafelId, TafelStatus.Vrij);

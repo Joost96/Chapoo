@@ -79,13 +79,5 @@ namespace Logica
             return totaalBtwBedrag;
 
         }
-
-        public double GetTotaal(int tafelId)
-        {
-            double totaalBedrag = GetBtwTotaal(tafelId) + GetSubtotaal(tafelId);
-            return totaalBedrag; 
-
-        }
     }
-
 }
