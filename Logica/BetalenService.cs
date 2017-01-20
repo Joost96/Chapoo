@@ -14,21 +14,7 @@ namespace Logica
 
         private TafelDAO tafelDAO = new TafelDAO();
         private TafelService tservice = new TafelService();
-        //Gemaakt door Mark. Haalt totaalbedrag op voor alle producten in 1 bestelling
-        /*public double getTotaalPrijsPerBestelling(int tafelId)
-        {
-            double totaalbedrag = 0;
-            TafelService service = new TafelService();
-            //List<TafelService.Prijzen> prijslijst = service.GetSubtotaal(tafelId);
 
-            foreach(TafelService.Prijzen p in prijslijst)
-            {
-                totaalbedrag += p.productMetBTW;
-            }
-            return totaalbedrag;
-
-        }*/
-        //Gemaakt door mark. Voert betalinggegevens in voor bestellingId
         public void UpdateBetaalStatus(int tafelId, BetaalMethode betaalmethode, double fooi, string commentaar)
         {
             int betalingmethode = (int)betaalmethode;
@@ -38,9 +24,10 @@ namespace Logica
             tafelDAO.UpdateStatus(tafelId, TafelStatus.Vrij);
         }
 
-
+        public double brekenSubtotaal (int tafelId)
+        {
+            double sub = tservice.GetSubtotaal(tafelId) - tservice.GetBtwTotaal(tafelId);
+            return sub;
+        }
     }
-
-
-
 }

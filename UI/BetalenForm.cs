@@ -13,8 +13,8 @@ namespace UI
     public partial class BetalenForm : StyleGuide.PhoneGuide
     {
         private int tafelId;
-        private List<BestellingProduct> bestellingProducten = new List<BestellingProduct>();
-        private TafelService tOverzicht = new TafelService();
+        //private List<BestellingProduct> bestellingProducten = new List<BestellingProduct>();
+        //private TafelService tOverzicht = new TafelService();
         private TafelService tafel = new TafelService();
         private BetalenService betalen = new BetalenService();
         
@@ -26,17 +26,17 @@ namespace UI
             CommentaarBox_txt.MaxLength = 200;
         }
 
+        private void BetalenForm_Load(object sender, EventArgs e)
+        {
+            BetaalDrop_btn.DataSource = Enum.GetValues(typeof(BetaalMethode));
+        }
+
         private void LaadTafel()
         {
-
-
-            TafelService tafel = new TafelService();
-
-            // vraagt bestellingId op
-
             listViewRekOverzicht.Items.Clear();
             Bestelling bestelling = tafel.GetBestellingByTafelId(tafelId);
-            foreach (BestellingProduct p in bestelling.Producten) // zet de items in de Listview
+
+            foreach (BestellingProduct p in bestelling.Producten)
             {
 
                 ListViewItem bestellingItem = new ListViewItem(p.Naam);
@@ -45,12 +45,10 @@ namespace UI
                 listViewRekOverzicht.Items.Add(bestellingItem);
 
             }
-            lblSubtotaal.Text = tafel.GetSubtotaal(tafelId).ToString("C2");
+
+            lblSubtotaal.Text = betalen.brekenSubtotaal(tafelId).ToString("C2");
             lblTotaal.Text = tafel.GetSubtotaal(tafelId).ToString("C2");
             lblBTW.Text = tafel.GetBtwTotaal(tafelId).ToString("C2");
-            
-                        // fooi toevoegen aan de bestellingProductTafel en aan de hand hier van brekenen
-                        // btw laten zien of niet???
              
             }
 
@@ -71,15 +69,15 @@ namespace UI
             return totaal;
 
         }
- 
-         private void pictureBox1_Click(object sender, EventArgs e)
+
+        private void txtBoxFooi_TextChanged(object sender, EventArgs e)
+        {
+            lblTotaal.Text = brekenTotaalEnFooi().ToString("C2");
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
          {
              
-         }
-
-         private void BetalenForm_Load(object sender, EventArgs e)
-         {
-             BetaalDrop_btn.DataSource = Enum.GetValues(typeof(BetaalMethode));
          }
   
          private void betalen_btn_Click(object sender, EventArgs e)
@@ -97,10 +95,5 @@ namespace UI
             vorige.Show();
             this.Close();
          }
-
-        private void txtBoxFooi_TextChanged(object sender, EventArgs e)
-        {
-            lblTotaal.Text = brekenTotaalEnFooi().ToString("C2");
-        }
     }
 }
