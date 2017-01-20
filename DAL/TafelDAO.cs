@@ -13,7 +13,7 @@ namespace DAL
 {
     public class TafelDAO
     {
-        //gemaakt door mark
+        
         public bool Update(Tafel tafel)
         {
             bool updatesuccesful = false;
@@ -36,19 +36,15 @@ namespace DAL
 
             return updatesuccesful;
         }
-        //Gemaakt door mark
         public List<Tafel> ReadAll()
             {
             List<Tafel> TafelOverzicht = new List<Tafel>();
-            //    Tafel tafel = new Tafel();
-            
 
             SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["constr"].ConnectionString);
             conn.Open();
             string sql = "SELECT [tafel_nr], [t_status], [zitplaatsen]" +
                 "FROM [RBS_1617F_db01].[dbo].[TAFEL] ";
-            SqlCommand command = new SqlCommand(sql, conn);
-           
+            SqlCommand command = new SqlCommand(sql, conn);        
 
             command.Prepare();
             SqlDataReader reader = command.ExecuteReader();
@@ -58,20 +54,15 @@ namespace DAL
                 TafelStatus status = (TafelStatus)reader.GetInt32(1);
                 int zitplaatsen = reader.GetInt32(2);
                 
-
-
                 TafelOverzicht.Add(new Tafel(tafelnummer, status, zitplaatsen));
             }
-
 
             return TafelOverzicht;
         }
 
-
         public Tafel ReadByTafelNummer(int tafelId)
         {
             Tafel tafel = null;
-
 
             SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["constr"].ConnectionString);
             conn.Open();
@@ -90,14 +81,11 @@ namespace DAL
                 int zitplaatsen = reader.GetInt32(2);
                 tafel = new Tafel(tafelnummer, status, zitplaatsen);
             }
-
-
             return tafel;
         }
 
         public void UpdateStatus(int tafelId, TafelStatus status)
-        {
-            
+        {           
             SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["constr"].ConnectionString);
             conn.Open();
             string sql = "UPDATE[RBS_1617F_db01].[dbo].[TAFEL] " +
@@ -109,13 +97,8 @@ namespace DAL
             command.Prepare();
            command.ExecuteNonQuery();
             conn.Close();
-            
-
-            
+                      
         }
-
-
-
 
     }
 }

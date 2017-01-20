@@ -20,40 +20,41 @@ namespace StyleGuide
             InitializeComponent();
 
             CreateTimer2();
-            AddWerknemerToHeader(werknemer);
+            AddWerknemerToHeader(werknemer); // geeft de huidige tijd + de werknemer weer in de header, als de werknemer is meegegeven in het form
         }
         public BaseGuide()
         {
             InitializeComponent();
-            CreateTimer();
-            GetCurrentTime();
+
+            CreateTimer(); //maakt de timer aan
+            GetCurrentTime(); // geeft de huidige tijd weer in de header
         }
         private void AddWerknemerToHeader(Werknemer werknemer)
         {
             string dateTime = DateTime.Now.ToShortTimeString();
-            this.Text = string.Format("Chapoo - {0} - {1} ", werknemer, dateTime);
+            this.Text = string.Format("Chapoo - {0} - {1} ", werknemer, dateTime); // zet deze tekst in de header!
         }
 
 
-        private void CreateTimer()
+        private void CreateTimer() 
         {
             Timer aTimer = new Timer();
 
-            aTimer.Interval = 10000;
+            aTimer.Interval = 10000; //zet de timer op 10s
 
-            aTimer.Enabled = true;
-            aTimer.Tick += new EventHandler(MyLittleTimer);
+            aTimer.Enabled = true; 
+            aTimer.Tick += new EventHandler(MyLittleTimer); // zet dit event vast aan de timer
             aTimer.Start();
         }
 
-        private void CreateTimer2()
+        private void CreateTimer2() //zelfde methode als hierboven, alleen deze gebruikt later een andere methode
         {
             Timer aTimer = new Timer();
 
             aTimer.Interval = 10000;
 
             aTimer.Enabled = true;
-            aTimer.Tick += new EventHandler(MyLittleTimer2);
+            aTimer.Tick += new EventHandler(MyLittleTimer2); 
             aTimer.Start();
         }
 
@@ -71,7 +72,7 @@ namespace StyleGuide
         private void GetCurrentTime()
         {
             string dateTime = DateTime.Now.ToShortTimeString();
-            this.Text = string.Format("Chapoo {0}", dateTime);
+            this.Text = string.Format("Chapoo {0}", dateTime); // zet de tekst in de header
 
         }
     }

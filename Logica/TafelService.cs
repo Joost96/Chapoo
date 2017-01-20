@@ -24,7 +24,7 @@ namespace Logica
             return bestelling;
 
         }
-        //Gemaakt door mark
+       
         public struct Prijzen
         {
             public double productprijs;
@@ -32,7 +32,7 @@ namespace Logica
             public double btwValue;
             public double productMetBTW;
         }
-        //gemaakt door mark
+     
         public double GetSubtotaal(int tafelId)
         {
             //Deze methode haalt aan de hand van een gegeven bestellingId een struct op met per product de prijs, de afzonderlijke BTW per product en de totaalprijs (productprijs + btw)
@@ -63,7 +63,7 @@ namespace Logica
         }
 
 
-        //BTW bedrag brekenen/ Shahin
+  
         public double GetBtwTotaal(int tafelId)
         {
             
