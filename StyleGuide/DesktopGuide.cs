@@ -11,16 +11,18 @@ namespace StyleGuide
 {
     public partial class DesktopGuide : StyleGuide.BaseGuide
     {
-        public DesktopGuide(Werknemer werknemer) :base(werknemer)
+        public DesktopGuide(Werknemer werknemer)
+            : base(werknemer)
         {
             InitializeComponent();
-       
+
         }
 
-        public DesktopGuide():base()
+        public DesktopGuide()
+            : base()
         {
             InitializeComponent();
-       
+
         }
 
 

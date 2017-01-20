@@ -13,7 +13,7 @@ namespace DAL
 {
     public class TafelDAO
     {
-        
+
         public bool Update(Tafel tafel)
         {
             bool updatesuccesful = false;
@@ -37,14 +37,14 @@ namespace DAL
             return updatesuccesful;
         }
         public List<Tafel> ReadAll()
-            {
+        {
             List<Tafel> TafelOverzicht = new List<Tafel>();
 
             SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["constr"].ConnectionString);
             conn.Open();
             string sql = "SELECT [tafel_nr], [t_status], [zitplaatsen]" +
                 "FROM [RBS_1617F_db01].[dbo].[TAFEL] ";
-            SqlCommand command = new SqlCommand(sql, conn);        
+            SqlCommand command = new SqlCommand(sql, conn);
 
             command.Prepare();
             SqlDataReader reader = command.ExecuteReader();
@@ -53,7 +53,7 @@ namespace DAL
                 int tafelnummer = reader.GetInt32(0);
                 TafelStatus status = (TafelStatus)reader.GetInt32(1);
                 int zitplaatsen = reader.GetInt32(2);
-                
+
                 TafelOverzicht.Add(new Tafel(tafelnummer, status, zitplaatsen));
             }
 
@@ -85,7 +85,7 @@ namespace DAL
         }
 
         public void UpdateStatus(int tafelId, TafelStatus status)
-        {           
+        {
             SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["constr"].ConnectionString);
             conn.Open();
             string sql = "UPDATE[RBS_1617F_db01].[dbo].[TAFEL] " +
@@ -95,9 +95,9 @@ namespace DAL
             command.Parameters.Add("@status", System.Data.SqlDbType.Int).Value = status;
             command.Parameters.Add("@tafelId", System.Data.SqlDbType.Int).Value = tafelId;
             command.Prepare();
-           command.ExecuteNonQuery();
+            command.ExecuteNonQuery();
             conn.Close();
-                      
+
         }
 
     }
