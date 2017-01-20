@@ -11,7 +11,7 @@ namespace Logica
     public class TafelService
     {
         //Nieuw prijs struct en lijst bestellingproduct
-        Prijzen PrijsPerProduct = new Prijzen();
+   
         BestellingDAO dao = new BestellingDAO();
         TafelDAO tafeldao = new TafelDAO();
         public List<BestellingProduct> GetBestellingProducten(int bestellingId)
@@ -24,14 +24,7 @@ namespace Logica
             return bestelling;
 
         }
-       
-        public struct Prijzen
-        {
-            public double productprijs;
-            public Category categorie;
-            public double btwValue;
-            public double productMetBTW;
-        }
+     
      
         public double GetSubtotaal(int tafelId)
         {
