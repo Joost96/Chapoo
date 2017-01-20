@@ -13,14 +13,15 @@ namespace StyleGuide
     {
         protected StyleGuide.BaseGuide vorige;
         private System.Windows.Forms.Button back_btn;
-        public PhoneGuide(BaseGuide vorige, Werknemer werknemer)
+        public PhoneGuide(BaseGuide vorige, Werknemer werknemer) 
             : base(werknemer)
         {
             this.vorige = vorige;
             InitializeComponent();
+
+            // maakt de back-button aan!
             this.back_btn = new System.Windows.Forms.Button();
-            this.back_btn.Image = Image.FromFile("../../../images/icon/Back.png");
-          
+            this.back_btn.Image = Image.FromFile("../../../images/icon/Back.png");         
             this.back_btn.Location = new System.Drawing.Point(3, 441);
             this.back_btn.Name = "back_btn";
             this.back_btn.Size = new System.Drawing.Size(37, 30);
@@ -36,24 +37,17 @@ namespace StyleGuide
             InitializeComponent();
         }
         
-
-
         public PhoneGuide()
         {
 
             InitializeComponent();
-
-           
-
         }
        
         private void back_btn_Click(object sender, EventArgs e)
         { 
             vorige.Show();
             Close();
-           
-
-        }
+          }
 
         private void DateTime_lbl_Click(object sender, EventArgs e)
         {

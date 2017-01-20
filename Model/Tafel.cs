@@ -12,8 +12,8 @@ namespace Model
 
         public TafelStatus status { get; set; }
         public int zitplaatsen { get; set; }
-        
-        public Tafel (int tafelNummer, TafelStatus status, int zitplaatsen)
+
+        public Tafel(int tafelNummer, TafelStatus status, int zitplaatsen)
         {
             this.tafelNummer = tafelNummer;
             this.status = status;

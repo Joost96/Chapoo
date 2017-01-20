@@ -13,7 +13,6 @@ namespace UI
     public partial class TafelForm : StyleGuide.PhoneGuide
     {
         private TafelService tafelService = new TafelService();
-
         private int tafelId;
         private Bestelling bestelling;
         private List<BestellingProduct> bestellingProducten = new List<BestellingProduct>();
@@ -54,18 +53,18 @@ namespace UI
             listview_bestelling.Items.Clear();
 
             this.bestelling = tafel.GetBestellingByTafelId(tafelId);
-               
-            if(bestelling != null)
-            foreach (BestellingProduct p in bestelling.Producten) // zet de items in de Listview
-            {
-                ListViewItem lvItem = new ListViewItem(p.Naam);
-                lvItem.SubItems.Add(p.Aantal.ToString());
-                lvItem.SubItems.Add(p.Commentaar);
-                lvItem.SubItems.Add(p.Prijs.ToString("C2"));
-                lvItem.SubItems.Add(p.Status.ToString());
-                lvItem.Tag = p;
-                listview_bestelling.Items.Add(lvItem);
-            }
+
+            if (bestelling != null)
+                foreach (BestellingProduct p in bestelling.Producten) // zet de items in de Listview
+                {
+                    ListViewItem lvItem = new ListViewItem(p.Naam);
+                    lvItem.SubItems.Add(p.Aantal.ToString());
+                    lvItem.SubItems.Add(p.Commentaar);
+                    lvItem.SubItems.Add(p.Prijs.ToString("C2"));
+                    lvItem.SubItems.Add(p.Status.ToString());
+                    lvItem.Tag = p;
+                    listview_bestelling.Items.Add(lvItem);
+                }
 
         }
 
@@ -75,9 +74,9 @@ namespace UI
             warning2_lbl.Visible = false;
             warning_lbl.Visible = false;
             BestellingMenuForm form = new BestellingMenuForm(this, werknemer, tafelId);
-            this.Hide();        
+            this.Hide();
             form.Show();
-            
+
         }
 
         private void betalen_btn_Click(object sender, EventArgs e)
@@ -106,11 +105,8 @@ namespace UI
 
         private void serveer_btn_Click(object sender, EventArgs e)
         {
-           
+
             KeukenBarService keukenBar = new KeukenBarService();
-
-            
-
 
             bool AllServerd = true;
             if (AllServerd)
@@ -123,27 +119,21 @@ namespace UI
                 AllServerd = ((BestellingProduct)item.Tag).Status != BestellingStatus.Ready;
             }
 
-
-
             foreach (ListViewItem item in listview_bestelling.SelectedItems)
             {
                 BestellingProduct product = (BestellingProduct)item.Tag;
                 if (product.Status == BestellingStatus.Ready) // kijkt of bestelling status wel status Ready heeft!
                 {
                     warning_lbl.Visible = false;
-                    keukenBar.ChangeBestellingStatus(product, BestellingStatus.Served);                  
+                    keukenBar.ChangeBestellingStatus(product, BestellingStatus.Served);
                 }
-                else 
+                else
                 {
-                    warning_lbl.Visible = true;                
-                  
+                    warning_lbl.Visible = true;
+
                 }
             }
-            
-            
-            
             LaadKaart();
-          
         }
     }
 }
