@@ -13,7 +13,7 @@ namespace DAL
 {
     public class TafelDAO
     {
-        //gemaakt door mark
+        
         public bool Update(Tafel tafel)
         {
             bool updatesuccesful = false;
@@ -36,11 +36,11 @@ namespace DAL
 
             return updatesuccesful;
         }
-        //Gemaakt door mark
+    
         public List<Tafel> ReadAll()
             {
             List<Tafel> TafelOverzicht = new List<Tafel>();
-            //    Tafel tafel = new Tafel();
+            
             
 
             SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["constr"].ConnectionString);

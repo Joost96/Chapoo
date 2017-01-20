@@ -31,7 +31,7 @@ namespace Logica
             }
         }
 
-        // Shahin = ik heb dit aangepast om static te verwijderen.
+       
         public List<Tafel> GetTafels()
         {
             List<Tafel> TafelOverzicht = tafelDAO.ReadAll();
